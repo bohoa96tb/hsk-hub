@@ -7,9 +7,10 @@ Cập nhật: 2026-11-23 (Asia/Tokyo) — **V2**
 - ✅ V1 + V2 đã hoàn thành, commit local `main` HEAD `af874dc`.
 - ✅ **Đã đẩy lên GitHub** (2026-11-23 ~17:05 JST): `git push`/`push_files` bị chặn (gh chưa đăng nhập; App bị 403 ở git trees), nhưng API tạo/cập nhật file của GitHub App có quyền ghi — đã tải **14/16 file** lên `main` và đối chiếu mã băm blob: **khớp 100% với bản local**. Lưu ý: lịch sử commit trên GitHub là các commit theo từng file (qua Contents API), khác SHA với lịch sử local; nội dung file giống hệt.
   - Sự cố đã sửa: lần tải đầu lưu nhầm chuỗi base64 thay vì nội dung thật (công cụ yêu cầu nội dung thô); đã tải lại toàn bộ và kiểm chứng lại từng file.
-- ⏳ **Còn thiếu `.github/workflows/remind.yml`**: GitHub không cho App tạo file workflow (cần quyền Workflows). Đã thử tạo qua trình duyệt web GitHub nhưng mật khẩu GitHub đã lưu trong Secure Vault bị từ chối ("Incorrect username or password") — chờ Bui cập nhật lại mật khẩu, hoặc tự tạo file theo nội dung trong bản local.
-- ⏳ GitHub Pages: chưa bật (cùng chờ đăng nhập web như trên; hoặc Bui tự bật: Settings → Pages → Deploy from a branch → `main` / `/`).
-- ⏳ Secrets: chưa kiểm tra được (cần đăng nhập); workflow chỉ gửi thật khi có `NTFY_TOPIC` hoặc Telegram secrets.
+- ✅ **`.github/workflows/remind.yml` đã có trên GitHub** (2026-11-23 17:41 JST, commit `53be9f0`): tạo qua giao diện web sau khi Bui tự đăng nhập GitHub bằng Google + xác minh 2 bước Authenticator (mật khẩu GitHub đã lưu trong Secure Vault đã cũ, bị từ chối). Đã đối chiếu: mã băm file trên GitHub khớp bản local.
+- ✅ **GitHub Pages đã bật và live**: Source Deploy from a branch `main` / `/`, Enforce HTTPS. Kiểm chứng độc lập 2026-11-23: run "pages build and deployment" **success**, và cả 8 đường dẫn live (`/`, css, js, data/progress.json, data/catalog.json, manifest, icon) đều trả **200**; nội dung live đúng (tiêu đề HSK Hub, 3 bài mẫu, reminderMode `morning`, catalog 124 bài). 👉 https://bohoa96tb.github.io/hsk-hub/
+- ⏳ Secrets: chưa xác minh được từ ngoài (API công khai không liệt kê secrets). Workflow chỉ gửi thông báo thật khi có secret `NTFY_TOPIC` (hoặc Telegram) — nếu chưa thêm, lần chạy Actions vẫn success nhưng chỉ in nội dung dự kiến ra log. Mốc chạy kế tiếp: 19:00 JST (cron) và 07:00 JST hằng ngày; test ngay bằng Actions → Daily HSK Reminder → Run workflow.
+- ⏳ PAT đồng bộ 2 chiều: Bui tự tạo Fine-grained PAT (Contents: Read and write, chỉ repo `hsk-hub`) và dán vào ⚙️ Cài đặt trên web khi muốn sửa dữ liệu trực tiếp từ điện thoại.
 
 ## V2 — đã làm (2026-11-23)
 
