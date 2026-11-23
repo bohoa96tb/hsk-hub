@@ -14,6 +14,7 @@ html[data-theme="dark"]{
   }
 }
 *{box-sizing:border-box}
+[hidden]{display:none !important}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
 .app-header{padding:16px 16px 8px;max-width:960px;margin:0 auto}
 .header-top{display:flex;align-items:center;justify-content:space-between}
@@ -61,7 +62,9 @@ html[data-theme="dark"] .btn.forgot{background:#3d2b1e;color:#f2b183}
 .fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));min-height:52px;padding:12px 20px;border-radius:999px;border:none;background:var(--accent);color:#fff;font-size:1rem;font-weight:650;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer;z-index:20}
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center;z-index:30}
 @media(min-width:640px){.modal-backdrop{align-items:center}}
-.modal{background:var(--surface);color:var(--text);width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;padding:18px}
+.modal{position:relative;background:var(--surface);color:var(--text);width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;padding:18px}
+.modal-x{position:absolute;top:8px;right:8px;min-width:44px;min-height:44px;border:none;background:transparent;color:var(--muted);font-size:1.25rem;line-height:1;cursor:pointer;border-radius:10px;z-index:2}
+.modal-x:active{background:var(--surface2)}
 @media(min-width:640px){.modal{border-radius:18px}}
 .modal h2{margin-top:0;font-size:1.2rem}
 .modal label{display:block;margin:10px 0;font-size:.92rem}
