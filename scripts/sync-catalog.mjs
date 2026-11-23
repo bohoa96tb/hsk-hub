@@ -1,1 +1,88 @@
-Ly8gc3luYy1jYXRhbG9nLm1qcyDigJQgVOG7lW5nIGjhu6NwIGRhbmggbeG7pWMgYsOgaSBo4buNYyB0aOG6rXQgdOG7qyBoYXppLXZpZXQgdsOgIEhTSzMuMC4KLy8gTm9kZSAyMCssIGNo4buJIGTDuW5nIGZldGNoIGJ1aWx0LWluLiBDaOG6oXk6IG5vZGUgc2NyaXB0cy9zeW5jLWNhdGFsb2cubWpzCi8vIE5ndeG7k24gZOG7ryBsaeG7h3UgKGZpbGUgSlNPTiBjw7RuZyBraGFpIHRyw6puIG5ow6FuaCBtYWluIGPhu6dhIDIgcmVwbyk6Ci8vIC0gaGF6aS12aWV0OiBkYXRhL3ZvY2FidWxhcnkvaGFuemlpLWNvdXJzZS5qc29uIC0+IGxlc3NvbnNbXSAoOTQgYsOgaSBIU0sxLTMpLgovLyAgIERlZXAtbGluayB04burbmcgYsOgaTogdm9jYWJ1bGFyeS5odG1sP3dvcmQ9PGlkIHThu6sgxJHhuqd1IHRpw6puIGPhu6dhIGLDoGk+LgovLyAtIEhTSzMuMDogZGF0YS9jb250ZW50Lmpzb24gLT4gbGVzc29uc1tdICgzMCBiw6BpIFRleHRib29rIEhTSzEtMikuCi8vICAgRGVlcC1saW5rIHThu6tuZyBiw6BpOiAjL2xlc3Nvbi88aWQgYsOgaT4gKGhhc2ggcm91dGVyKS4KaW1wb3J0IHsgd3JpdGVGaWxlIH0gZnJvbSAnbm9kZTpmcy9wcm9taXNlcyc7CmltcG9ydCB7IGZpbGVVUkxUb1BhdGggfSBmcm9tICdub2RlOnVybCc7CmltcG9ydCB7IGRpcm5hbWUsIGpvaW4gfSBmcm9tICdub2RlOnBhdGgnOwoKZXhwb3J0IGNvbnN0IFNPVVJDRVMgPSB7CiAgaGF6aTogJ2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9ib2hvYTk2dGIvaGF6aS12aWV0L21haW4vZGF0YS92b2NhYnVsYXJ5L2hhbnppaS1jb3Vyc2UuanNvbicsCiAgaHNrMzA6ICdodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vYm9ob2E5NnRiL0hTSzMuMC9tYWluL2RhdGEvY29udGVudC5qc29uJywKfTsKZXhwb3J0IGNvbnN0IEhBWklfQkFTRSA9ICdodHRwczovL2JvaG9hOTZ0Yi5naXRodWIuaW8vaGF6aS12aWV0Lyc7CmV4cG9ydCBjb25zdCBIU0szMF9CQVNFID0gJ2h0dHBzOi8vYm9ob2E5NnRiLmdpdGh1Yi5pby9IU0szLjAvJzsKCmV4cG9ydCBmdW5jdGlvbiBidWlsZEhhemlFbnRyaWVzKGNvdXJzZSkgewogIGNvbnN0IGxlc3NvbnMgPSBBcnJheS5pc0FycmF5KGNvdXJzZT8ubGVzc29ucykgPyBjb3Vyc2UubGVzc29ucyA6IFtdOwogIHJldHVybiBsZXNzb25zCiAgICAuZmlsdGVyKChsKSA9PiBsICYmIGwuaWQgJiYgQXJyYXkuaXNBcnJheShsLndvcmRJZHMpICYmIGwud29yZElkcy5sZW5ndGggPiAwKQogICAgLm1hcCgobCkgPT4gewogICAgICBjb25zdCByYXdUaXRsZSA9IFN0cmluZyhsLnRpdGxlIHx8ICcnKS50cmltKCk7CiAgICAgIGNvbnN0IHRpdGxlID0gL15IU0svaS50ZXN0KHJhd1RpdGxlKQogICAgICAgID8gcmF3VGl0bGUKICAgICAgICA6IGBIU0sgJHtsLmxldmVsfSDCtyBCw6BpICR7bC5udW1iZXJ9IOKAlCAke3Jhd1RpdGxlfWA7CiAgICAgIHJldHVybiB7CiAgICAgICAgaWQ6IGBoYXppLSR7bC5pZH1gLAogICAgICAgIGFwcDogJ2hhemktdmlldCcsCiAgICAgICAgZ3JvdXA6IGBIU0sgJHtsLmxldmVsfWAsCiAgICAgICAgdGl0bGUsCiAgICAgICAgdXJsOiBgJHtIQVpJX0JBU0V9dm9jYWJ1bGFyeS5odG1sP3dvcmQ9JHtlbmNvZGVVUklDb21wb25lbnQobC53b3JkSWRzWzBdKX1gLAogICAgICB9OwogICAgfSk7Cn0KCmV4cG9ydCBmdW5jdGlvbiBidWlsZEhzazMwRW50cmllcyhjb250ZW50KSB7CiAgY29uc3QgbGVzc29ucyA9IEFycmF5LmlzQXJyYXkoY29udGVudD8ubGVzc29ucykgPyBjb250ZW50Lmxlc3NvbnMgOiBbXTsKICByZXR1cm4gbGVzc29ucwogICAgLmZpbHRlcigobCkgPT4gbCAmJiBsLmlkICYmIGwudGl0bGVaaCkKICAgIC5tYXAoKGwpID0+ICh7CiAgICAgIGlkOiBgaHNrMzAtJHtsLmlkfWAsCiAgICAgIGFwcDogJ2hzazMuMCcsCiAgICAgIGdyb3VwOiBTdHJpbmcobC5sZXZlbCB8fCAnSFNLJyksCiAgICAgIHRpdGxlOiBgJHtsLmxldmVsfSDCtyBCw6BpICR7bC5sZXNzb25OdW1iZXJ9IOKAlCAke2wudGl0bGVaaH0ke2wudGl0bGVWaSA/IGAgKCR7bC50aXRsZVZpfSlgIDogJyd9YCwKICAgICAgdXJsOiBgJHtIU0szMF9CQVNFfSMvbGVzc29uLyR7ZW5jb2RlVVJJQ29tcG9uZW50KGwuaWQpfWAsCiAgICB9KSk7Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBidWlsZENhdGFsb2coZmV0Y2hGbiA9IGZldGNoKSB7CiAgY29uc3QgW2hhemlSZXMsIGhza1Jlc10gPSBhd2FpdCBQcm9taXNlLmFsbChbZmV0Y2hGbihTT1VSQ0VTLmhhemkpLCBmZXRjaEZuKFNPVVJDRVMuaHNrMzApXSk7CiAgaWYgKCFoYXppUmVzLm9rKSB0aHJvdyBuZXcgRXJyb3IoYEtow7RuZyB04bqjaSDEkcaw4bujYyBk4buvIGxp4buHdSBoYXppLXZpZXQgKEhUVFAgJHtoYXppUmVzLnN0YXR1c30pYCk7CiAgaWYgKCFoc2tSZXMub2spIHRocm93IG5ldyBFcnJvcihgS2jDtG5nIHThuqNpIMSRxrDhu6NjIGThu68gbGnhu4d1IEhTSzMuMCAoSFRUUCAke2hza1Jlcy5zdGF0dXN9KWApOwogIGNvbnN0IFtjb3Vyc2UsIGNvbnRlbnRdID0gYXdhaXQgUHJvbWlzZS5hbGwoW2hhemlSZXMuanNvbigpLCBoc2tSZXMuanNvbigpXSk7CiAgY29uc3QgZW50cmllcyA9IFsuLi5idWlsZEhhemlFbnRyaWVzKGNvdXJzZSksIC4uLmJ1aWxkSHNrMzBFbnRyaWVzKGNvbnRlbnQpXTsKICBjb25zdCBpZHMgPSBuZXcgU2V0KGVudHJpZXMubWFwKChlKSA9PiBlLmlkKSk7CiAgaWYgKGlkcy5zaXplICE9PSBlbnRyaWVzLmxlbmd0aCkgdGhyb3cgbmV3IEVycm9yKCdEYW5oIG3hu6VjIGPDsyBJRCB0csO5bmcg4oCUIMSRw6MgaOG7p3kgZ2hpIGZpbGUnKTsKICBpZiAoZW50cmllcy5sZW5ndGggPT09IDApIHRocm93IG5ldyBFcnJvcignRGFuaCBt4bulYyBy4buXbmcg4oCUIMSRw6MgaOG7p3kgZ2hpIGZpbGUnKTsKICByZXR1cm4gewogICAgdmVyc2lvbjogMSwKICAgIGdlbmVyYXRlZEF0OiBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCksCiAgICBzb3VyY2VzOiB7ICdoYXppLXZpZXQnOiBTT1VSQ0VTLmhhemksICdoc2szLjAnOiBTT1VSQ0VTLmhzazMwIH0sCiAgICBjb3VudHM6IHsKICAgICAgJ2hhemktdmlldCc6IGVudHJpZXMuZmlsdGVyKChlKSA9PiBlLmFwcCA9PT0gJ2hhemktdmlldCcpLmxlbmd0aCwKICAgICAgJ2hzazMuMCc6IGVudHJpZXMuZmlsdGVyKChlKSA9PiBlLmFwcCA9PT0gJ2hzazMuMCcpLmxlbmd0aCwKICAgICAgdG90YWw6IGVudHJpZXMubGVuZ3RoLAogICAgfSwKICAgIGVudHJpZXMsCiAgfTsKfQoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIG1haW4oZmV0Y2hGbiA9IGZldGNoKSB7CiAgY29uc3QgY2F0YWxvZyA9IGF3YWl0IGJ1aWxkQ2F0YWxvZyhmZXRjaEZuKTsKICBjb25zdCBoZXJlID0gZGlybmFtZShmaWxlVVJMVG9QYXRoKGltcG9ydC5tZXRhLnVybCkpOwogIGNvbnN0IG91dCA9IGpvaW4oaGVyZSwgJy4uJywgJ2RhdGEnLCAnY2F0YWxvZy5qc29uJyk7CiAgYXdhaXQgd3JpdGVGaWxlKG91dCwgSlNPTi5zdHJpbmdpZnkoY2F0YWxvZywgbnVsbCwgMikgKyAnXG4nLCAndXRmOCcpOwogIGNvbnNvbGUubG9nKGDinIUgxJDDoyBnaGkgJHtvdXR9YCk7CiAgY29uc29sZS5sb2coYCAgIEhhemkgVmnhu4d0OiAke2NhdGFsb2cuY291bnRzWydoYXppLXZpZXQnXX0gYsOgaSDCtyBIU0sgMy4wOiAke2NhdGFsb2cuY291bnRzWydoc2szLjAnXX0gYsOgaSDCtyBU4buVbmc6ICR7Y2F0YWxvZy5jb3VudHMudG90YWx9IGLDoGlgKTsKICByZXR1cm4gY2F0YWxvZzsKfQoKaWYgKGltcG9ydC5tZXRhLnVybCA9PT0gYGZpbGU6Ly8ke3Byb2Nlc3MuYXJndlsxXX1gKSB7CiAgbWFpbigpLmNhdGNoKChlcnIpID0+IHsKICAgIGNvbnNvbGUuZXJyb3IoYEzhu5dpOiAke2Vyci5tZXNzYWdlfWApOwogICAgcHJvY2Vzcy5leGl0KDEpOwogIH0pOwp9Cg==
+// sync-catalog.mjs — Tổng hợp danh mục bài học thật từ hazi-viet và HSK3.0.
+// Node 20+, chỉ dùng fetch built-in. Chạy: node scripts/sync-catalog.mjs
+// Nguồn dữ liệu (file JSON công khai trên nhánh main của 2 repo):
+// - hazi-viet: data/vocabulary/hanzii-course.json -> lessons[] (94 bài HSK1-3).
+//   Deep-link từng bài: vocabulary.html?word=<id từ đầu tiên của bài>.
+// - HSK3.0: data/content.json -> lessons[] (30 bài Textbook HSK1-2).
+//   Deep-link từng bài: #/lesson/<id bài> (hash router).
+import { writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
+export const SOURCES = {
+  hazi: 'https://raw.githubusercontent.com/bohoa96tb/hazi-viet/main/data/vocabulary/hanzii-course.json',
+  hsk30: 'https://raw.githubusercontent.com/bohoa96tb/HSK3.0/main/data/content.json',
+};
+export const HAZI_BASE = 'https://bohoa96tb.github.io/hazi-viet/';
+export const HSK30_BASE = 'https://bohoa96tb.github.io/HSK3.0/';
+
+export function buildHaziEntries(course) {
+  const lessons = Array.isArray(course?.lessons) ? course.lessons : [];
+  return lessons
+    .filter((l) => l && l.id && Array.isArray(l.wordIds) && l.wordIds.length > 0)
+    .map((l) => {
+      const rawTitle = String(l.title || '').trim();
+      const title = /^HSK/i.test(rawTitle)
+        ? rawTitle
+        : `HSK ${l.level} · Bài ${l.number} — ${rawTitle}`;
+      return {
+        id: `hazi-${l.id}`,
+        app: 'hazi-viet',
+        group: `HSK ${l.level}`,
+        title,
+        url: `${HAZI_BASE}vocabulary.html?word=${encodeURIComponent(l.wordIds[0])}`,
+      };
+    });
+}
+
+export function buildHsk30Entries(content) {
+  const lessons = Array.isArray(content?.lessons) ? content.lessons : [];
+  return lessons
+    .filter((l) => l && l.id && l.titleZh)
+    .map((l) => ({
+      id: `hsk30-${l.id}`,
+      app: 'hsk3.0',
+      group: String(l.level || 'HSK'),
+      title: `${l.level} · Bài ${l.lessonNumber} — ${l.titleZh}${l.titleVi ? ` (${l.titleVi})` : ''}`,
+      url: `${HSK30_BASE}#/lesson/${encodeURIComponent(l.id)}`,
+    }));
+}
+
+export async function buildCatalog(fetchFn = fetch) {
+  const [haziRes, hskRes] = await Promise.all([fetchFn(SOURCES.hazi), fetchFn(SOURCES.hsk30)]);
+  if (!haziRes.ok) throw new Error(`Không tải được dữ liệu hazi-viet (HTTP ${haziRes.status})`);
+  if (!hskRes.ok) throw new Error(`Không tải được dữ liệu HSK3.0 (HTTP ${hskRes.status})`);
+  const [course, content] = await Promise.all([haziRes.json(), hskRes.json()]);
+  const entries = [...buildHaziEntries(course), ...buildHsk30Entries(content)];
+  const ids = new Set(entries.map((e) => e.id));
+  if (ids.size !== entries.length) throw new Error('Danh mục có ID trùng — đã hủy ghi file');
+  if (entries.length === 0) throw new Error('Danh mục rỗng — đã hủy ghi file');
+  return {
+    version: 1,
+    generatedAt: new Date().toISOString(),
+    sources: { 'hazi-viet': SOURCES.hazi, 'hsk3.0': SOURCES.hsk30 },
+    counts: {
+      'hazi-viet': entries.filter((e) => e.app === 'hazi-viet').length,
+      'hsk3.0': entries.filter((e) => e.app === 'hsk3.0').length,
+      total: entries.length,
+    },
+    entries,
+  };
+}
+
+export async function main(fetchFn = fetch) {
+  const catalog = await buildCatalog(fetchFn);
+  const here = dirname(fileURLToPath(import.meta.url));
+  const out = join(here, '..', 'data', 'catalog.json');
+  await writeFile(out, JSON.stringify(catalog, null, 2) + '\n', 'utf8');
+  console.log(`✅ Đã ghi ${out}`);
+  console.log(`   Hazi Việt: ${catalog.counts['hazi-viet']} bài · HSK 3.0: ${catalog.counts['hsk3.0']} bài · Tổng: ${catalog.counts.total} bài`);
+  return catalog;
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch((err) => {
+    console.error(`Lỗi: ${err.message}`);
+    process.exit(1);
+  });
+}
