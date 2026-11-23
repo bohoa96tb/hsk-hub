@@ -282,5 +282,35 @@ await test('18. findDuplicateLesson: trùng URL hoặc cùng app+tên thì cản
   assert.equal(none, null);
 });
 
+// 19. Modal: CSS không ghi đè [hidden], nút đóng khớp handler, trạng thái mặc định đóng
+await test('19. Modal đóng được: [hidden] thắng display:flex, mọi nút đóng có type=button + handler', async () => {
+  const root = new URL('..', import.meta.url);
+  const css = await readFile(new URL('css/style.css', root), 'utf8');
+  const html = await readFile(new URL('index.html', root), 'utf8');
+  const app = await readFile(new URL('js/app.js', root), 'utf8');
+  // CSS: bắt buộc có luật [hidden] display:none !important để thắng .modal-backdrop{display:flex}
+  assert.match(css, /\[hidden\]\s*\{\s*display:\s*none\s*!important;?\s*\}/, 'thiếu luật [hidden] display:none !important');
+  assert.match(css, /\.modal-backdrop\{[^}]*display:flex/, 'vẫn cần .modal-backdrop display:flex khi mở (để test trên có ý nghĩa)');
+  // HTML: cả 2 modal mặc định hidden khi tải trang
+  assert.match(html, /id="lessonModal"[^>]*\shidden(\s|>)/, 'lessonModal phải mặc định hidden');
+  assert.match(html, /id="settingsModal"[^>]*\shidden(\s|>)/, 'settingsModal phải mặc định hidden');
+  // Mọi nút data-close đều là type="button" (không submit form) và có đủ ở cả 2 modal
+  const closeBtns = [...html.matchAll(/<button[^>]*data-close[^>]*>/g)].map((m) => m[0]);
+  assert.ok(closeBtns.length >= 4, `chỉ có ${closeBtns.length} nút data-close`);
+  for (const b of closeBtns) assert.match(b, /type="button"/, `nút đóng thiếu type=button: ${b}`);
+  // Mỗi modal có 1 nút ✕ ở góc (class modal-x + data-close)
+  const xBtns = [...html.matchAll(/<button[^>]*class="modal-x"[^>]*>/g)].map((m) => m[0]);
+  assert.equal(xBtns.length, 2, 'mỗi modal phải có đúng 1 nút ✕');
+  for (const b of xBtns) assert.match(b, /data-close/);
+  // app.js: handler data-close đóng modal, có Escape, có closeAllModals và mở modal thì đóng modal khác
+  assert.match(app, /querySelectorAll\('\[data-close\]'\)/);
+  assert.match(app, /closeAllModals\(\)/);
+  assert.match(app, /e\.key === 'Escape'/);
+  assert.match(app, /function openLessonModal[\s\S]*?closeAllModals\(\)/);
+  assert.match(app, /function openSettings[\s\S]*?closeAllModals\(\)/);
+  // Backdrop: bấm vào chính nền tối (target === modal) thì đóng
+  assert.match(app, /e\.target === m/);
+});
+
 console.log(`\n===== KẾT QUẢ: ${passed} đạt, ${failures.length} lỗi =====`);
 if (failures.length) { failures.forEach((f) => console.log(`- ${f}`)); process.exit(1); }
