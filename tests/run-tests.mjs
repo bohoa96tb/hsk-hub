@@ -9,6 +9,8 @@ import {
   normalizeReminderMode,
 } from '../js/srs.js';
 import { encodeBase64Utf8, decodeBase64Utf8, GitHubSync, GitHubError, createSyncQueue } from '../js/github-sync.js';
+import { spreadOverdueLessons, deferLessonDate, computeTierProgress, overdueLessons } from '../js/srs.js';
+import { monthGrid, buildHeatmap, buildForecastCounts, forecastLessonsOn, monthStats } from '../js/calendar.js';
 import { buildMessage, sendNtfy, sendTelegram, shouldSendNow, currentHourJST } from '../scripts/remind.mjs';
 import { buildHaziEntries, buildHsk30Entries } from '../scripts/sync-catalog.mjs';
 
@@ -200,15 +202,12 @@ await test('14. GitHub API: 401/409/timeout xử lý đúng, save lấy sha trư
 });
 
 // Dữ liệu mẫu + manifest hợp lệ
-await test('15. data/progress.json và manifest.json hợp lệ, bài mẫu có bài hôm nay + quá hạn', async () => {
+await test('15. data/progress.json và manifest.json hợp lệ (dữ liệu thật của người dùng — chỉ kiểm schema)', async () => {
   const root = new URL('..', import.meta.url);
   const data = JSON.parse(await readFile(new URL('data/progress.json', root), 'utf8'));
   const v = validateData(data);
   assert.equal(v.ok, true, v.error);
-  const today = todayJST();
-  const due = dueLessons(data, today);
-  assert.ok(due.length >= 2, 'cần ít nhất 2 bài đến hạn trong dữ liệu mẫu');
-  assert.ok(due.some((l) => l.nextReviewDate < today), 'cần 1 bài quá hạn');
+  assert.ok(Array.isArray(data.lessons), 'lessons phải là mảng');
   const manifest = JSON.parse(await readFile(new URL('manifest.json', root), 'utf8'));
   assert.equal(manifest.name, 'HSK Hub');
   assert.equal(manifest.start_url, './');
@@ -291,16 +290,19 @@ await test('19. Modal đóng được: [hidden] thắng display:flex, mọi nút
   // CSS: bắt buộc có luật [hidden] display:none !important để thắng .modal-backdrop{display:flex}
   assert.match(css, /\[hidden\]\s*\{\s*display:\s*none\s*!important;?\s*\}/, 'thiếu luật [hidden] display:none !important');
   assert.match(css, /\.modal-backdrop\{[^}]*display:flex/, 'vẫn cần .modal-backdrop display:flex khi mở (để test trên có ý nghĩa)');
-  // HTML: cả 2 modal mặc định hidden khi tải trang
+  // HTML: mọi modal mặc định hidden khi tải trang
   assert.match(html, /id="lessonModal"[^>]*\shidden(\s|>)/, 'lessonModal phải mặc định hidden');
   assert.match(html, /id="settingsModal"[^>]*\shidden(\s|>)/, 'settingsModal phải mặc định hidden');
+  assert.match(html, /id="spreadModal"[^>]*\shidden(\s|>)/, 'spreadModal phải mặc định hidden');
+  assert.match(html, /id="deferModal"[^>]*\shidden(\s|>)/, 'deferModal phải mặc định hidden');
   // Mọi nút data-close đều là type="button" (không submit form) và có đủ ở cả 2 modal
   const closeBtns = [...html.matchAll(/<button[^>]*data-close[^>]*>/g)].map((m) => m[0]);
   assert.ok(closeBtns.length >= 4, `chỉ có ${closeBtns.length} nút data-close`);
   for (const b of closeBtns) assert.match(b, /type="button"/, `nút đóng thiếu type=button: ${b}`);
-  // Mỗi modal có 1 nút ✕ ở góc (class modal-x + data-close)
+  // Mỗi modal có đúng 1 nút ✕ ở góc (class modal-x + data-close) — số modal đếm động từ HTML
   const xBtns = [...html.matchAll(/<button[^>]*class="modal-x"[^>]*>/g)].map((m) => m[0]);
-  assert.equal(xBtns.length, 2, 'mỗi modal phải có đúng 1 nút ✕');
+  const modalCount = [...html.matchAll(/class="modal-backdrop"/g)].length;
+  assert.equal(xBtns.length, modalCount, 'mỗi modal phải có đúng 1 nút ✕');
   for (const b of xBtns) assert.match(b, /data-close/);
   // app.js: handler data-close đóng modal, có Escape, có closeAllModals và mở modal thì đóng modal khác
   assert.match(app, /querySelectorAll\('\[data-close\]'\)/);
@@ -394,6 +396,107 @@ await test('20c. PUT gặp 409 lần đầu: chờ, GET lại sha mới, retry t
   };
   await sync.save(baseData());
   assert.equal(getCount, 0, 'đã có lastKnownSha thì không GET lại');
+});
+
+// 21. V3 — Lưới lịch tháng T2–CN
+await test('21a. monthGrid: tháng 2 năm nhuận 2024 và tháng có ngày 1 rơi vào Chủ nhật', async () => {
+  const feb = monthGrid(2024, 2);
+  for (const week of feb) assert.equal(week.length, 7, 'mỗi tuần đúng 7 ô');
+  const febCells = feb.flat();
+  assert.equal(febCells.filter((c) => c.date).length, 29, 'tháng 2/2024 có 29 ngày');
+  // 01/02/2024 là Thứ 5 -> 3 ô trống đầu (T2,T3,T4), ngày 1 ở cột Thứ 5 (index 3)
+  assert.deepEqual(febCells.slice(0, 3), [{ date: null, day: null }, { date: null, day: null }, { date: null, day: null }]);
+  assert.equal(febCells[3].date, '2024-02-01');
+  // 01/09/2024 là Chủ nhật -> 6 ô trống, ngày 1 ở cột CN (index 6)
+  const sep = monthGrid(2024, 9).flat();
+  assert.equal(sep.slice(0, 6).every((c) => c.date === null), true);
+  assert.equal(sep[6].date, '2024-09-01');
+  assert.equal(sep.filter((c) => c.date).length, 30);
+  // Các ngày trong tháng liên tục, không trùng
+  const dates = febCells.filter((c) => c.date).map((c) => c.date);
+  assert.equal(new Set(dates).size, 29);
+  assert.equal(dates[28], '2024-02-29');
+});
+
+await test('21b. Heatmap không đếm trùng + Dự báo SRS không sửa dữ liệu gốc', async () => {
+  const lessons = [
+    { id: 'a', app: 'hazi-viet', stage: 0, nextReviewDate: '2026-11-25', reviewHistory: ['2026-11-20', '2026-11-22'], learnedDate: '2026-11-20' },
+    { id: 'b', app: 'hsk3.0', stage: 2, nextReviewDate: '2026-11-25', reviewHistory: ['2026-11-20'] },
+  ];
+  const snapshot = JSON.stringify(lessons);
+  const heat = buildHeatmap(lessons);
+  assert.equal(heat.get('2026-11-20'), 2, '2 bài ôn ngày 20/11, bài a không bị đếm trùng vì learnedDate trùng reviewHistory');
+  assert.equal(heat.get('2026-11-22'), 1);
+  const stats = monthStats(heat, 2026, 11);
+  assert.deepEqual(stats, { totalReviews: 3, daysStudied: 2 });
+  const fc = buildForecastCounts(lessons);
+  // Bài a stage 0, mốc tới 25/11: các mốc dự báo +3 (28/11), +7 (05/12)...
+  assert.equal(fc.get('2026-11-28'), 1);
+  assert.equal(fc.get('2026-11-25'), undefined, 'mốc sắp tới không tính vào dự báo');
+  assert.equal(JSON.stringify(lessons), snapshot, 'dự báo/heatmap không được sửa lessons gốc');
+  const onDec5 = forecastLessonsOn(lessons, '2026-12-05');
+  assert.ok(onDec5.some((l) => l.id === 'a'));
+});
+
+// 22. V3 — Dàn đều / Dời ngày / Tiến độ 3 tầng
+await test('22a. spreadOverdueLessons: giữ stage, tôn trọng dailyReviewLimit, cộng dồn lịch sẵn có', async () => {
+  const today = '2026-11-24';
+  const lessons = [
+    { id: 'old1', stage: 3, nextReviewDate: '2026-11-18', reviewHistory: ['2026-11-10'] },
+    { id: 'old2', stage: 1, nextReviewDate: '2026-11-20', reviewHistory: [] },
+    { id: 'old3', stage: 5, nextReviewDate: '2026-11-23', reviewHistory: ['2026-11-01'] },
+    // 3 bài vốn đã có lịch hôm nay (24/11) — limit 4 nên hôm nay chỉ nhận thêm 1
+    { id: 's1', stage: 0, nextReviewDate: '2026-11-24', reviewHistory: [] },
+    { id: 's2', stage: 0, nextReviewDate: '2026-11-24', reviewHistory: [] },
+    { id: 's3', stage: 0, nextReviewDate: '2026-11-24', reviewHistory: [] },
+    { id: 'future', stage: 2, nextReviewDate: '2026-11-30', reviewHistory: [] },
+  ];
+  const before = JSON.stringify(lessons);
+  const { lessons: out, assignments, byDate } = spreadOverdueLessons(lessons, { today, startDate: today, dailyReviewLimit: 4 });
+  assert.equal(JSON.stringify(lessons), before, 'không sửa dữ liệu gốc');
+  assert.equal(assignments.length, 3);
+  // Quá hạn lâu nhất (old1, 18/11) được rải trước vào 24/11 (còn 1 chỗ), old2 + old3 sang 25/11
+  assert.deepEqual(byDate, { '2026-11-24': 1, '2026-11-25': 2 });
+  const byId = Object.fromEntries(out.map((l) => [l.id, l]));
+  assert.equal(byId.old1.nextReviewDate, '2026-11-24');
+  assert.equal(byId.old1.stage, 3, 'giữ nguyên stage');
+  assert.deepEqual(byId.old1.reviewHistory, ['2026-11-10'], 'giữ nguyên reviewHistory');
+  assert.equal(byId.old3.stage, 5);
+  assert.equal(byId.future.nextReviewDate, '2026-11-30', 'bài không quá hạn không đổi');
+  // Không ngày nào vượt limit sau khi rải
+  const counts = {};
+  for (const l of out) if (l.nextReviewDate >= today) counts[l.nextReviewDate] = (counts[l.nextReviewDate] || 0) + 1;
+  for (const [d, n] of Object.entries(counts)) assert.ok(n <= 4, `ngày ${d} vượt limit`);
+  // overdueLessons sắp xếp quá hạn lâu nhất trước
+  assert.deepEqual(overdueLessons({ lessons }, today).map((l) => l.id), ['old1', 'old2', 'old3']);
+});
+
+await test('22b. deferLessonDate (+1 / ngày tùy ý) và computeTierProgress (kể cả catalogCount = 0)', async () => {
+  const lessons = [
+    { id: 'a', app: 'hazi-viet', stage: 1, nextReviewDate: '2026-11-24', reviewHistory: ['2026-11-20'] },
+    { id: 'b', app: 'hazi-viet', stage: 2, nextReviewDate: '2026-11-24', reviewHistory: [] },
+    { id: 'c', app: 'hazi-viet', stage: 4, nextReviewDate: '2026-11-24', reviewHistory: [] },
+    { id: 'd', app: 'hsk3.0', stage: 3, nextReviewDate: '2026-11-24', reviewHistory: [] },
+  ];
+  const plus1 = deferLessonDate(lessons, 'a', addDays('2026-11-24', 1));
+  assert.equal(plus1[0].nextReviewDate, '2026-11-25');
+  assert.equal(plus1[0].stage, 1, 'dời ngày giữ nguyên stage');
+  const custom = deferLessonDate(lessons, 'b', '2026-12-24');
+  assert.equal(custom[1].nextReviewDate, '2026-12-24');
+  assert.throws(() => deferLessonDate(lessons, 'a', '24/11/2026'), /không hợp lệ/);
+  const progress = computeTierProgress(lessons, { 'hazi-viet': 94, 'hsk3.0': 30 });
+  assert.deepEqual(
+    { total: progress['hazi-viet'].total, tracked: progress['hazi-viet'].tracked, fresh: progress['hazi-viet'].fresh, consol: progress['hazi-viet'].consolidating, deep: progress['hazi-viet'].deep, percent: progress['hazi-viet'].percent },
+    { total: 94, tracked: 3, fresh: 1, consol: 1, deep: 1, percent: 3 },
+  );
+  assert.equal(progress['hsk3.0'].consolidating, 1);
+  // Biên: catalogCount = 0 -> mẫu số = số bài của người dùng; không có bài nào -> 0% không NaN
+  const zero = computeTierProgress([], { 'hazi-viet': 0, 'hsk3.0': 0 });
+  assert.equal(zero['hazi-viet'].total, 0);
+  assert.equal(zero['hazi-viet'].percent, 0);
+  const noCatalog = computeTierProgress(lessons, {});
+  assert.equal(noCatalog['hazi-viet'].total, 3, 'không có catalog thì lấy số bài người dùng');
+  assert.equal(noCatalog['hazi-viet'].percent, 100);
 });
 
 console.log(`\n===== KẾT QUẢ: ${passed} đạt, ${failures.length} lỗi =====`);
