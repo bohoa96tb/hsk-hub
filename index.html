@@ -55,6 +55,7 @@
 <!-- Modal thêm / sửa bài -->
 <div id="lessonModal" class="modal-backdrop" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="lessonModalTitle">
+    <button type="button" class="modal-x" data-close aria-label="Đóng">✕</button>
     <h2 id="lessonModalTitle">Thêm bài mới</h2>
     <form id="lessonForm">
       <input type="hidden" id="fId">
@@ -104,6 +105,7 @@
 <!-- Modal cài đặt & đồng bộ -->
 <div id="settingsModal" class="modal-backdrop" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <button type="button" class="modal-x" data-close aria-label="Đóng">✕</button>
     <h2 id="settingsTitle">Cài đặt &amp; Đồng bộ</h2>
     <p class="warn">⚠️ Token lưu trong trình duyệt này có rủi ro nếu người khác dùng chung máy. Chỉ dùng Fine-grained PAT giới hạn quyền <strong>Contents: Read and write</strong> cho duy nhất repo <strong>hsk-hub</strong>. Token không bao giờ được ghi vào file hay gửi đi nơi khác ngoài GitHub API.</p>
     <label>GitHub Fine-grained PAT
