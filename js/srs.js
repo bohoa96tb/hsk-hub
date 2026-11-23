@@ -315,3 +315,87 @@ export function findDuplicateLesson(lessons, { app, url, title }) {
     (url && l.url === url) || (l.app === app && norm(l.title) === norm(title)),
   ) || null;
 }
+
+// ---------- V3: Dàn đều bài quá hạn / Dời ngày / Tiến độ 3 tầng ----------
+
+export const DEFAULT_DAILY_REVIEW_LIMIT = 4;
+
+/** Danh sách bài quá hạn (nextReviewDate < hôm nay), quá hạn lâu nhất lên trước. */
+export function overdueLessons(data, today = todayJST()) {
+  return [...(data.lessons || [])]
+    .filter((l) => l.nextReviewDate < today)
+    .sort((a, b) => (a.nextReviewDate < b.nextReviewDate ? -1 : a.nextReviewDate > b.nextReviewDate ? 1 : 0));
+}
+
+/**
+ * Dàn đều bài quá hạn vào các ngày từ startDate trở đi, mỗi ngày tối đa dailyReviewLimit bài
+ * (tính cả các bài vốn đã có lịch ở ngày đó). CHỈ đổi nextReviewDate — giữ nguyên stage và reviewHistory.
+ * Thuần: không sửa dữ liệu gốc. Trả về { lessons (bản mới), assignments: [{id, from, to}], byDate: {date: số bài được rải vào} }.
+ */
+export function spreadOverdueLessons(lessons, { today = todayJST(), startDate = today, dailyReviewLimit = DEFAULT_DAILY_REVIEW_LIMIT } = {}) {
+  const limit = Math.min(10, Math.max(1, Math.trunc(dailyReviewLimit) || DEFAULT_DAILY_REVIEW_LIMIT));
+  const overdue = (Array.isArray(lessons) ? lessons : [])
+    .filter((l) => l.nextReviewDate < today)
+    .sort((a, b) => (a.nextReviewDate < b.nextReviewDate ? -1 : a.nextReviewDate > b.nextReviewDate ? 1 : 0));
+  // Đếm số bài vốn đã có lịch ở từng ngày từ startDate trở đi (không tính chính các bài quá hạn sắp dời)
+  const counts = new Map();
+  for (const l of lessons || []) {
+    if (l.nextReviewDate >= startDate && !overdue.includes(l)) {
+      counts.set(l.nextReviewDate, (counts.get(l.nextReviewDate) || 0) + 1);
+    }
+  }
+  const newDateById = new Map();
+  const byDate = {};
+  for (const lesson of overdue) {
+    let date = startDate;
+    // Tìm ngày gần nhất còn trống chỗ (luôn tìm được vì ngày kéo dài vô hạn)
+    while ((counts.get(date) || 0) >= limit) date = addDays(date, 1);
+    counts.set(date, (counts.get(date) || 0) + 1);
+    newDateById.set(lesson.id, date);
+    byDate[date] = (byDate[date] || 0) + 1;
+  }
+  const now = new Date().toISOString();
+  return {
+    lessons: (lessons || []).map((l) => (newDateById.has(l.id)
+      ? { ...l, nextReviewDate: newDateById.get(l.id), updatedAt: now }
+      : l)),
+    assignments: overdue.map((l) => ({ id: l.id, from: l.nextReviewDate, to: newDateById.get(l.id) })),
+    byDate,
+  };
+}
+
+/** Dời ngày ôn của 1 bài sang newDate (giữ nguyên stage/reviewHistory). Trả về mảng lessons mới. */
+export function deferLessonDate(lessons, lessonId, newDate) {
+  if (!isValidDateStr(newDate)) throw new Error(`Ngày không hợp lệ: ${newDate}`);
+  const now = new Date().toISOString();
+  return (Array.isArray(lessons) ? lessons : []).map((l) =>
+    (l.id === lessonId ? { ...l, nextReviewDate: newDate, updatedAt: now } : l));
+}
+
+/**
+ * Tiến độ 3 tầng nhớ cho từng app.
+ * Tầng: Mới học (stage <= 1), Đang củng cố (stage 2–3), Đã nhớ sâu (stage >= 4).
+ * catalogCounts: { 'hazi-viet': n, 'hsk3.0': n } — mẫu số = max(catalog, số bài người dùng có của app).
+ * Trả về { [appKey]: { total, tracked, fresh, consolidating, deep, percent } } — an toàn khi total = 0.
+ */
+export function computeTierProgress(lessons, catalogCounts = {}) {
+  const result = {};
+  for (const appKey of Object.keys(APPS)) {
+    const mine = (Array.isArray(lessons) ? lessons : []).filter((l) => l.app === appKey);
+    const catalog = Math.max(0, Math.trunc(catalogCounts[appKey]) || 0);
+    const total = Math.max(catalog, mine.length);
+    const tiers = { fresh: 0, consolidating: 0, deep: 0 };
+    for (const l of mine) {
+      if (l.stage >= 4) tiers.deep++;
+      else if (l.stage >= 2) tiers.consolidating++;
+      else tiers.fresh++;
+    }
+    result[appKey] = {
+      total,
+      tracked: mine.length,
+      ...tiers,
+      percent: total > 0 ? Math.round((mine.length / total) * 100) : 0,
+    };
+  }
+  return result;
+}
