@@ -1,1 +1,203 @@
-Ly8gZ2l0aHViLXN5bmMuanMg4oCUIMSQ4buTbmcgYuG7mSAyIGNoaeG7gXUgduG7m2kgR2l0SHViIENvbnRlbnRzIEFQSS4KLy8gUEFUIGNo4buJIGzGsHUgdHJvbmcgbG9jYWxTdG9yYWdlIGPhu6dhIHRyw6xuaCBkdXnhu4d0LCBLSMOUTkcgYmFvIGdp4budIGdoaSB2w6BvIGZpbGUvcmVwby9sb2cuCgpleHBvcnQgY29uc3QgVE9LRU5fS0VZID0gJ2hzay1odWItcGF0JzsKZXhwb3J0IGNvbnN0IERBVEFfS0VZID0gJ2hzay1odWItZGF0YSc7CmV4cG9ydCBjb25zdCBCQUNLVVBfS0VZID0gJ2hzay1odWItYmFja3VwJzsKY29uc3QgQVBJX0JBU0UgPSAnaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbSc7CmNvbnN0IERFRkFVTFRfVElNRU9VVF9NUyA9IDE1MDAwOwoKLyoqIE3DoyBob8OhIEJhc2U2NCBhbiB0b8OgbiBVbmljb2RlICh0aeG6v25nIFZp4buHdCArIGNo4buvIEjDoW4pIOKAlCBLSMOUTkcgZMO5bmcgYnRvYSB0cuG7sWMgdGnhur9wLiAqLwpleHBvcnQgZnVuY3Rpb24gZW5jb2RlQmFzZTY0VXRmOChzdHIpIHsKICBjb25zdCBieXRlcyA9IG5ldyBUZXh0RW5jb2RlcigpLmVuY29kZShzdHIpOwogIGxldCBiaW5hcnkgPSAnJzsKICBjb25zdCBjaHVuayA9IDB4ODAwMDsKICBmb3IgKGxldCBpID0gMDsgaSA8IGJ5dGVzLmxlbmd0aDsgaSArPSBjaHVuaykgewogICAgYmluYXJ5ICs9IFN0cmluZy5mcm9tQ2hhckNvZGUoLi4uYnl0ZXMuc3ViYXJyYXkoaSwgaSArIGNodW5rKSk7CiAgfQogIHJldHVybiBidG9hKGJpbmFyeSk7Cn0KCi8qKiBHaeG6o2kgbcOjIEJhc2U2NCAtPiBjaHXhu5dpIFVURi04LiAqLwpleHBvcnQgZnVuY3Rpb24gZGVjb2RlQmFzZTY0VXRmOChiNjQpIHsKICBjb25zdCBiaW5hcnkgPSBhdG9iKFN0cmluZyhiNjQpLnJlcGxhY2UoL1xzL2csICcnKSk7CiAgY29uc3QgYnl0ZXMgPSBuZXcgVWludDhBcnJheShiaW5hcnkubGVuZ3RoKTsKICBmb3IgKGxldCBpID0gMDsgaSA8IGJpbmFyeS5sZW5ndGg7IGkrKykgYnl0ZXNbaV0gPSBiaW5hcnkuY2hhckNvZGVBdChpKTsKICByZXR1cm4gbmV3IFRleHREZWNvZGVyKCkuZGVjb2RlKGJ5dGVzKTsKfQoKZXhwb3J0IGNsYXNzIEdpdEh1YkVycm9yIGV4dGVuZHMgRXJyb3IgewogIGNvbnN0cnVjdG9yKHN0YXR1cywgbWVzc2FnZSkgewogICAgc3VwZXIobWVzc2FnZSk7CiAgICB0aGlzLnN0YXR1cyA9IHN0YXR1czsKICB9Cn0KCmZ1bmN0aW9uIGRlc2NyaWJlU3RhdHVzKHN0YXR1cykgewogIHN3aXRjaCAoc3RhdHVzKSB7CiAgICBjYXNlIDQwMTogcmV0dXJuICdUb2tlbiBraMO0bmcgaOG7o3AgbOG7hyBob+G6t2MgxJHDoyBo4bq/dCBo4bqhbiAoNDAxKS4gSMOjeSB04bqhbyBQQVQgbeG7m2kuJzsKICAgIGNhc2UgNDAzOiByZXR1cm4gJ1Rva2VuIHRoaeG6v3UgcXV54buBbiBDb250ZW50czogUmVhZCBhbmQgd3JpdGUgaG/hurdjIGLhu4sgZ2nhu5tpIGjhuqFuICg0MDMpLic7CiAgICBjYXNlIDQwNDogcmV0dXJuICdLaMO0bmcgdMOsbSB0aOG6pXkgcmVwby9maWxlICg0MDQpLiBLaeG7g20gdHJhIG93bmVyL3JlcG8vYnJhbmNoLic7CiAgICBjYXNlIDQwOTogcmV0dXJuICdYdW5nIMSR4buZdCBk4buvIGxp4buHdSAoNDA5KS4gxJDDoyB0aOG7rSBs4bqleSBzaGEgbeG7m2kgbmjhuqV0IOKAlCBow6N5IMSR4buTbmcgYuG7mSBs4bqhaS4nOwogICAgY2FzZSA0MjI6IHJldHVybiAnROG7ryBsaeG7h3UgZ+G7rWkgbMOqbiBraMO0bmcgaOG7o3AgbOG7hyAoNDIyKS4nOwogICAgY2FzZSA0Mjk6IHJldHVybiAnR2l0SHViIGdp4bubaSBo4bqhbiB04bqnbiBzdeG6pXQgKDQyOSkuIENo4budIG3hu5l0IGzDoXQgcuG7k2kgdGjhu60gbOG6oWkuJzsKICAgIGRlZmF1bHQ6CiAgICAgIHJldHVybiBzdGF0dXMgPj0gNTAwCiAgICAgICAgPyBgR2l0SHViIMSRYW5nIGzhu5dpIG3DoXkgY2jhu6cgKCR7c3RhdHVzfSkuIFRo4butIGzhuqFpIHNhdS5gCiAgICAgICAgOiBgTOG7l2kgR2l0SHViICgke3N0YXR1c30pLmA7CiAgfQp9Cgphc3luYyBmdW5jdGlvbiBmZXRjaFdpdGhUaW1lb3V0KHVybCwgb3B0aW9ucyA9IHt9LCB0aW1lb3V0TXMgPSBERUZBVUxUX1RJTUVPVVRfTVMsIGZldGNoRm4gPSBmZXRjaCkgewogIGNvbnN0IGNvbnRyb2xsZXIgPSBuZXcgQWJvcnRDb250cm9sbGVyKCk7CiAgY29uc3QgdGltZXIgPSBzZXRUaW1lb3V0KCgpID0+IGNvbnRyb2xsZXIuYWJvcnQoKSwgdGltZW91dE1zKTsKICB0cnkgewogICAgcmV0dXJuIGF3YWl0IGZldGNoRm4odXJsLCB7IC4uLm9wdGlvbnMsIHNpZ25hbDogY29udHJvbGxlci5zaWduYWwgfSk7CiAgfSBjYXRjaCAoZXJyKSB7CiAgICBpZiAoZXJyICYmIGVyci5uYW1lID09PSAnQWJvcnRFcnJvcicpIHRocm93IG5ldyBHaXRIdWJFcnJvcigwLCAnSOG6v3QgdGjhu51pIGdpYW4gY2jhu50gR2l0SHViICh0aW1lb3V0KS4gS2nhu4NtIHRyYSBt4bqhbmcgcuG7k2kgdGjhu60gbOG6oWkuJyk7CiAgICB0aHJvdyBuZXcgR2l0SHViRXJyb3IoMCwgJ0tow7RuZyBr4bq/dCBu4buRaSDEkcaw4bujYyBHaXRIdWIuIEtp4buDbSB0cmEgbeG6oW5nIHLhu5NpIHRo4butIGzhuqFpLicpOwogIH0gZmluYWxseSB7CiAgICBjbGVhclRpbWVvdXQodGltZXIpOwogIH0KfQoKLyoqIENo4buJIHJldHJ5IHbhu5tpIGzhu5dpIG3huqFuZy90aW1lb3V0IHbDoCA1eHgsIHThu5FpIMSRYSBtYXhSZXRyaWVzIGzhuqduLCBiYWNrb2ZmIHTEg25nIGThuqduLiAqLwphc3luYyBmdW5jdGlvbiByZXF1ZXN0V2l0aFJldHJ5KGZuLCB7IG1heFJldHJpZXMgPSAyLCBiYXNlRGVsYXlNcyA9IDYwMCB9ID0ge30pIHsKICBsZXQgbGFzdEVycjsKICBmb3IgKGxldCBhdHRlbXB0ID0gMDsgYXR0ZW1wdCA8PSBtYXhSZXRyaWVzOyBhdHRlbXB0KyspIHsKICAgIHRyeSB7CiAgICAgIHJldHVybiBhd2FpdCBmbigpOwogICAgfSBjYXRjaCAoZXJyKSB7CiAgICAgIGxhc3RFcnIgPSBlcnI7CiAgICAgIGNvbnN0IHJldHJ5YWJsZSA9IGVyciBpbnN0YW5jZW9mIEdpdEh1YkVycm9yICYmIChlcnIuc3RhdHVzID09PSAwIHx8IGVyci5zdGF0dXMgPj0gNTAwKTsKICAgICAgaWYgKCFyZXRyeWFibGUgfHwgYXR0ZW1wdCA9PT0gbWF4UmV0cmllcykgdGhyb3cgZXJyOwogICAgICBhd2FpdCBuZXcgUHJvbWlzZSgocikgPT4gc2V0VGltZW91dChyLCBiYXNlRGVsYXlNcyAqIChhdHRlbXB0ICsgMSkpKTsKICAgIH0KICB9CiAgdGhyb3cgbGFzdEVycjsKfQoKZXhwb3J0IGZ1bmN0aW9uIGdldFN0b3JlZFRva2VuKHN0b3JhZ2UgPSBsb2NhbFN0b3JhZ2UpIHsKICB0cnkgeyByZXR1cm4gc3RvcmFnZS5nZXRJdGVtKFRPS0VOX0tFWSkgfHwgJyc7IH0gY2F0Y2ggeyByZXR1cm4gJyc7IH0KfQpleHBvcnQgZnVuY3Rpb24gc3RvcmVUb2tlbih0b2tlbiwgc3RvcmFnZSA9IGxvY2FsU3RvcmFnZSkgewogIHRyeSB7CiAgICBpZiAodG9rZW4pIHN0b3JhZ2Uuc2V0SXRlbShUT0tFTl9LRVksIHRva2VuKTsKICAgIGVsc2Ugc3RvcmFnZS5yZW1vdmVJdGVtKFRPS0VOX0tFWSk7CiAgfSBjYXRjaCB7IC8qIGLhu48gcXVhIG7hur91IHN0b3JhZ2UgYuG7iyBjaOG6t24gKi8gfQp9CgpleHBvcnQgY2xhc3MgR2l0SHViU3luYyB7CiAgY29uc3RydWN0b3IoeyBvd25lciA9ICdib2hvYTk2dGInLCByZXBvID0gJ2hzay1odWInLCBicmFuY2ggPSAnbWFpbicsIHRva2VuID0gJycsIGZldGNoRm4gPSBmZXRjaCwgdGltZW91dE1zID0gREVGQVVMVF9USU1FT1VUX01TIH0gPSB7fSkgewogICAgdGhpcy5vd25lciA9IG93bmVyOwogICAgdGhpcy5yZXBvID0gcmVwbzsKICAgIHRoaXMuYnJhbmNoID0gYnJhbmNoOwogICAgdGhpcy50b2tlbiA9IHRva2VuOwogICAgdGhpcy5mZXRjaEZuID0gZmV0Y2hGbjsKICAgIHRoaXMudGltZW91dE1zID0gdGltZW91dE1zOwogICAgdGhpcy5wYXRoID0gJ2RhdGEvcHJvZ3Jlc3MuanNvbic7CiAgfQoKICBoZWFkZXJzKCkgewogICAgY29uc3QgaCA9IHsgQWNjZXB0OiAnYXBwbGljYXRpb24vdm5kLmdpdGh1Yitqc29uJywgJ1gtR2l0SHViLUFwaS1WZXJzaW9uJzogJzIwMjItMTEtMjgnIH07CiAgICBpZiAodGhpcy50b2tlbikgaC5BdXRob3JpemF0aW9uID0gYEJlYXJlciAke3RoaXMudG9rZW59YDsKICAgIHJldHVybiBoOwogIH0KCiAgY29udGVudHNVcmwoKSB7CiAgICByZXR1cm4gYCR7QVBJX0JBU0V9L3JlcG9zLyR7dGhpcy5vd25lcn0vJHt0aGlzLnJlcG99L2NvbnRlbnRzLyR7dGhpcy5wYXRofWA7CiAgfQoKICAvKiogR0VUIGZpbGUgaGnhu4duIHThuqFpIC0+IHsgZGF0YSAob2JqZWN0IMSRw6MgcGFyc2UpLCBzaGEgfSBob+G6t2MgbnVsbCBu4bq/dSBmaWxlIGNoxrBhIGPDsyAoNDA0IGtow7RuZyB0b2tlbikuICovCiAgYXN5bmMgZmV0Y2hSZW1vdGUoKSB7CiAgICByZXR1cm4gcmVxdWVzdFdpdGhSZXRyeShhc3luYyAoKSA9PiB7CiAgICAgIGNvbnN0IHJlcyA9IGF3YWl0IGZldGNoV2l0aFRpbWVvdXQoCiAgICAgICAgYCR7dGhpcy5jb250ZW50c1VybCgpfT9yZWY9JHtlbmNvZGVVUklDb21wb25lbnQodGhpcy5icmFuY2gpfWAsCiAgICAgICAgeyBoZWFkZXJzOiB0aGlzLmhlYWRlcnMoKSB9LAogICAgICAgIHRoaXMudGltZW91dE1zLAogICAgICAgIHRoaXMuZmV0Y2hGbiwKICAgICAgKTsKICAgICAgaWYgKHJlcy5zdGF0dXMgPT09IDQwNCkgewogICAgICAgIGlmICghdGhpcy50b2tlbikgcmV0dXJuIG51bGw7CiAgICAgICAgdGhyb3cgbmV3IEdpdEh1YkVycm9yKDQwNCwgZGVzY3JpYmVTdGF0dXMoNDA0KSk7CiAgICAgIH0KICAgICAgaWYgKCFyZXMub2spIHRocm93IG5ldyBHaXRIdWJFcnJvcihyZXMuc3RhdHVzLCBkZXNjcmliZVN0YXR1cyhyZXMuc3RhdHVzKSk7CiAgICAgIGNvbnN0IGpzb24gPSBhd2FpdCByZXMuanNvbigpOwogICAgICBjb25zdCB0ZXh0ID0gZGVjb2RlQmFzZTY0VXRmOChqc29uLmNvbnRlbnQgfHwgJycpOwogICAgICByZXR1cm4geyBkYXRhOiBKU09OLnBhcnNlKHRleHQpLCBzaGE6IGpzb24uc2hhIH07CiAgICB9KTsKICB9CgogIC8qKiBLaeG7g20gdHJhIGvhur90IG7hu5FpOiDEkeG7jWMgdGjDtG5nIHRpbiByZXBvLiAqLwogIGFzeW5jIHRlc3RDb25uZWN0aW9uKCkgewogICAgY29uc3QgcmVzID0gYXdhaXQgZmV0Y2hXaXRoVGltZW91dCgKICAgICAgYCR7QVBJX0JBU0V9L3JlcG9zLyR7dGhpcy5vd25lcn0vJHt0aGlzLnJlcG99YCwKICAgICAgeyBoZWFkZXJzOiB0aGlzLmhlYWRlcnMoKSB9LAogICAgICB0aGlzLnRpbWVvdXRNcywKICAgICAgdGhpcy5mZXRjaEZuLAogICAgKTsKICAgIGlmICghcmVzLm9rKSB0aHJvdyBuZXcgR2l0SHViRXJyb3IocmVzLnN0YXR1cywgZGVzY3JpYmVTdGF0dXMocmVzLnN0YXR1cykpOwogICAgY29uc3QgaW5mbyA9IGF3YWl0IHJlcy5qc29uKCk7CiAgICByZXR1cm4geyBmdWxsTmFtZTogaW5mby5mdWxsX25hbWUsIHByaXZhdGU6IGluZm8ucHJpdmF0ZSwgZGVmYXVsdEJyYW5jaDogaW5mby5kZWZhdWx0X2JyYW5jaCB9OwogIH0KCiAgLyoqCiAgICogTMawdSBk4buvIGxp4buHdSBsw6puIEdpdEh1Yi4gTHXDtG4gR0VUIHNoYSBt4bubaSBuaOG6pXQgbmdheSB0csaw4bubYyBQVVQgxJHhu4MgdHLDoW5oIDQwOS4KICAgKiBO4bq/dSB24bqrbiBn4bq3cCA0MDksIHRo4butIGzhuqFpIMSRw7puZyAxIHbDsm5nIEdFVCtQVVQgbuG7r2EuCiAgICovCiAgYXN5bmMgc2F2ZShkYXRhLCBtZXNzYWdlID0gJ2Nob3JlOiBzeW5jIHByb2dyZXNzIGZyb20gSFNLIEh1YicpIHsKICAgIGZvciAobGV0IHJvdW5kID0gMDsgcm91bmQgPCAyOyByb3VuZCsrKSB7CiAgICAgIGxldCBzaGE7CiAgICAgIHRyeSB7CiAgICAgICAgY29uc3QgcmVtb3RlID0gYXdhaXQgdGhpcy5mZXRjaFJlbW90ZSgpOwogICAgICAgIHNoYSA9IHJlbW90ZSA/IHJlbW90ZS5zaGEgOiB1bmRlZmluZWQ7CiAgICAgIH0gY2F0Y2ggKGVycikgewogICAgICAgIGlmIChlcnIgaW5zdGFuY2VvZiBHaXRIdWJFcnJvciAmJiBlcnIuc3RhdHVzID09PSA0MDQpIHNoYSA9IHVuZGVmaW5lZDsKICAgICAgICBlbHNlIHRocm93IGVycjsKICAgICAgfQogICAgICBjb25zdCBib2R5ID0gewogICAgICAgIG1lc3NhZ2UsCiAgICAgICAgY29udGVudDogZW5jb2RlQmFzZTY0VXRmOChKU09OLnN0cmluZ2lmeShkYXRhLCBudWxsLCAyKSArICdcbicpLAogICAgICAgIGJyYW5jaDogdGhpcy5icmFuY2gsCiAgICAgIH07CiAgICAgIGlmIChzaGEpIGJvZHkuc2hhID0gc2hhOwogICAgICBjb25zdCByZXMgPSBhd2FpdCBmZXRjaFdpdGhUaW1lb3V0KAogICAgICAgIHRoaXMuY29udGVudHNVcmwoKSwKICAgICAgICB7IG1ldGhvZDogJ1BVVCcsIGhlYWRlcnM6IHsgLi4udGhpcy5oZWFkZXJzKCksICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicgfSwgYm9keTogSlNPTi5zdHJpbmdpZnkoYm9keSkgfSwKICAgICAgICB0aGlzLnRpbWVvdXRNcywKICAgICAgICB0aGlzLmZldGNoRm4sCiAgICAgICk7CiAgICAgIGlmIChyZXMuc3RhdHVzID09PSA0MDkgJiYgcm91bmQgPT09IDApIGNvbnRpbnVlOyAvLyBs4bqleSBzaGEgbeG7m2kgcuG7k2kgdGjhu60gbOG6oWkKICAgICAgaWYgKCFyZXMub2spIHRocm93IG5ldyBHaXRIdWJFcnJvcihyZXMuc3RhdHVzLCBkZXNjcmliZVN0YXR1cyhyZXMuc3RhdHVzKSk7CiAgICAgIGNvbnN0IG91dCA9IGF3YWl0IHJlcy5qc29uKCk7CiAgICAgIHJldHVybiB7IHNoYTogb3V0LmNvbnRlbnQ/LnNoYSwgY29tbWl0OiBvdXQuY29tbWl0Py5zaGEgfTsKICAgIH0KICAgIHRocm93IG5ldyBHaXRIdWJFcnJvcig0MDksIGRlc2NyaWJlU3RhdHVzKDQwOSkpOwogIH0KfQoKLyoqIFThuqNpIGThu68gbGnhu4d1IHTEqW5oIHThu6sgUGFnZXMgKGtow7RuZyBjYWNoZSBj4bupbmcpIOKAlCBkw7luZyBraGkgY2jGsGEgY8OzIHRva2VuLiAqLwpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZmV0Y2hTdGF0aWNEYXRhKGZldGNoRm4gPSBmZXRjaCkgewogIGNvbnN0IHJlcyA9IGF3YWl0IGZldGNoRm4oYC4vZGF0YS9wcm9ncmVzcy5qc29uP3Q9JHtEYXRlLm5vdygpfWAsIHsgY2FjaGU6ICduby1zdG9yZScgfSk7CiAgaWYgKCFyZXMub2spIHRocm93IG5ldyBFcnJvcihgS2jDtG5nIHThuqNpIMSRxrDhu6NjIGRhdGEvcHJvZ3Jlc3MuanNvbiAoJHtyZXMuc3RhdHVzfSlgKTsKICByZXR1cm4gcmVzLmpzb24oKTsKfQoKZXhwb3J0IGZ1bmN0aW9uIGxvYWRMb2NhbERhdGEoc3RvcmFnZSA9IGxvY2FsU3RvcmFnZSkgewogIHRyeSB7CiAgICBjb25zdCByYXcgPSBzdG9yYWdlLmdldEl0ZW0oREFUQV9LRVkpOwogICAgcmV0dXJuIHJhdyA/IEpTT04ucGFyc2UocmF3KSA6IG51bGw7CiAgfSBjYXRjaCB7IHJldHVybiBudWxsOyB9Cn0KCmV4cG9ydCBmdW5jdGlvbiBzYXZlTG9jYWxEYXRhKGRhdGEsIHN0b3JhZ2UgPSBsb2NhbFN0b3JhZ2UpIHsKICB0cnkgeyBzdG9yYWdlLnNldEl0ZW0oREFUQV9LRVksIEpTT04uc3RyaW5naWZ5KGRhdGEpKTsgfSBjYXRjaCB7IC8qIHN0b3JhZ2UgxJHhuqd5L2Lhu4sgY2jhurduICovIH0KfQoKLyoqIEzGsHUgYuG6o24gc2FvIGzGsHUgdHLGsOG7m2MgdGhhbyB0w6FjIG5ndXkgaGnhu4NtIChpbXBvcnQvZ2hpIMSRw6gpLiAqLwpleHBvcnQgZnVuY3Rpb24gYmFja3VwTG9jYWxEYXRhKHN0b3JhZ2UgPSBsb2NhbFN0b3JhZ2UpIHsKICB0cnkgewogICAgY29uc3QgcmF3ID0gc3RvcmFnZS5nZXRJdGVtKERBVEFfS0VZKTsKICAgIGlmIChyYXcpIHN0b3JhZ2Uuc2V0SXRlbShCQUNLVVBfS0VZLCByYXcpOwogIH0gY2F0Y2ggeyAvKiBi4buPIHF1YSAqLyB9Cn0K
+// github-sync.js — Đồng bộ 2 chiều với GitHub Contents API.
+// PAT chỉ lưu trong localStorage của trình duyệt, KHÔNG bao giờ ghi vào file/repo/log.
+
+export const TOKEN_KEY = 'hsk-hub-pat';
+export const DATA_KEY = 'hsk-hub-data';
+export const BACKUP_KEY = 'hsk-hub-backup';
+const API_BASE = 'https://api.github.com';
+const DEFAULT_TIMEOUT_MS = 15000;
+
+/** Mã hoá Base64 an toàn Unicode (tiếng Việt + chữ Hán) — KHÔNG dùng btoa trực tiếp. */
+export function encodeBase64Utf8(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = '';
+  const chunk = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunk) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunk));
+  }
+  return btoa(binary);
+}
+
+/** Giải mã Base64 -> chuỗi UTF-8. */
+export function decodeBase64Utf8(b64) {
+  const binary = atob(String(b64).replace(/\s/g, ''));
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+
+export class GitHubError extends Error {
+  constructor(status, message) {
+    super(message);
+    this.status = status;
+  }
+}
+
+function describeStatus(status) {
+  switch (status) {
+    case 401: return 'Token không hợp lệ hoặc đã hết hạn (401). Hãy tạo PAT mới.';
+    case 403: return 'Token thiếu quyền Contents: Read and write hoặc bị giới hạn (403).';
+    case 404: return 'Không tìm thấy repo/file (404). Kiểm tra owner/repo/branch.';
+    case 409: return 'Xung đột dữ liệu (409). Đã thử lấy sha mới nhất — hãy đồng bộ lại.';
+    case 422: return 'Dữ liệu gửi lên không hợp lệ (422).';
+    case 429: return 'GitHub giới hạn tần suất (429). Chờ một lát rồi thử lại.';
+    default:
+      return status >= 500
+        ? `GitHub đang lỗi máy chủ (${status}). Thử lại sau.`
+        : `Lỗi GitHub (${status}).`;
+  }
+}
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = DEFAULT_TIMEOUT_MS, fetchFn = fetch) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetchFn(url, { ...options, signal: controller.signal });
+  } catch (err) {
+    if (err && err.name === 'AbortError') throw new GitHubError(0, 'Hết thời gian chờ GitHub (timeout). Kiểm tra mạng rồi thử lại.');
+    throw new GitHubError(0, 'Không kết nối được GitHub. Kiểm tra mạng rồi thử lại.');
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/** Chỉ retry với lỗi mạng/timeout và 5xx, tối đa maxRetries lần, backoff tăng dần. */
+async function requestWithRetry(fn, { maxRetries = 2, baseDelayMs = 600 } = {}) {
+  let lastErr;
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastErr = err;
+      const retryable = err instanceof GitHubError && (err.status === 0 || err.status >= 500);
+      if (!retryable || attempt === maxRetries) throw err;
+      await new Promise((r) => setTimeout(r, baseDelayMs * (attempt + 1)));
+    }
+  }
+  throw lastErr;
+}
+
+export function getStoredToken(storage = localStorage) {
+  try { return storage.getItem(TOKEN_KEY) || ''; } catch { return ''; }
+}
+export function storeToken(token, storage = localStorage) {
+  try {
+    if (token) storage.setItem(TOKEN_KEY, token);
+    else storage.removeItem(TOKEN_KEY);
+  } catch { /* bỏ qua nếu storage bị chặn */ }
+}
+
+export class GitHubSync {
+  constructor({ owner = 'bohoa96tb', repo = 'hsk-hub', branch = 'main', token = '', fetchFn = fetch, timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
+    this.owner = owner;
+    this.repo = repo;
+    this.branch = branch;
+    this.token = token;
+    this.fetchFn = fetchFn;
+    this.timeoutMs = timeoutMs;
+    this.path = 'data/progress.json';
+  }
+
+  headers() {
+    const h = { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
+    if (this.token) h.Authorization = `Bearer ${this.token}`;
+    return h;
+  }
+
+  contentsUrl() {
+    return `${API_BASE}/repos/${this.owner}/${this.repo}/contents/${this.path}`;
+  }
+
+  /** GET file hiện tại -> { data (object đã parse), sha } hoặc null nếu file chưa có (404 không token). */
+  async fetchRemote() {
+    return requestWithRetry(async () => {
+      const res = await fetchWithTimeout(
+        `${this.contentsUrl()}?ref=${encodeURIComponent(this.branch)}`,
+        { headers: this.headers() },
+        this.timeoutMs,
+        this.fetchFn,
+      );
+      if (res.status === 404) {
+        if (!this.token) return null;
+        throw new GitHubError(404, describeStatus(404));
+      }
+      if (!res.ok) throw new GitHubError(res.status, describeStatus(res.status));
+      const json = await res.json();
+      const text = decodeBase64Utf8(json.content || '');
+      return { data: JSON.parse(text), sha: json.sha };
+    });
+  }
+
+  /** Kiểm tra kết nối: đọc thông tin repo. */
+  async testConnection() {
+    const res = await fetchWithTimeout(
+      `${API_BASE}/repos/${this.owner}/${this.repo}`,
+      { headers: this.headers() },
+      this.timeoutMs,
+      this.fetchFn,
+    );
+    if (!res.ok) throw new GitHubError(res.status, describeStatus(res.status));
+    const info = await res.json();
+    return { fullName: info.full_name, private: info.private, defaultBranch: info.default_branch };
+  }
+
+  /**
+   * Lưu dữ liệu lên GitHub. Luôn GET sha mới nhất ngay trước PUT để tránh 409.
+   * Nếu vẫn gặp 409, thử lại đúng 1 vòng GET+PUT nữa.
+   */
+  async save(data, message = 'chore: sync progress from HSK Hub') {
+    for (let round = 0; round < 2; round++) {
+      let sha;
+      try {
+        const remote = await this.fetchRemote();
+        sha = remote ? remote.sha : undefined;
+      } catch (err) {
+        if (err instanceof GitHubError && err.status === 404) sha = undefined;
+        else throw err;
+      }
+      const body = {
+        message,
+        content: encodeBase64Utf8(JSON.stringify(data, null, 2) + '\n'),
+        branch: this.branch,
+      };
+      if (sha) body.sha = sha;
+      const res = await fetchWithTimeout(
+        this.contentsUrl(),
+        { method: 'PUT', headers: { ...this.headers(), 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
+        this.timeoutMs,
+        this.fetchFn,
+      );
+      if (res.status === 409 && round === 0) continue; // lấy sha mới rồi thử lại
+      if (!res.ok) throw new GitHubError(res.status, describeStatus(res.status));
+      const out = await res.json();
+      return { sha: out.content?.sha, commit: out.commit?.sha };
+    }
+    throw new GitHubError(409, describeStatus(409));
+  }
+}
+
+/** Tải dữ liệu tĩnh từ Pages (không cache cứng) — dùng khi chưa có token. */
+export async function fetchStaticData(fetchFn = fetch) {
+  const res = await fetchFn(`./data/progress.json?t=${Date.now()}`, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`Không tải được data/progress.json (${res.status})`);
+  return res.json();
+}
+
+export function loadLocalData(storage = localStorage) {
+  try {
+    const raw = storage.getItem(DATA_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch { return null; }
+}
+
+export function saveLocalData(data, storage = localStorage) {
+  try { storage.setItem(DATA_KEY, JSON.stringify(data)); } catch { /* storage đầy/bị chặn */ }
+}
+
+/** Lưu bản sao lưu trước thao tác nguy hiểm (import/ghi đè). */
+export function backupLocalData(storage = localStorage) {
+  try {
+    const raw = storage.getItem(DATA_KEY);
+    if (raw) storage.setItem(BACKUP_KEY, raw);
+  } catch { /* bỏ qua */ }
+}
