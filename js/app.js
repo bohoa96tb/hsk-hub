@@ -315,8 +315,15 @@ $('#cList').addEventListener('change', () => {
 ['fTitle', 'fUrl'].forEach((id) => $('#' + id).addEventListener('input', updateDupWarn));
 $('#fApp').addEventListener('change', updateDupWarn);
 
+// ---------- Đóng/mở modal (chỉ tối đa 1 modal tại một thời điểm) ----------
+function closeAllModals() {
+  els.lessonModal.hidden = true;
+  els.settingsModal.hidden = true;
+}
+
 // ---------- Modal bài học ----------
 function openLessonModal(lesson = null) {
+  closeAllModals();
   $('#lessonModalTitle').textContent = lesson ? 'Sửa bài' : 'Thêm bài mới';
   $('#fId').value = lesson ? lesson.id : '';
   $('#fApp').value = lesson ? lesson.app : 'hazi-viet';
@@ -365,6 +372,7 @@ $('#lessonForm').addEventListener('submit', (e) => {
 
 // ---------- Modal cài đặt ----------
 function openSettings() {
+  closeAllModals();
   $('#sToken').value = getStoredToken();
   const s = (data && data.settings) || {};
   $('#sOwner').value = s.owner || 'bohoa96tb';
@@ -457,15 +465,15 @@ $('#importFile').addEventListener('change', async (e) => {
   }
 });
 
-// Đóng modal
+// Đóng modal: nút Đóng/Hủy/✕ (data-close), bấm nền tối bên ngoài, hoặc phím Escape
 document.querySelectorAll('[data-close]').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    els.lessonModal.hidden = true;
-    els.settingsModal.hidden = true;
-  });
+  btn.addEventListener('click', () => closeAllModals());
 });
 [els.lessonModal, els.settingsModal].forEach((m) => {
-  m.addEventListener('click', (e) => { if (e.target === m) m.hidden = true; });
+  m.addEventListener('click', (e) => { if (e.target === m) closeAllModals(); });
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeAllModals();
 });
 
 // ---------- Offline ----------
