@@ -14,21 +14,6 @@
   },
   "lessons": [
     {
-      "id": "lesson-sample-hazi-002",
-      "title": "HSK1 · Bài 2 — 谢谢 (Cảm ơn)",
-      "app": "hazi-viet",
-      "url": "https://bohoa96tb.github.io/hazi-viet/",
-      "note": "Bài mẫu quá hạn để xem badge đỏ",
-      "stage": 0,
-      "nextReviewDate": "2026-11-24",
-      "reviewHistory": [
-        "2026-11-21",
-        "2026-11-23"
-      ],
-      "createdAt": "2026-11-21T00:00:00.000Z",
-      "updatedAt": "2026-11-23T09:44:20.686Z"
-    },
-    {
       "id": "lesson-mwt2he0j-9173342348d9",
       "title": "HSK 2 · Bài 3 — 我想去西安旅游 (Tôi muốn đi du lịch Tây An)",
       "app": "hsk3.0",
