@@ -84,3 +84,46 @@ html[data-theme="dark"] .warn{background:#3a3220;color:#f0d48a}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom));background:#222;color:#fff;padding:10px 16px;border-radius:999px;box-shadow:var(--shadow);z-index:40;max-width:92vw;text-align:center;font-size:.92rem}
 .toast.error{background:#a1261c}
 .toast.ok{background:#146c3c}
+
+/* ===== V3: Tiến độ 3 tầng / Lịch tháng / Dàn đều & Dời ngày ===== */
+.progress-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);margin:0 0 14px;padding:6px 14px 12px}
+.progress-head{width:100%;min-height:44px;display:flex;justify-content:space-between;align-items:center;background:none;border:none;color:var(--text);font-size:1rem;font-weight:700;cursor:pointer;padding:6px 0}
+.progress-row{padding:8px 0;border-top:1px solid var(--border)}
+.progress-row:first-child{border-top:none}
+.progress-meta{display:flex;justify-content:space-between;gap:8px;font-size:.9rem;margin-bottom:6px}
+.progress-meta .p-count{color:var(--muted);white-space:nowrap}
+.stacked-bar{display:flex;height:12px;border-radius:999px;background:var(--surface2);overflow:hidden}
+.stacked-bar .seg{height:100%}
+.seg-fresh{background:#e6a817}
+.seg-consol{background:#2470c9}
+.seg-deep{background:#1e8e4f}
+.progress-tiers{color:var(--muted);font-size:.8rem;margin-top:5px}
+.overdue-banner{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fdeceb;border:1px solid #e5a09a;color:#7c1d14;border-radius:var(--radius);padding:10px 12px;margin:0 0 12px;font-size:.92rem}
+html[data-theme="dark"] .overdue-banner{background:#3d1f1b;border-color:#7a3a33;color:#ffb3ab}
+@media (prefers-color-scheme:dark){html[data-theme="auto"] .overdue-banner{background:#3d1f1b;border-color:#7a3a33;color:#ffb3ab}}
+.btn.danger{background:var(--danger);color:#fff;border-color:var(--danger)}
+.cal-nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.cal-title{font-size:1.05rem;margin:0;flex:1;text-align:center}
+.cal-forecast-toggle{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-size:.9rem;cursor:pointer}
+.cal-forecast-toggle input{width:20px;height:20px}
+.cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;color:var(--muted);font-size:.78rem;margin-bottom:4px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-cell{position:relative;min-height:54px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);cursor:pointer;display:flex;flex-direction:column;align-items:center;padding:4px 2px;gap:2px;font-size:.9rem}
+.cal-cell.empty{background:transparent;border-color:transparent;cursor:default}
+.cal-cell.selected{outline:2px solid var(--accent);outline-offset:-1px}
+.cal-cell .cal-daynum{width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%}
+.cal-cell.today .cal-daynum{background:var(--accent);color:#fff;font-weight:700}
+.cal-cell.heat-1{background:rgba(30,142,79,.14)}
+.cal-cell.heat-2{background:rgba(30,142,79,.32)}
+.cal-cell.heat-3{background:rgba(30,142,79,.55)}
+.cal-badges{display:flex;gap:3px;min-height:16px}
+.dot-badge{font-size:.66rem;line-height:1;padding:2px 5px;border-radius:999px;color:#fff}
+.dot-badge.due{background:#2470c9}
+.dot-badge.forecast{background:#8e44ad}
+.cal-legend{color:var(--muted);font-size:.78rem;text-align:center;margin:8px 0 2px}
+.cal-stats{color:var(--muted);font-size:.85rem;text-align:center;margin:0 0 10px}
+.cal-detail{display:flex;flex-direction:column;gap:10px}
+.cal-detail h3{font-size:.98rem;margin:4px 0 0}
+.cal-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;box-shadow:var(--shadow)}
+.cal-item .lesson-actions{margin-top:8px}
+.spread-preview{background:var(--surface2);border-radius:10px;padding:10px 12px;font-size:.92rem;white-space:pre-line}
