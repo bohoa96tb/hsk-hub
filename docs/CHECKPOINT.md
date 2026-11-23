@@ -1,9 +1,11 @@
 # CHECKPOINT — HSK Hub
 
-Cập nhật: 2026-11-23 (Asia/Tokyo) — **V2**
+Cập nhật: 2026-11-24 (Asia/Tokyo) — **V3**
 
 ## Trạng thái hiện tại
 
+- ✅ **V3 đã hoàn thành (2026-11-24)**: tab **Lịch tháng SRS** (`js/calendar.js`: lưới T2–CN, heatmap theo `reviewHistory`/`learnedDate` không đếm trùng, huy hiệu 🔵 đến hạn, công tắc Dự báo SRS 🟣 mô phỏng thuần không sửa dữ liệu, ngăn chi tiết ngày), **Dàn đều bài quá hạn** (`spreadOverdueLessons` — chỉ đổi `nextReviewDate`, giữ `stage`/`reviewHistory`, tôn trọng `settings.dailyReviewLimit` mặc định 4) + **Dời ngày nhanh** (`deferLessonDate`, +1/+3/ngày tùy ý), **thanh tiến độ 3 tầng** (`computeTierProgress`, mẫu số `max(catalog, số bài của người dùng)`, an toàn chia 0). Test mới nhóm 21a/21b/22a/22b, tổng **24/24 đạt**; subpath 10/10 đường dẫn 200; dry-run nhắc ôn đọc đúng dữ liệu thật (1 bài, quá hạn 1 ngày).
+- 🔒 **Dữ liệu thật của Bui được bảo vệ tuyệt đối trong đợt V3**: trước khi sửa đã `git fetch origin` và lấy `data/progress.json` mới nhất từ `origin/main` (Bui đã xóa 3 bài mẫu, thêm 1 bài thật HSK 2 · Bài 3, streak 2, 18 lượt ôn — qua các commit "chore: sync progress from HSK Hub" từ điện thoại, tức PAT đồng bộ đã hoạt động). File này **không nằm trong commit V3 và không được tải lên**; mã băm bản làm việc khớp 100% với `origin/main` sau khi xong việc. (Không dùng `git pull --rebase` vì lịch sử local và remote đã phân kỳ do cơ chế tải file qua Contents API — rebase sẽ xung đột gần như mọi file; fetch + lấy nguyên vẹn file dữ liệu đạt đúng mục đích bảo vệ.) Test 15 đã chuyển sang chỉ kiểm schema của `progress.json` vì dữ liệu mẫu không còn là dữ liệu thật nữa.
 - ✅ V1 + V2 đã hoàn thành, commit local `main` HEAD `af874dc`.
 - ✅ **Đã đẩy lên GitHub** (2026-11-23 ~17:05 JST): `git push`/`push_files` bị chặn (gh chưa đăng nhập; App bị 403 ở git trees), nhưng API tạo/cập nhật file của GitHub App có quyền ghi — đã tải **14/16 file** lên `main` và đối chiếu mã băm blob: **khớp 100% với bản local**. Lưu ý: lịch sử commit trên GitHub là các commit theo từng file (qua Contents API), khác SHA với lịch sử local; nội dung file giống hệt.
   - Sự cố đã sửa: lần tải đầu lưu nhầm chuỗi base64 thay vì nội dung thật (công cụ yêu cầu nội dung thô); đã tải lại toàn bộ và kiểm chứng lại từng file.
@@ -33,7 +35,7 @@ Cập nhật: 2026-11-23 (Asia/Tokyo) — **V2**
 ## Việc còn lại (cần Bui)
 
 1. Thêm secret `NTFY_TOPIC` (và/hoặc Telegram) trong Settings → Secrets → Actions, rồi chạy thử workflow một lần (Actions → Daily HSK Reminder → Run workflow) và cài app ntfy đăng ký đúng topic.
-2. Tạo PAT (Contents: Read and write, chỉ repo `hsk-hub`) dán vào ⚙️ Cài đặt trên web để đồng bộ 2 chiều từ điện thoại.
+2. ~~Tạo PAT dán vào web~~ ✅ Đã xong (bằng chứng: các commit "chore: sync progress from HSK Hub" từ điện thoại ngày 23–24/11 — Bui đã xóa bài mẫu, thêm bài thật và đồng bộ thành công).
 3. (Không bắt buộc) Cập nhật lại mật khẩu GitHub đã lưu trong Secure Vault — bản đã lưu bị GitHub từ chối; lần đăng nhập web vừa rồi dùng Google + Authenticator.
 
 ## Tiếp tục công việc
