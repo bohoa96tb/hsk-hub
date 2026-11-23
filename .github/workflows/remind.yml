@@ -1,0 +1,30 @@
+name: Daily HSK Reminder
+
+on:
+  schedule:
+    # Chạy cả 2 mốc giờ Nhật mỗi ngày; scripts/remind.mjs tự lọc theo settings.reminderMode trong data/progress.json (Sáng 07:00 / Tối 19:00 / Cả hai / Tạm dừng) — đổi khung giờ ngay trên web, không cần sửa file này.
+    - cron: '0 22 * * *' # 07:00 JST
+    - cron: '0 10 * * *' # 19:00 JST
+  workflow_dispatch:
+    inputs:
+      force_send:
+        description: 'Gửi thông báo kể cả khi không có bài đến hạn và ngoài khung giờ đã chọn (để test)'
+        type: boolean
+        default: true
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Gửi nhắc ôn tập
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_SERVER: ${{ secrets.NTFY_SERVER }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FORCE_SEND: ${{ inputs.force_send }}
+        run: node scripts/remind.mjs
