@@ -1,1 +1,9 @@
-bm9kZV9tb2R1bGVzLwouRFNfU3RvcmUKKi5sb2cKLmVudgouZW52LioKIS5lbnYuZXhhbXBsZQojIEtow7RuZyBiYW8gZ2nhu50gY29tbWl0IHRva2VuL3NlY3JldAoqdG9rZW4qCipzZWNyZXQqCg==
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+# Không bao giờ commit token/secret
+*token*
+*secret*
