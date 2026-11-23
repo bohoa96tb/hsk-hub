@@ -38,16 +38,50 @@
     </a>
   </section>
 
+  <section id="progressCard" class="progress-card" aria-label="Tiến độ tổng thể">
+    <button id="progressToggle" class="progress-head" type="button" aria-expanded="true">
+      <span>📊 Tiến độ tổng thể</span><span id="progressChevron">▾</span>
+    </button>
+    <div id="progressBody">
+      <div class="progress-row" id="progress-hazi-viet"></div>
+      <div class="progress-row" id="progress-hsk3.0"></div>
+    </div>
+  </section>
+
   <nav class="tabs" role="tablist" aria-label="Lọc bài học">
     <button class="tab active" type="button" role="tab" aria-selected="true" data-tab="due">Cần ôn hôm nay</button>
     <button class="tab" type="button" role="tab" aria-selected="false" data-tab="upcoming">Sắp tới</button>
     <button class="tab" type="button" role="tab" aria-selected="false" data-tab="all">Tất cả</button>
+    <button class="tab" type="button" role="tab" aria-selected="false" data-tab="calendar">Lịch tháng</button>
   </nav>
 
   <p id="loadingState" class="state-msg">Đang tải dữ liệu…</p>
   <p id="errorState" class="state-msg error" hidden></p>
+  <div id="dueSpreadBanner" class="overdue-banner" hidden>
+    <span id="dueSpreadText"></span>
+    <button id="dueSpreadBtn" class="btn small danger" type="button">Dàn đều bài</button>
+  </div>
   <p id="emptyState" class="state-msg" hidden></p>
   <section id="lessonList" class="lesson-list" aria-live="polite"></section>
+
+  <section id="calendarView" hidden aria-label="Lịch tháng SRS">
+    <div class="cal-nav">
+      <button id="calPrev" class="icon-btn" type="button" aria-label="Tháng trước">‹</button>
+      <h2 id="calTitle" class="cal-title">Tháng</h2>
+      <button id="calNext" class="icon-btn" type="button" aria-label="Tháng sau">›</button>
+      <button id="calTodayBtn" class="btn small" type="button">Hôm nay</button>
+      <label class="cal-forecast-toggle"><input id="calForecast" type="checkbox"> Dự báo SRS</label>
+    </div>
+    <div id="calOverdueBanner" class="overdue-banner" hidden>
+      <span id="calOverdueText"></span>
+      <button id="calSpreadBtn" class="btn small danger" type="button">Dàn đều bài</button>
+    </div>
+    <div class="cal-weekdays" aria-hidden="true"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div>
+    <div id="calGrid" class="cal-grid"></div>
+    <p class="cal-legend">🟢 Đã ôn · 🔵 Đến hạn · 🟣 Dự báo</p>
+    <p id="calMonthStats" class="cal-stats"></p>
+    <div id="calDayDetail" class="cal-detail"></div>
+  </section>
 
   <button id="addBtn" class="fab" type="button">+ Thêm bài mới</button>
 </main>
@@ -133,6 +167,59 @@
       <button type="button" class="btn" id="importBtn">Nhập JSON</button>
       <input id="importFile" type="file" accept="application/json,.json" hidden>
       <button type="button" class="btn ghost" data-close>Đóng</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal dàn đều bài quá hạn -->
+<div id="spreadModal" class="modal-backdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="spreadTitle">
+    <button type="button" class="modal-x" data-close aria-label="Đóng">✕</button>
+    <h2 id="spreadTitle">Dàn đều bài quá hạn</h2>
+    <p class="sync-status">Chỉ dời ngày ôn — mốc SRS và lịch sử ôn của từng bài được giữ nguyên.</p>
+    <label>Hạn mức tối đa mỗi ngày
+      <select id="spreadLimit">
+        <option value="2">2 bài/ngày</option>
+        <option value="3">3 bài/ngày</option>
+        <option value="4">4 bài/ngày</option>
+        <option value="5">5 bài/ngày</option>
+        <option value="6">6 bài/ngày</option>
+        <option value="7">7 bài/ngày</option>
+        <option value="8">8 bài/ngày</option>
+        <option value="9">9 bài/ngày</option>
+        <option value="10">10 bài/ngày</option>
+      </select>
+    </label>
+    <label>Bắt đầu rải từ
+      <select id="spreadStart">
+        <option value="today">Hôm nay</option>
+        <option value="tomorrow">Ngày mai</option>
+      </select>
+    </label>
+    <p id="spreadPreview" class="spread-preview"></p>
+    <div class="modal-actions">
+      <button type="button" class="btn ghost" data-close>Hủy</button>
+      <button type="button" class="btn primary" id="spreadConfirmBtn">Dàn đều ngay</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal dời ngày ôn của 1 bài -->
+<div id="deferModal" class="modal-backdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="deferTitle">
+    <button type="button" class="modal-x" data-close aria-label="Đóng">✕</button>
+    <h2 id="deferTitle">Dời ngày ôn</h2>
+    <p id="deferLessonName" class="sync-status"></p>
+    <div class="modal-actions wrap">
+      <button type="button" class="btn" id="deferPlus1Btn">Sang mai (+1 ngày)</button>
+      <button type="button" class="btn" id="deferPlus3Btn">+3 ngày</button>
+    </div>
+    <label>Hoặc chọn ngày bất kỳ
+      <input id="deferDateInput" type="date">
+    </label>
+    <div class="modal-actions">
+      <button type="button" class="btn ghost" data-close>Hủy</button>
+      <button type="button" class="btn primary" id="deferCustomBtn">Dời tới ngày này</button>
     </div>
   </div>
 </div>
