@@ -55,6 +55,13 @@ Thử tại máy (không gửi thật):
 FORCE_SEND=true node scripts/remind.mjs --dry-run
 ```
 
+## Tính năng V3 — Lịch tháng SRS, dàn đều bài quá hạn, tiến độ 3 tầng
+
+- **Tab "Lịch tháng"**: lưới lịch T2–CN, nền xanh đậm nhạt (heatmap) theo số bài đã ôn mỗi ngày, huy hiệu 🔵 số bài đến hạn, công tắc **Dự báo SRS** hiện thêm chấm 🟣 mô phỏng các mốc ôn tương lai (chỉ xem trước, không đổi dữ liệu). Chạm vào một ngày để xem chi tiết: bài cần ôn, bài đã hoàn thành, bài dự kiến. Phía trên lưới có thanh cảnh báo số bài quá hạn.
+- **Dàn đều bài quá hạn**: khi có từ 2 bài quá hạn, nút **Dàn đều bài** (ở tab "Cần ôn hôm nay" và tab "Lịch tháng") mở hộp chọn hạn mức mỗi ngày (2–10, lưu vào `settings.dailyReviewLimit`, mặc định 4) và ngày bắt đầu (hôm nay/ngày mai), xem trước cách rải rồi mới xác nhận. Chỉ dời `nextReviewDate` — giữ nguyên mốc SRS và lịch sử ôn.
+- **Dời ngày nhanh**: nút **📅 Dời** trên mỗi thẻ bài — chọn "Sang mai (+1)", "+3 ngày" hoặc một ngày bất kỳ.
+- **Thanh tiến độ tổng thể**: ngay dưới 2 thẻ mở nhanh, mỗi app (Hazi Việt / HSK 3.0) một dòng `X/Y bài (Z%)` với thanh phân đoạn 3 màu theo tầng nhớ: **Mới học** (mốc 1–3 ngày, vàng), **Đang củng cố** (7–14 ngày, xanh dương), **Đã nhớ sâu** (30–60 ngày, xanh lá). Mẫu số Y lấy từ `data/catalog.json`. Có nút thu gọn, trạng thái được nhớ trên máy.
+
 ## Chọn nhanh bài học từ danh mục (V2)
 
 Nút **+ Thêm bài mới** có mục **Chọn nhanh từ danh mục**: lọc theo app, gõ tìm (tên bài, chữ Hán…), chạm một bài là tự điền tên/app/link đúng bài thật — Hazi Việt mở thẳng bài qua `vocabulary.html?word=…`, HSK 3.0 qua `#/lesson/…`. Nếu bài đã có trong danh sách của bạn, web hiện cảnh báo nhẹ để tránh thêm trùng. Vẫn nhập tay tự do được như cũ.
