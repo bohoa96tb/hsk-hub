@@ -8,7 +8,7 @@ import {
   generateId, dueLessons, emptyData, filterCatalog, findDuplicateLesson,
   normalizeReminderMode,
 } from '../js/srs.js';
-import { encodeBase64Utf8, decodeBase64Utf8, GitHubSync, GitHubError } from '../js/github-sync.js';
+import { encodeBase64Utf8, decodeBase64Utf8, GitHubSync, GitHubError, createSyncQueue } from '../js/github-sync.js';
 import { buildMessage, sendNtfy, sendTelegram, shouldSendNow, currentHourJST } from '../scripts/remind.mjs';
 import { buildHaziEntries, buildHsk30Entries } from '../scripts/sync-catalog.mjs';
 
@@ -310,6 +310,90 @@ await test('19. Modal đóng được: [hidden] thắng display:flex, mọi nút
   assert.match(app, /function openSettings[\s\S]*?closeAllModals\(\)/);
   // Backdrop: bấm vào chính nền tối (target === modal) thì đóng
   assert.match(app, /e\.target === m/);
+});
+
+// 20. Sync queue tuần tự + chống cache khi lấy sha + retry 409
+await test('20a. Xóa 3 bài liên tiếp: hàng đợi gom thao tác, không PUT song song, chỉ PUT trạng thái mới nhất', async () => {
+  const calls = [];
+  let active = 0;
+  let maxActive = 0;
+  const queue = createSyncQueue(async (arg) => {
+    active++; maxActive = Math.max(maxActive, active);
+    await new Promise((r) => setTimeout(r, 30));
+    calls.push(arg);
+    active--;
+  }, { debounceMs: 10 });
+  // 3 lần schedule nhanh trước khi chạy -> gom thành 1 lần với arg mới nhất
+  queue.schedule('xóa bài 1');
+  queue.schedule('xóa bài 2');
+  queue.schedule('xóa bài 3');
+  await queue.whenIdle();
+  assert.deepEqual(calls, ['xóa bài 3']);
+  // Đang PUT dở mà bấm tiếp 3 lần -> chỉ thêm đúng 1 PUT với trạng thái cuối
+  calls.length = 0;
+  queue.schedule('PUT đang chạy');
+  await new Promise((r) => setTimeout(r, 15)); // PUT đầu đã bắt đầu (sau debounce 10ms)
+  queue.schedule('thay đổi A');
+  queue.schedule('thay đổi B');
+  queue.schedule('thay đổi C');
+  await queue.whenIdle();
+  assert.deepEqual(calls, ['PUT đang chạy', 'thay đổi C']);
+  assert.equal(maxActive, 1, 'không bao giờ có 2 PUT chạy song song');
+});
+
+await test('20b. GET lấy sha chống cache tuyệt đối (query _= + no-store, KHÔNG header Cache-Control/Pragma)', async () => {
+  let seen = null;
+  const sync = new GitHubSync({
+    token: 'ok',
+    fetchFn: async (url, opts) => {
+      seen = { url, opts };
+      return { ok: true, status: 200, json: async () => ({ content: encodeBase64Utf8('{"version":1,"lessons":[]}'), sha: 'shaX' }) };
+    },
+  });
+  const remote = await sync.fetchRemote();
+  assert.equal(remote.sha, 'shaX');
+  assert.equal(sync.lastKnownSha, 'shaX');
+  assert.match(seen.url, /\?ref=main&_=\d+$/, 'URL GET phải có ref + _=<timestamp>');
+  assert.equal(seen.opts.cache, 'no-store');
+  const headerNames = Object.keys(seen.opts.headers).map((h) => h.toLowerCase());
+  assert.ok(!headerNames.includes('cache-control') && !headerNames.includes('pragma'), 'không được gửi header Cache-Control/Pragma (lỗi CORS)');
+});
+
+await test('20c. PUT gặp 409 lần đầu: chờ, GET lại sha mới, retry thành công lần 2 và cập nhật lastKnownSha', async () => {
+  let putCount = 0;
+  let getCount = 0;
+  const sync = new GitHubSync({
+    token: 'ok',
+    sleepFn: async () => {},
+    fetchFn: async (url, opts) => {
+      if (opts && opts.method === 'PUT') {
+        putCount++;
+        if (putCount === 1) return { ok: false, status: 409, json: async () => ({}) };
+        const body = JSON.parse(opts.body);
+        assert.equal(body.sha, 'sha-moi', 'PUT retry phải dùng sha vừa GET lại');
+        return { ok: true, status: 200, json: async () => ({ content: { sha: 'sha-sau-put' }, commit: { sha: 'c2' } }) };
+      }
+      getCount++;
+      return { ok: true, status: 200, json: async () => ({ content: encodeBase64Utf8('{"version":1,"lessons":[]}'), sha: getCount === 1 ? 'sha-cu' : 'sha-moi' }) };
+    },
+  });
+  const saved = await sync.save(baseData());
+  assert.equal(putCount, 2);
+  assert.equal(saved.sha, 'sha-sau-put');
+  assert.equal(sync.lastKnownSha, 'sha-sau-put', 'lastKnownSha phải cập nhật từ response PUT');
+  // Lần save tiếp theo dùng ngay lastKnownSha, không cần GET lại
+  getCount = 0; putCount = 0;
+  const sync2Fetch = sync.fetchFn;
+  sync.fetchFn = async (url, opts) => {
+    if (opts && opts.method === 'PUT') {
+      const body = JSON.parse(opts.body);
+      assert.equal(body.sha, 'sha-sau-put', 'PUT lần sau phải dùng lastKnownSha');
+      return { ok: true, status: 200, json: async () => ({ content: { sha: 'sha-tiep' }, commit: { sha: 'c3' } }) };
+    }
+    return sync2Fetch(url, opts);
+  };
+  await sync.save(baseData());
+  assert.equal(getCount, 0, 'đã có lastKnownSha thì không GET lại');
 });
 
 console.log(`\n===== KẾT QUẢ: ${passed} đạt, ${failures.length} lỗi =====`);
