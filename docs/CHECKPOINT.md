@@ -30,10 +30,9 @@ Cập nhật: 2026-11-23 (Asia/Tokyo) — **V2**
 
 ## Việc còn lại (cần Bui)
 
-1. Cấp quyền repo `hsk-hub` cho GitHub App của Muse **hoặc** tự `git push -u origin main`.
-2. Bật GitHub Pages (`main` / `/`).
-3. Thêm secret `NTFY_TOPIC` (và/hoặc Telegram) rồi chạy thử workflow một lần.
-4. Tạo PAT (Contents: Read and write, chỉ repo `hsk-hub`) dán vào ⚙️ Cài đặt trên web.
+1. Thêm secret `NTFY_TOPIC` (và/hoặc Telegram) trong Settings → Secrets → Actions, rồi chạy thử workflow một lần (Actions → Daily HSK Reminder → Run workflow) và cài app ntfy đăng ký đúng topic.
+2. Tạo PAT (Contents: Read and write, chỉ repo `hsk-hub`) dán vào ⚙️ Cài đặt trên web để đồng bộ 2 chiều từ điện thoại.
+3. (Không bắt buộc) Cập nhật lại mật khẩu GitHub đã lưu trong Secure Vault — bản đã lưu bị GitHub từ chối; lần đăng nhập web vừa rồi dùng Google + Authenticator.
 
 ## Tiếp tục công việc
 
