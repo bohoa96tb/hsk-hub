@@ -1,60 +1,60 @@
 {
+  "version": 1,
+  "settings": {
+    "owner": "bohoa96tb",
+    "repo": "hsk-hub",
+    "branch": "main",
+    "reminderMode": "morning"
+  },
+  "stats": {
+    "currentStreak": 1,
+    "longestStreak": 1,
+    "totalReviews": 3,
+    "lastStudyDate": "2026-11-22"
+  },
   "lessons": [
     {
-      "app": "hazi-viet",
-      "createdAt": "2026-11-20T00:00:00.000Z",
       "id": "lesson-sample-hazi-001",
-      "nextReviewDate": "2026-11-23",
+      "title": "HSK1 · Bài 1 — 你好 (Xin chào)",
+      "app": "hazi-viet",
+      "url": "https://bohoa96tb.github.io/hazi-viet/",
       "note": "Bài mẫu — sửa link thành link bài cụ thể của bạn",
+      "stage": 2,
+      "nextReviewDate": "2026-11-23",
       "reviewHistory": [
         "2026-11-20",
         "2026-11-22"
       ],
-      "stage": 2,
-      "title": "HSK1 · Bài 1 — 你好 (Xin chào)",
-      "updatedAt": "2026-11-22T00:00:00.000Z",
-      "url": "https://bohoa96tb.github.io/hazi-viet/"
+      "createdAt": "2026-11-20T00:00:00.000Z",
+      "updatedAt": "2026-11-22T00:00:00.000Z"
     },
     {
-      "app": "hsk3.0",
-      "createdAt": "2026-11-22T00:00:00.000Z",
       "id": "lesson-sample-hsk30-001",
-      "nextReviewDate": "2026-11-23",
+      "title": "HSK 3.0 · Bài 1 — Chào hỏi 你好",
+      "app": "hsk3.0",
+      "url": "https://bohoa96tb.github.io/HSK3.0/",
       "note": "Bài mẫu — sửa link thành link bài cụ thể của bạn",
+      "stage": 1,
+      "nextReviewDate": "2026-11-23",
       "reviewHistory": [
         "2026-11-22"
       ],
-      "stage": 1,
-      "title": "HSK 3.0 · Bài 1 — Chào hỏi 你好",
-      "updatedAt": "2026-11-22T00:00:00.000Z",
-      "url": "https://bohoa96tb.github.io/HSK3.0/"
+      "createdAt": "2026-11-22T00:00:00.000Z",
+      "updatedAt": "2026-11-22T00:00:00.000Z"
     },
     {
-      "app": "hazi-viet",
-      "createdAt": "2026-11-21T00:00:00.000Z",
       "id": "lesson-sample-hazi-002",
-      "nextReviewDate": "2026-11-22",
+      "title": "HSK1 · Bài 2 — 谢谢 (Cảm ơn)",
+      "app": "hazi-viet",
+      "url": "https://bohoa96tb.github.io/hazi-viet/",
       "note": "Bài mẫu quá hạn để xem badge đỏ",
+      "stage": 0,
+      "nextReviewDate": "2026-11-22",
       "reviewHistory": [
         "2026-11-21"
       ],
-      "stage": 0,
-      "title": "HSK1 · Bài 2 — 谢谢 (Cảm ơn)",
-      "updatedAt": "2026-11-21T00:00:00.000Z",
-      "url": "https://bohoa96tb.github.io/hazi-viet/"
+      "createdAt": "2026-11-21T00:00:00.000Z",
+      "updatedAt": "2026-11-21T00:00:00.000Z"
     }
-  ],
-  "settings": {
-    "branch": "main",
-    "owner": "bohoa96tb",
-    "reminderMode": "morning",
-    "repo": "hsk-hub"
-  },
-  "stats": {
-    "currentStreak": 1,
-    "lastStudyDate": "2026-11-22",
-    "longestStreak": 1,
-    "totalReviews": 3
-  },
-  "version": 1
+  ]
 }
