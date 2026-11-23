@@ -9,7 +9,7 @@
   "stats": {
     "currentStreak": 2,
     "longestStreak": 2,
-    "totalReviews": 14,
+    "totalReviews": 15,
     "lastStudyDate": "2026-11-23"
   },
   "lessons": [
@@ -27,7 +27,7 @@
         "2026-11-23"
       ],
       "createdAt": "2026-11-20T00:00:00.000Z",
-      "updatedAt": "2026-11-23T09:44:05.456Z"
+      "updatedAt": "2026-11-23T09:44:07.395Z"
     },
     {
       "id": "lesson-sample-hsk30-001",
