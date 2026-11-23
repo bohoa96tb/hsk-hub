@@ -14,21 +14,6 @@
   },
   "lessons": [
     {
-      "id": "lesson-sample-hsk30-001",
-      "title": "HSK 3.0 · Bài 1 — Chào hỏi 你好",
-      "app": "hsk3.0",
-      "url": "https://bohoa96tb.github.io/HSK3.0/",
-      "note": "Bài mẫu — sửa link thành link bài cụ thể của bạn",
-      "stage": 0,
-      "nextReviewDate": "2026-11-24",
-      "reviewHistory": [
-        "2026-11-22",
-        "2026-11-23"
-      ],
-      "createdAt": "2026-11-22T00:00:00.000Z",
-      "updatedAt": "2026-11-23T09:44:18.138Z"
-    },
-    {
       "id": "lesson-sample-hazi-002",
       "title": "HSK1 · Bài 2 — 谢谢 (Cảm ơn)",
       "app": "hazi-viet",
