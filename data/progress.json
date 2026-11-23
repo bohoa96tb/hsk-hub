@@ -14,22 +14,6 @@
   },
   "lessons": [
     {
-      "id": "lesson-sample-hazi-001",
-      "title": "HSK1 · Bài 1 — 你好 (Xin chào)",
-      "app": "hazi-viet",
-      "url": "https://bohoa96tb.github.io/hazi-viet/",
-      "note": "Bài mẫu — sửa link thành link bài cụ thể của bạn",
-      "stage": 0,
-      "nextReviewDate": "2026-11-24",
-      "reviewHistory": [
-        "2026-11-20",
-        "2026-11-22",
-        "2026-11-23"
-      ],
-      "createdAt": "2026-11-20T00:00:00.000Z",
-      "updatedAt": "2026-11-23T09:44:09.267Z"
-    },
-    {
       "id": "lesson-sample-hsk30-001",
       "title": "HSK 3.0 · Bài 1 — Chào hỏi 你好",
       "app": "hsk3.0",
