@@ -7,7 +7,7 @@ import {
 } from './srs.js';
 import {
   GitHubSync, GitHubError, getStoredToken, storeToken, fetchStaticData,
-  loadLocalData, saveLocalData, backupLocalData, TOKEN_KEY,
+  loadLocalData, saveLocalData, backupLocalData, createSyncQueue,
 } from './github-sync.js';
 
 const $ = (sel) => document.querySelector(sel);
@@ -22,7 +22,9 @@ const els = {
 let data = null;
 let activeTab = 'due';
 let syncState = 'Chưa gắn Token';
-let saveTimer = null;
+let syncClient = null;
+let syncClientKey = '';
+let syncQueue = null;
 
 function toast(msg, kind = '') {
   els.toast.textContent = msg;
@@ -56,14 +58,21 @@ function updateThemeBtn() {
 }
 
 // ---------- Tải / lưu dữ liệu ----------
-function makeSync() {
-  const s = (data && data.settings) || {};
-  return new GitHubSync({
+// Dùng 1 instance GitHubSync duy nhất cho mỗi cấu hình để giữ lastKnownSha giữa các lần lưu.
+function makeSync(settingsSource) {
+  const s = settingsSource || (data && data.settings) || {};
+  const cfg = {
     owner: s.owner || 'bohoa96tb',
     repo: s.repo || 'hsk-hub',
     branch: s.branch || 'main',
     token: getStoredToken(),
-  });
+  };
+  const key = `${cfg.owner}/${cfg.repo}@${cfg.branch}#${cfg.token ? 'tok' : 'anon'}`;
+  if (!syncClient || syncClientKey !== key) {
+    syncClient = new GitHubSync(cfg);
+    syncClientKey = key;
+  }
+  return syncClient;
 }
 
 async function loadData() {
@@ -119,11 +128,7 @@ function validateLocal(local) {
   return v.ok ? v.data : emptyData();
 }
 function makeSyncFor(local) {
-  const s = (local && local.settings) || (data && data.settings) || {};
-  return new GitHubSync({
-    owner: s.owner || 'bohoa96tb', repo: s.repo || 'hsk-hub', branch: s.branch || 'main',
-    token: getStoredToken(),
-  });
+  return makeSync((local && local.settings) || undefined);
 }
 
 function showError(msg) {
@@ -131,26 +136,36 @@ function showError(msg) {
   els.error.hidden = false;
 }
 
-/** Lưu local ngay; nếu có token thì debounce đẩy lên GitHub. */
+/**
+ * Hàng đợi đồng bộ: mọi thay đổi (xóa/nhớ/thêm liên tiếp) được gom debounce 700ms
+ * và gửi TUẦN TỰ — không bao giờ có 2 lệnh PUT song song. Đang PUT mà có thay đổi mới
+ * thì chỉ PUT thêm đúng 1 lần với trạng thái mới nhất.
+ */
+function getSyncQueue() {
+  if (!syncQueue) {
+    syncQueue = createSyncQueue(async () => {
+      setSync('Đang lưu…');
+      try {
+        await makeSync().save(data);
+        setSync('Đã đồng bộ');
+        toast('Đã đồng bộ lên GitHub', 'ok');
+      } catch (err) {
+        setSync('Lỗi đồng bộ');
+        toast(err instanceof GitHubError ? err.message : `Lỗi đồng bộ: ${err.message}`, 'error');
+      }
+    }, { debounceMs: 700 });
+  }
+  return syncQueue;
+}
+
+/** Lưu local ngay; nếu có token thì đưa vào hàng đợi đồng bộ lên GitHub. */
 function persist({ immediate = false } = {}) {
   saveLocalData(data);
   render();
   const token = getStoredToken();
   if (!token) { setSync('Chưa gắn Token'); return; }
-  clearTimeout(saveTimer);
-  const doSave = async () => {
-    setSync('Đang lưu…');
-    try {
-      await makeSync().save(data);
-      setSync('Đã đồng bộ');
-      toast('Đã đồng bộ lên GitHub', 'ok');
-    } catch (err) {
-      setSync('Lỗi đồng bộ');
-      toast(err instanceof GitHubError ? err.message : `Lỗi đồng bộ: ${err.message}`, 'error');
-    }
-  };
-  if (immediate) doSave();
-  else saveTimer = setTimeout(doSave, 800);
+  if (immediate) getSyncQueue().flush();
+  else getSyncQueue().schedule();
 }
 
 // ---------- Render ----------
