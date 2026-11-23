@@ -1,1 +1,286 @@
-Ly8gcnVuLXRlc3RzLm1qcyDigJQgQuG7mSB0ZXN0IHThu7EgxJHhu5luZywgY2jhu4kgZMO5bmcgbm9kZTphc3NlcnQgKGtow7RuZyBwYWNrYWdlIG5nb8OgaSkuCi8vIENo4bqheTogbm9kZSB0ZXN0cy9ydW4tdGVzdHMubWpzCmltcG9ydCBhc3NlcnQgZnJvbSAnbm9kZTphc3NlcnQvc3RyaWN0JzsKaW1wb3J0IHsgcmVhZEZpbGUgfSBmcm9tICdub2RlOmZzL3Byb21pc2VzJzsKaW1wb3J0IHsKICBTUlNfSU5URVJWQUxTLCB0b2RheUpTVCwgYWRkRGF5cywgZGlmZkRheXMsIGlzVmFsaWREYXRlU3RyLAogIG1hcmtSZW1lbWJlcmVkLCBtYXJrRm9yZ290dGVuLCBhcHBseVN0dWR5RGF5LCB2YWxpZGF0ZURhdGEsIG1lcmdlRGF0YSwKICBnZW5lcmF0ZUlkLCBkdWVMZXNzb25zLCBlbXB0eURhdGEsIGZpbHRlckNhdGFsb2csIGZpbmREdXBsaWNhdGVMZXNzb24sCiAgbm9ybWFsaXplUmVtaW5kZXJNb2RlLAp9IGZyb20gJy4uL2pzL3Nycy5qcyc7CmltcG9ydCB7IGVuY29kZUJhc2U2NFV0ZjgsIGRlY29kZUJhc2U2NFV0ZjgsIEdpdEh1YlN5bmMsIEdpdEh1YkVycm9yIH0gZnJvbSAnLi4vanMvZ2l0aHViLXN5bmMuanMnOwppbXBvcnQgeyBidWlsZE1lc3NhZ2UsIHNlbmROdGZ5LCBzZW5kVGVsZWdyYW0sIHNob3VsZFNlbmROb3csIGN1cnJlbnRIb3VySlNUIH0gZnJvbSAnLi4vc2NyaXB0cy9yZW1pbmQubWpzJzsKaW1wb3J0IHsgYnVpbGRIYXppRW50cmllcywgYnVpbGRIc2szMEVudHJpZXMgfSBmcm9tICcuLi9zY3JpcHRzL3N5bmMtY2F0YWxvZy5tanMnOwoKbGV0IHBhc3NlZCA9IDA7CmNvbnN0IGZhaWx1cmVzID0gW107CmFzeW5jIGZ1bmN0aW9uIHRlc3QobmFtZSwgZm4pIHsKICB0cnkgeyBhd2FpdCBmbigpOyBwYXNzZWQrKzsgY29uc29sZS5sb2coYOKchSAke25hbWV9YCk7IH0KICBjYXRjaCAoZXJyKSB7IGZhaWx1cmVzLnB1c2goYCR7bmFtZX06ICR7ZXJyLm1lc3NhZ2V9YCk7IGNvbnNvbGUubG9nKGDinYwgJHtuYW1lfTogJHtlcnIubWVzc2FnZX1gKTsgfQp9CgpmdW5jdGlvbiBiYXNlRGF0YSgpIHsKICByZXR1cm4gewogICAgdmVyc2lvbjogMSwKICAgIHNldHRpbmdzOiB7IG93bmVyOiAnYm9ob2E5NnRiJywgcmVwbzogJ2hzay1odWInLCBicmFuY2g6ICdtYWluJyB9LAogICAgc3RhdHM6IHsgY3VycmVudFN0cmVhazogMCwgbG9uZ2VzdFN0cmVhazogMCwgdG90YWxSZXZpZXdzOiAwLCBsYXN0U3R1ZHlEYXRlOiBudWxsIH0sCiAgICBsZXNzb25zOiBbewogICAgICBpZDogJ2wxJywgdGl0bGU6ICdCw6BpIDEg5L2g5aW9JywgYXBwOiAnaGF6aS12aWV0JywgdXJsOiAnaHR0cHM6Ly9ib2hvYTk2dGIuZ2l0aHViLmlvL2hhemktdmlldC8nLAogICAgICBub3RlOiAnJywgc3RhZ2U6IDAsIG5leHRSZXZpZXdEYXRlOiAnMjAyNi0xMS0yMycsIHJldmlld0hpc3Rvcnk6IFtdLAogICAgICBjcmVhdGVkQXQ6ICcyMDI2LTExLTIwVDAwOjAwOjAwLjAwMFonLCB1cGRhdGVkQXQ6ICcyMDI2LTExLTIwVDAwOjAwOjAwLjAwMFonLAogICAgfV0sCiAgfTsKfQoKLy8gMS4gSlNUCmF3YWl0IHRlc3QoJzEuIE5nw6B5IEpTVDogbuG7rWEgxJHDqm0gVVRDIHbhuqtuIGzDoCBuZ8OgeSBow7RtIHRyxrDhu5tjIOG7nyBUb2t5byBraGkgY2jGsGEgcXVhIDAwOjAwIEpTVCcsICgpID0+IHsKICAvLyAyMDI2LTExLTIyVDE2OjMwOjAwWiA9IDIwMjYtMTEtMjMgMDE6MzAgSlNUCiAgYXNzZXJ0LmVxdWFsKHRvZGF5SlNUKG5ldyBEYXRlKCcyMDI2LTExLTIyVDE2OjMwOjAwWicpKSwgJzIwMjYtMTEtMjMnKTsKICAvLyAyMDI2LTExLTIyVDE0OjMwOjAwWiA9IDIwMjYtMTEtMjIgMjM6MzAgSlNUCiAgYXNzZXJ0LmVxdWFsKHRvZGF5SlNUKG5ldyBEYXRlKCcyMDI2LTExLTIyVDE0OjMwOjAwWicpKSwgJzIwMjYtMTEtMjInKTsKICBhc3NlcnQuZXF1YWwoYWRkRGF5cygnMjAyNi0xMS0yMycsIDEpLCAnMjAyNi0xMS0yNCcpOwogIGFzc2VydC5lcXVhbChhZGREYXlzKCcyMDI2LTEyLTMxJywgMSksICcyMDI3LTAxLTAxJyk7CiAgYXNzZXJ0LmVxdWFsKGFkZERheXMoJzIwMjQtMDItMjgnLCAxKSwgJzIwMjQtMDItMjknKTsgLy8gbsSDbSBuaHXhuq1uCiAgYXNzZXJ0LmVxdWFsKGRpZmZEYXlzKCcyMDI2LTExLTIyJywgJzIwMjYtMTEtMjMnKSwgMSk7CiAgYXNzZXJ0LmVxdWFsKGlzVmFsaWREYXRlU3RyKCcyMDI2LTAyLTMwJyksIGZhbHNlKTsKICBhc3NlcnQuZXF1YWwoaXNWYWxpZERhdGVTdHIoJzIwMjYtMTEtMjMnKSwgdHJ1ZSk7Cn0pOwoKLy8gMiszLiBTUlMgbeG7jWkgc3RhZ2UgKyBraMO0bmcgdsaw4bujdCBnaeG7m2kgaOG6oW4KYXdhaXQgdGVzdCgnMi0zLiBTUlM6IG3hu41pIHN0YWdlIGjhurluIMSRw7puZyBraG/huqNuZywgc3RhZ2Uga+G6uXQg4bufIG3hu5FjIGN14buRaSA2MCBuZ8OgeScsICgpID0+IHsKICBsZXQgZCA9IGJhc2VEYXRhKCk7CiAgY29uc3QgZXhwZWN0ZWQgPSBbMywgNywgMTQsIDMwLCA2MCwgNjBdOwogIGZvciAobGV0IGkgPSAwOyBpIDwgZXhwZWN0ZWQubGVuZ3RoOyBpKyspIHsKICAgIGQgPSBtYXJrUmVtZW1iZXJlZChkLCAnbDEnLCAnMjAyNi0xMS0yMycpOwogICAgYXNzZXJ0LmVxdWFsKGQubGVzc29uc1swXS5uZXh0UmV2aWV3RGF0ZSwgYWRkRGF5cygnMjAyNi0xMS0yMycsIGV4cGVjdGVkW2ldKSwgYGzhuqduICR7aSArIDF9YCk7CiAgICBhc3NlcnQub2soZC5sZXNzb25zWzBdLnN0YWdlIDw9IFNSU19JTlRFUlZBTFMubGVuZ3RoIC0gMSk7CiAgfQogIGFzc2VydC5lcXVhbChkLmxlc3NvbnNbMF0uc3RhZ2UsIFNSU19JTlRFUlZBTFMubGVuZ3RoIC0gMSk7Cn0pOwoKLy8gNC4gTmjhu5sgbmhp4buBdSBiw6BpIGPDuW5nIG5nw6B5OiBzdHJlYWsgY2jhu4kgKzEsIGhpc3Rvcnkga2jDtG5nIHRyw7luZwphd2FpdCB0ZXN0KCc0LiBI4buNYyBuaGnhu4F1IGLDoGkgY8O5bmcgbmfDoHk6IHN0cmVhayB0w61uaCB0aGVvIG5nw6B5IGR1eSBuaOG6pXQsIHJldmlld0hpc3Rvcnkga2jDtG5nIHRyw7luZycsICgpID0+IHsKICBsZXQgZCA9IGJhc2VEYXRhKCk7CiAgZC5sZXNzb25zLnB1c2goeyAuLi5kLmxlc3NvbnNbMF0sIGlkOiAnbDInLCB0aXRsZTogJ0LDoGkgMicgfSk7CiAgZCA9IG1hcmtSZW1lbWJlcmVkKGQsICdsMScsICcyMDI2LTExLTIzJyk7CiAgZCA9IG1hcmtSZW1lbWJlcmVkKGQsICdsMicsICcyMDI2LTExLTIzJyk7CiAgZCA9IG1hcmtSZW1lbWJlcmVkKGQsICdsMScsICcyMDI2LTExLTIzJyk7CiAgYXNzZXJ0LmVxdWFsKGQuc3RhdHMuY3VycmVudFN0cmVhaywgMSk7CiAgYXNzZXJ0LmVxdWFsKGQuc3RhdHMudG90YWxSZXZpZXdzLCAzKTsKICBhc3NlcnQuZGVlcEVxdWFsKGQubGVzc29uc1swXS5yZXZpZXdIaXN0b3J5LCBbJzIwMjYtMTEtMjMnXSk7Cn0pOwoKLy8gNS4gUXXDqm4KYXdhaXQgdGVzdCgnNS4gUXXDqm46IHN0YWdlIHbhu4EgMCwgw7RuIGzhuqFpIG5nw6B5IG1haSwgduG6q24gdMOtbmggbmfDoHkgaOG7jWMnLCAoKSA9PiB7CiAgbGV0IGQgPSBiYXNlRGF0YSgpOwogIGQubGVzc29uc1swXS5zdGFnZSA9IDM7CiAgZCA9IG1hcmtGb3Jnb3R0ZW4oZCwgJ2wxJywgJzIwMjYtMTEtMjMnKTsKICBhc3NlcnQuZXF1YWwoZC5sZXNzb25zWzBdLnN0YWdlLCAwKTsKICBhc3NlcnQuZXF1YWwoZC5sZXNzb25zWzBdLm5leHRSZXZpZXdEYXRlLCAnMjAyNi0xMS0yNCcpOwogIGFzc2VydC5lcXVhbChkLnN0YXRzLmxhc3RTdHVkeURhdGUsICcyMDI2LTExLTIzJyk7CiAgYXNzZXJ0LmVxdWFsKGQuc3RhdHMuY3VycmVudFN0cmVhaywgMSk7Cn0pOwoKLy8gNis3LiBTdHJlYWsKYXdhaXQgdGVzdCgnNi03LiBTdHJlYWs6IGPDuW5nIG5nw6B5IGdp4buvIG5ndXnDqm4sIGxpw6puIHRp4bq/cCArMSwgYuG7jyBuZ8OgeSByZXNldCAxLCBsb25nZXN0IGtow7RuZyBnaeG6o20nLCAoKSA9PiB7CiAgbGV0IHMgPSB7IGN1cnJlbnRTdHJlYWs6IDAsIGxvbmdlc3RTdHJlYWs6IDAsIHRvdGFsUmV2aWV3czogMCwgbGFzdFN0dWR5RGF0ZTogbnVsbCB9OwogIHMgPSBhcHBseVN0dWR5RGF5KHMsICcyMDI2LTExLTIwJyk7IGFzc2VydC5lcXVhbChzLmN1cnJlbnRTdHJlYWssIDEpOwogIHMgPSBhcHBseVN0dWR5RGF5KHMsICcyMDI2LTExLTIwJyk7IGFzc2VydC5lcXVhbChzLmN1cnJlbnRTdHJlYWssIDEpOwogIHMgPSBhcHBseVN0dWR5RGF5KHMsICcyMDI2LTExLTIxJyk7IGFzc2VydC5lcXVhbChzLmN1cnJlbnRTdHJlYWssIDIpOwogIHMgPSBhcHBseVN0dWR5RGF5KHMsICcyMDI2LTExLTIzJyk7IGFzc2VydC5lcXVhbChzLmN1cnJlbnRTdHJlYWssIDEpOyAvLyBi4buPIDIyCiAgYXNzZXJ0LmVxdWFsKHMubG9uZ2VzdFN0cmVhaywgMik7CiAgcyA9IGFwcGx5U3R1ZHlEYXkocywgJzIwMjYtMTEtMjQnKTsgYXNzZXJ0LmVxdWFsKHMuY3VycmVudFN0cmVhaywgMik7CiAgYXNzZXJ0LmVxdWFsKHMubG9uZ2VzdFN0cmVhaywgMik7Cn0pOwoKLy8gOC4gSUQga2jDtG5nIHRyw7luZwphd2FpdCB0ZXN0KCc4LiBnZW5lcmF0ZUlkOiAxMDAwIElEIGtow7RuZyB0csO5bmcnLCAoKSA9PiB7CiAgY29uc3QgaWRzID0gbmV3IFNldChBcnJheS5mcm9tKHsgbGVuZ3RoOiAxMDAwIH0sICgpID0+IGdlbmVyYXRlSWQoKSkpOwogIGFzc2VydC5lcXVhbChpZHMuc2l6ZSwgMTAwMCk7Cn0pOwoKLy8gOS4gSW1wb3J0IHNhaSBi4buLIHThu6sgY2jhu5FpCmF3YWl0IHRlc3QoJzkuIFZhbGlkYXRlOiBKU09OIHNhaS9uZ8OgeSBzYWkvaWQgdHLDuW5nIGLhu4sgdOG7qyBjaOG7kWksIGThu68gbGnhu4d1IGjhu6NwIGzhu4cgxJHGsOG7o2Mgbmjhuq1uJywgKCkgPT4gewogIGFzc2VydC5lcXVhbCh2YWxpZGF0ZURhdGEobnVsbCkub2ssIGZhbHNlKTsKICBhc3NlcnQuZXF1YWwodmFsaWRhdGVEYXRhKHsgbGVzc29uczogJ3gnIH0pLm9rLCBmYWxzZSk7CiAgY29uc3QgYmFkRGF0ZSA9IGJhc2VEYXRhKCk7IGJhZERhdGUubGVzc29uc1swXS5uZXh0UmV2aWV3RGF0ZSA9ICcyMy8xMS8yMDI2JzsKICBhc3NlcnQuZXF1YWwodmFsaWRhdGVEYXRhKGJhZERhdGUpLm9rLCBmYWxzZSk7CiAgY29uc3QgZHVwID0gYmFzZURhdGEoKTsgZHVwLmxlc3NvbnMucHVzaCh7IC4uLmR1cC5sZXNzb25zWzBdIH0pOwogIGFzc2VydC5lcXVhbCh2YWxpZGF0ZURhdGEoZHVwKS5vaywgZmFsc2UpOwogIGNvbnN0IGR1cEhpc3QgPSBiYXNlRGF0YSgpOyBkdXBIaXN0Lmxlc3NvbnNbMF0ucmV2aWV3SGlzdG9yeSA9IFsnMjAyNi0xMS0yMCcsICcyMDI2LTExLTIwJ107CiAgYXNzZXJ0LmVxdWFsKHZhbGlkYXRlRGF0YShkdXBIaXN0KS5vaywgZmFsc2UpOwogIGFzc2VydC5lcXVhbCh2YWxpZGF0ZURhdGEoYmFzZURhdGEoKSkub2ssIHRydWUpOwp9KTsKCi8vIDEwLiBNZXJnZSBraMO0bmcgbeG6pXQgYsOgaQphd2FpdCB0ZXN0KCcxMC4gTWVyZ2UgdGhlbyBJRDoga2jDtG5nIG3huqV0IGLDoGkg4bufIGPhuqMgaGFpIHBow61hLCBn4buZcCByZXZpZXdIaXN0b3J5JywgKCkgPT4gewogIGNvbnN0IGEgPSBiYXNlRGF0YSgpOwogIGNvbnN0IGIgPSBiYXNlRGF0YSgpOwogIGIubGVzc29ucyA9IFt7IC4uLmIubGVzc29uc1swXSwgaWQ6ICdsMicsIHRpdGxlOiAnQ2jhu4kgY8OzIOG7nyBCJyB9XTsKICBhLmxlc3NvbnNbMF0ucmV2aWV3SGlzdG9yeSA9IFsnMjAyNi0xMS0yMCddOwogIGNvbnN0IGEyID0gYmFzZURhdGEoKTsgYTIubGVzc29uc1swXS5yZXZpZXdIaXN0b3J5ID0gWycyMDI2LTExLTIxJ107CiAgYTIubGVzc29uc1swXS51cGRhdGVkQXQgPSAnMjAyNi0xMS0yMVQwMDowMDowMC4wMDBaJzsKICBjb25zdCBtZXJnZWQgPSBtZXJnZURhdGEoYSwgYik7CiAgYXNzZXJ0LmRlZXBFcXVhbChtZXJnZWQubGVzc29ucy5tYXAoKGwpID0+IGwuaWQpLnNvcnQoKSwgWydsMScsICdsMiddKTsKICBjb25zdCBtZXJnZWRIaXN0ID0gbWVyZ2VEYXRhKGEsIGEyKTsKICBhc3NlcnQuZGVlcEVxdWFsKG1lcmdlZEhpc3QubGVzc29uc1swXS5yZXZpZXdIaXN0b3J5LCBbJzIwMjYtMTEtMjAnLCAnMjAyNi0xMS0yMSddKTsKfSk7CgovLyAxMS4gVW5pY29kZSBCYXNlNjQKYXdhaXQgdGVzdCgnMTEuIEJhc2U2NCBVVEYtODogdGnhur9uZyBWaeG7h3QgKyBjaOG7ryBIw6FuIGto4bupIGjhu5NpIG5ndXnDqm4gduG6uW4nLCAoKSA9PiB7CiAgY29uc3QgcyA9ICdI4buNYyB0aeG6v25nIFRydW5nIC0g5L2g5aW95LiW55WMJzsKICBhc3NlcnQuZXF1YWwoZGVjb2RlQmFzZTY0VXRmOChlbmNvZGVCYXNlNjRVdGY4KHMpKSwgcyk7CiAgY29uc3QgbG9uZyA9ICfmsYnlrZcgaOG7jWMgJy5yZXBlYXQoNTAwMCk7CiAgYXNzZXJ0LmVxdWFsKGRlY29kZUJhc2U2NFV0ZjgoZW5jb2RlQmFzZTY0VXRmOChsb25nKSksIGxvbmcpOwp9KTsKCi8vIDEyLiBSZW1pbmRlcgphd2FpdCB0ZXN0KCcxMi4gUmVtaW5kZXI6IGLDoGkgaMO0bSBuYXkgKyBxdcOhIGjhuqFuIGzDqm4gxJHhuqd1LCBraMO0bmcgY8OzIGLDoGksIEZPUkNFX1NFTkQnLCAoKSA9PiB7CiAgY29uc3QgZCA9IGJhc2VEYXRhKCk7CiAgZC5sZXNzb25zLnB1c2goeyAuLi5kLmxlc3NvbnNbMF0sIGlkOiAnbDAnLCB0aXRsZTogJ0LDoGkgcXXDoSBo4bqhbicsIG5leHRSZXZpZXdEYXRlOiAnMjAyNi0xMS0yMCcgfSk7CiAgZC5sZXNzb25zLnB1c2goeyAuLi5kLmxlc3NvbnNbMF0sIGlkOiAnbDknLCB0aXRsZTogJ0LDoGkgdMawxqFuZyBsYWknLCBuZXh0UmV2aWV3RGF0ZTogJzIwMjYtMTItMDEnIH0pOwogIGNvbnN0IGR1ZSA9IGR1ZUxlc3NvbnMoZCwgJzIwMjYtMTEtMjMnKTsKICBhc3NlcnQuZGVlcEVxdWFsKGR1ZS5tYXAoKGwpID0+IGwuaWQpLCBbJ2wwJywgJ2wxJ10pOwogIGNvbnN0IG1zZyA9IGJ1aWxkTWVzc2FnZShkLCAnMjAyNi0xMS0yMycpOwogIGFzc2VydC5lcXVhbChtc2cuZHVlQ291bnQsIDIpOwogIGFzc2VydC5tYXRjaChtc2cuYm9keSwgL1F1w6EgaOG6oW4gMyBuZ8OgeS8pOwogIGFzc2VydC5tYXRjaChtc2cuYm9keSwgL2JvaG9hOTZ0YlwuZ2l0aHViXC5pb1wvaHNrLWh1Yi8pOwogIGNvbnN0IGVtcHR5ID0gYnVpbGRNZXNzYWdlKGVtcHR5RGF0YSgpLCAnMjAyNi0xMS0yMycpOwogIGFzc2VydC5lcXVhbChlbXB0eS5kdWVDb3VudCwgMCk7Cn0pOwoKLy8gMTMuIG50ZnkvVGVsZWdyYW0gbOG7l2kgSFRUUAphd2FpdCB0ZXN0KCcxMy4gbnRmeS9UZWxlZ3JhbTogSFRUUCBs4buXaSB0aMOsIG7DqW0gbOG7l2kgcsO1IHLDoG5nLCBIVFRQIDIwMCB0aMOsIE9LJywgYXN5bmMgKCkgPT4gewogIGNvbnN0IGZhaWxGZXRjaCA9IGFzeW5jICgpID0+ICh7IG9rOiBmYWxzZSwgc3RhdHVzOiA1MDAgfSk7CiAgYXdhaXQgYXNzZXJ0LnJlamVjdHMoKCkgPT4gc2VuZE50ZnkoeyB0b3BpYzogJ3gnIH0sICdu4buZaSBkdW5nJywgZmFpbEZldGNoKSwgLzUwMC8pOwogIGF3YWl0IGFzc2VydC5yZWplY3RzKCgpID0+IHNlbmRUZWxlZ3JhbSh7IHRva2VuOiAndCcsIGNoYXRJZDogJzEnIH0sIHsgdGl0bGU6ICd0JywgYm9keTogJ2FcblxuYicgfSwgZmFpbEZldGNoKSwgLzUwMC8pOwogIGxldCBudGZ5UmVxID0gbnVsbDsKICBjb25zdCBva0ZldGNoID0gYXN5bmMgKHVybCwgb3B0cykgPT4geyBudGZ5UmVxID0geyB1cmwsIG9wdHMgfTsgcmV0dXJuIHsgb2s6IHRydWUsIHN0YXR1czogMjAwIH07IH07CiAgYXdhaXQgc2VuZE50ZnkoeyB0b3BpYzogJ215LXRvcGljJyB9LCAnSOG7jWMgdGnhur9uZyBUcnVuZyDkvaDlpb0nLCBva0ZldGNoKTsKICBhc3NlcnQubWF0Y2gobnRmeVJlcS51cmwsIC9udGZ5XC5zaFwvbXktdG9waWMvKTsKICBhc3NlcnQub2soL15bXHgwMC1ceDdGXSokLy50ZXN0KG50ZnlSZXEub3B0cy5oZWFkZXJzLlRpdGxlKSwgJ0hlYWRlciBUaXRsZSBwaOG6o2kgQVNDSUknKTsKICBhc3NlcnQuZXF1YWwobnRmeVJlcS5vcHRzLmJvZHksICdI4buNYyB0aeG6v25nIFRydW5nIOS9oOWlvScpOwogIGxldCB0Z1JlcSA9IG51bGw7CiAgY29uc3QgdGdGZXRjaCA9IGFzeW5jICh1cmwsIG9wdHMpID0+IHsgdGdSZXEgPSB7IHVybCwgb3B0cyB9OyByZXR1cm4geyBvazogdHJ1ZSwgc3RhdHVzOiAyMDAgfTsgfTsKICBhd2FpdCBzZW5kVGVsZWdyYW0oeyB0b2tlbjogJ3RvaycsIGNoYXRJZDogJzQyJyB9LCB7IHRpdGxlOiAnVCcsIGJvZHk6ICdUXG5cbuKAoiBCw6BpX2EqYiA8eD4nIH0sIHRnRmV0Y2gpOwogIGNvbnN0IHBheWxvYWQgPSBKU09OLnBhcnNlKHRnUmVxLm9wdHMuYm9keSk7CiAgYXNzZXJ0Lm1hdGNoKHBheWxvYWQudGV4dCwgL0LDoGlfYVwqYiAmbHQ7eCZndDsvKTsKfSk7CgovLyAxNC4gR2l0SHViIEFQSSBs4buXaQphd2FpdCB0ZXN0KCcxNC4gR2l0SHViIEFQSTogNDAxLzQwOS90aW1lb3V0IHjhu60gbMO9IMSRw7puZywgc2F2ZSBs4bqleSBzaGEgdHLGsOG7m2MgUFVUJywgYXN5bmMgKCkgPT4gewogIGNvbnN0IG1rUmVzID0gKHN0YXR1cywganNvbiA9IHt9KSA9PiAoeyBvazogc3RhdHVzID49IDIwMCAmJiBzdGF0dXMgPCAzMDAsIHN0YXR1cywganNvbjogYXN5bmMgKCkgPT4ganNvbiB9KTsKICAvLyA0MDEKICBjb25zdCBzNDAxID0gbmV3IEdpdEh1YlN5bmMoeyB0b2tlbjogJ2JhZCcsIGZldGNoRm46IGFzeW5jICgpID0+IG1rUmVzKDQwMSkgfSk7CiAgYXdhaXQgYXNzZXJ0LnJlamVjdHMoKCkgPT4gczQwMS5mZXRjaFJlbW90ZSgpLCAoZSkgPT4gZSBpbnN0YW5jZW9mIEdpdEh1YkVycm9yICYmIGUuc3RhdHVzID09PSA0MDEpOwogIC8vIDQwOSDhu58gUFVUIMSR4bqndSAtPiBHRVQgbOG6oWkgc2hhIC0+IFBVVCBs4bqhaSB0aMOgbmggY8O0bmcKICBsZXQgcHV0Q291bnQgPSAwOwogIGNvbnN0IHM0MDkgPSBuZXcgR2l0SHViU3luYyh7CiAgICB0b2tlbjogJ29rJywKICAgIGZldGNoRm46IGFzeW5jICh1cmwsIG9wdHMpID0+IHsKICAgICAgaWYgKG9wdHMgJiYgb3B0cy5tZXRob2QgPT09ICdQVVQnKSB7CiAgICAgICAgcHV0Q291bnQrKzsKICAgICAgICBpZiAocHV0Q291bnQgPT09IDEpIHJldHVybiBta1Jlcyg0MDkpOwogICAgICAgIHJldHVybiBta1JlcygyMDAsIHsgY29udGVudDogeyBzaGE6ICduZXdzaGEnIH0sIGNvbW1pdDogeyBzaGE6ICdjMScgfSB9KTsKICAgICAgfQogICAgICByZXR1cm4gbWtSZXMoMjAwLCB7IGNvbnRlbnQ6IGVuY29kZUJhc2U2NFV0ZjgoJ3sidmVyc2lvbiI6MSwibGVzc29ucyI6W119JyksIHNoYTogJ3NoYTEnIH0pOwogICAgfSwKICB9KTsKICBjb25zdCBzYXZlZCA9IGF3YWl0IHM0MDkuc2F2ZShiYXNlRGF0YSgpKTsKICBhc3NlcnQuZXF1YWwocHV0Q291bnQsIDIpOwogIGFzc2VydC5lcXVhbChzYXZlZC5zaGEsICduZXdzaGEnKTsKICAvLyBUaW1lb3V0CiAgY29uc3Qgc1RpbWVvdXQgPSBuZXcgR2l0SHViU3luYyh7CiAgICB0b2tlbjogJ29rJywgdGltZW91dE1zOiAzMCwKICAgIGZldGNoRm46ICh1cmwsIG9wdHMpID0+IG5ldyBQcm9taXNlKChfLCByZWplY3QpID0+IHsKICAgICAgb3B0cy5zaWduYWwuYWRkRXZlbnRMaXN0ZW5lcignYWJvcnQnLCAoKSA9PiB7IGNvbnN0IGUgPSBuZXcgRXJyb3IoJ2Fib3J0ZWQnKTsgZS5uYW1lID0gJ0Fib3J0RXJyb3InOyByZWplY3QoZSk7IH0pOwogICAgfSksCiAgfSk7CiAgYXdhaXQgYXNzZXJ0LnJlamVjdHMoKCkgPT4gc1RpbWVvdXQudGVzdENvbm5lY3Rpb24oKSwgL3RpbWVvdXQvaSk7Cn0pOwoKLy8gROG7ryBsaeG7h3UgbeG6q3UgKyBtYW5pZmVzdCBo4bujcCBs4buHCmF3YWl0IHRlc3QoJzE1LiBkYXRhL3Byb2dyZXNzLmpzb24gdsOgIG1hbmlmZXN0Lmpzb24gaOG7o3AgbOG7hywgYsOgaSBt4bqrdSBjw7MgYsOgaSBow7RtIG5heSArIHF1w6EgaOG6oW4nLCBhc3luYyAoKSA9PiB7CiAgY29uc3Qgcm9vdCA9IG5ldyBVUkwoJy4uJywgaW1wb3J0Lm1ldGEudXJsKTsKICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShhd2FpdCByZWFkRmlsZShuZXcgVVJMKCdkYXRhL3Byb2dyZXNzLmpzb24nLCByb290KSwgJ3V0ZjgnKSk7CiAgY29uc3QgdiA9IHZhbGlkYXRlRGF0YShkYXRhKTsKICBhc3NlcnQuZXF1YWwodi5vaywgdHJ1ZSwgdi5lcnJvcik7CiAgY29uc3QgdG9kYXkgPSB0b2RheUpTVCgpOwogIGNvbnN0IGR1ZSA9IGR1ZUxlc3NvbnMoZGF0YSwgdG9kYXkpOwogIGFzc2VydC5vayhkdWUubGVuZ3RoID49IDIsICdj4bqnbiDDrXQgbmjhuqV0IDIgYsOgaSDEkeG6v24gaOG6oW4gdHJvbmcgZOG7ryBsaeG7h3UgbeG6q3UnKTsKICBhc3NlcnQub2soZHVlLnNvbWUoKGwpID0+IGwubmV4dFJldmlld0RhdGUgPCB0b2RheSksICdj4bqnbiAxIGLDoGkgcXXDoSBo4bqhbicpOwogIGNvbnN0IG1hbmlmZXN0ID0gSlNPTi5wYXJzZShhd2FpdCByZWFkRmlsZShuZXcgVVJMKCdtYW5pZmVzdC5qc29uJywgcm9vdCksICd1dGY4JykpOwogIGFzc2VydC5lcXVhbChtYW5pZmVzdC5uYW1lLCAnSFNLIEh1YicpOwogIGFzc2VydC5lcXVhbChtYW5pZmVzdC5zdGFydF91cmwsICcuLycpOwogIGFzc2VydC5lcXVhbChtYW5pZmVzdC5kaXNwbGF5LCAnc3RhbmRhbG9uZScpOwp9KTsKCi8vIDE2LiByZW1pbmRlck1vZGU6IHPDoW5nL3Thu5FpL2PhuqMgaGFpL3Thuq90ICsgY+G7rWEgc+G7lSDCsTIgZ2nhu50gY2jhu5FuZyB0cuG7hSBjcm9uICsgRk9SQ0VfU0VORCBi4buPIHF1YQphd2FpdCB0ZXN0KCcxNi4gcmVtaW5kZXJNb2RlOiBs4buNYyBraHVuZyBnaeG7nSDEkcO6bmcgbeG7jWkgY2jhur8gxJHhu5ksIHRy4buFIGNyb24gdHJvbmcgwrEyaCB24bqrbiBn4butaScsICgpID0+IHsKICAvLyBtb3JuaW5nICht4buRYyA3KTogNSw3LDkgZ+G7rWk7IDQsMTAsMTkga2jDtG5nCiAgZm9yIChjb25zdCBoIG9mIFs1LCA3LCA5XSkgYXNzZXJ0LmVxdWFsKHNob3VsZFNlbmROb3coJ21vcm5pbmcnLCBoKSwgdHJ1ZSwgYG1vcm5pbmcgJHtofWhgKTsKICBmb3IgKGNvbnN0IGggb2YgWzQsIDEwLCAxMiwgMTldKSBhc3NlcnQuZXF1YWwoc2hvdWxkU2VuZE5vdygnbW9ybmluZycsIGgpLCBmYWxzZSwgYG1vcm5pbmcgJHtofWhgKTsKICAvLyBldmVuaW5nICht4buRYyAxOSk6IDE3LDE5LDIxIGfhu61pOyAxNiwyMiw3IGtow7RuZwogIGZvciAoY29uc3QgaCBvZiBbMTcsIDE5LCAyMV0pIGFzc2VydC5lcXVhbChzaG91bGRTZW5kTm93KCdldmVuaW5nJywgaCksIHRydWUsIGBldmVuaW5nICR7aH1oYCk7CiAgZm9yIChjb25zdCBoIG9mIFsxNiwgMjIsIDddKSBhc3NlcnQuZXF1YWwoc2hvdWxkU2VuZE5vdygnZXZlbmluZycsIGgpLCBmYWxzZSwgYGV2ZW5pbmcgJHtofWhgKTsKICAvLyBib3RoCiAgYXNzZXJ0LmVxdWFsKHNob3VsZFNlbmROb3coJ2JvdGgnLCA3KSwgdHJ1ZSk7CiAgYXNzZXJ0LmVxdWFsKHNob3VsZFNlbmROb3coJ2JvdGgnLCAxOSksIHRydWUpOwogIGFzc2VydC5lcXVhbChzaG91bGRTZW5kTm93KCdib3RoJywgMTIpLCBmYWxzZSk7CiAgLy8gb2ZmOiBraMO0bmcgYmFvIGdp4budLCB0cuG7qyBmb3JjZQogIGFzc2VydC5lcXVhbChzaG91bGRTZW5kTm93KCdvZmYnLCA3KSwgZmFsc2UpOwogIGFzc2VydC5lcXVhbChzaG91bGRTZW5kTm93KCdvZmYnLCAxOSksIGZhbHNlKTsKICBhc3NlcnQuZXF1YWwoc2hvdWxkU2VuZE5vdygnb2ZmJywgMTIsIHRydWUpLCB0cnVlKTsKICBhc3NlcnQuZXF1YWwoc2hvdWxkU2VuZE5vdygnbW9ybmluZycsIDE5LCB0cnVlKSwgdHJ1ZSk7CiAgLy8gbW9kZSBs4bqhIC0+IG3hurdjIMSR4buLbmggbW9ybmluZzsgZ2nhu50gSlNUIHThu6sgRGF0ZSBVVEM6IDIyOjMwIFVUQyA9IDA3OjMwIEpTVAogIGFzc2VydC5lcXVhbChjdXJyZW50SG91ckpTVChuZXcgRGF0ZSgnMjAyNi0xMS0yMlQyMjozMDowMFonKSksIDcpOwogIGFzc2VydC5lcXVhbChzaG91bGRTZW5kTm93KCd4eHgnLCBuZXcgRGF0ZSgnMjAyNi0xMS0yMlQyMjozMDowMFonKSksIHRydWUpOwogIGFzc2VydC5lcXVhbChub3JtYWxpemVSZW1pbmRlck1vZGUoJ2V2ZW5pbmcnKSwgJ2V2ZW5pbmcnKTsKICBhc3NlcnQuZXF1YWwobm9ybWFsaXplUmVtaW5kZXJNb2RlKCd4eXonKSwgJ21vcm5pbmcnKTsKICAvLyB2YWxpZGF0ZURhdGEgZ2nhu68gcmVtaW5kZXJNb2RlIGjhu6NwIGzhu4cgdsOgIGNodeG6qW4gaG/DoSBtb2RlIHNhaQogIGNvbnN0IG9rTW9kZSA9IGJhc2VEYXRhKCk7IG9rTW9kZS5zZXR0aW5ncyA9IHsgcmVtaW5kZXJNb2RlOiAnYm90aCcgfTsKICBhc3NlcnQuZXF1YWwodmFsaWRhdGVEYXRhKG9rTW9kZSkuZGF0YS5zZXR0aW5ncy5yZW1pbmRlck1vZGUsICdib3RoJyk7CiAgY29uc3QgYmFkTW9kZSA9IGJhc2VEYXRhKCk7IGJhZE1vZGUuc2V0dGluZ3MgPSB7IHJlbWluZGVyTW9kZTogJ25pZ2h0JyB9OwogIGFzc2VydC5lcXVhbCh2YWxpZGF0ZURhdGEoYmFkTW9kZSkuZGF0YS5zZXR0aW5ncy5yZW1pbmRlck1vZGUsICdtb3JuaW5nJyk7Cn0pOwoKLy8gMTcuIGNhdGFsb2cuanNvbiB0aOG6rXQgKyBow6BtIGThu7FuZyBkYW5oIG3hu6VjCmF3YWl0IHRlc3QoJzE3LiBjYXRhbG9nLmpzb246IMSR4bunIDIgbmd14buTbiwgc2NoZW1hIMSRw7puZywgSUQga2jDtG5nIHRyw7luZywgVVJMIGRlZXAtbGluayDEkcO6bmcnLCBhc3luYyAoKSA9PiB7CiAgY29uc3Qgcm9vdCA9IG5ldyBVUkwoJy4uJywgaW1wb3J0Lm1ldGEudXJsKTsKICBjb25zdCBjYXRhbG9nID0gSlNPTi5wYXJzZShhd2FpdCByZWFkRmlsZShuZXcgVVJMKCdkYXRhL2NhdGFsb2cuanNvbicsIHJvb3QpLCAndXRmOCcpKTsKICBhc3NlcnQub2soY2F0YWxvZy5jb3VudHNbJ2hhemktdmlldCddID49IDkwLCBgaGF6aS12aWV0IGNo4buJIGPDsyAke2NhdGFsb2cuY291bnRzWydoYXppLXZpZXQnXX1gKTsKICBhc3NlcnQub2soY2F0YWxvZy5jb3VudHNbJ2hzazMuMCddID49IDMwLCBgaHNrMy4wIGNo4buJIGPDsyAke2NhdGFsb2cuY291bnRzWydoc2szLjAnXX1gKTsKICBhc3NlcnQuZXF1YWwoY2F0YWxvZy5lbnRyaWVzLmxlbmd0aCwgY2F0YWxvZy5jb3VudHMudG90YWwpOwogIGFzc2VydC5lcXVhbChuZXcgU2V0KGNhdGFsb2cuZW50cmllcy5tYXAoKGUpID0+IGUuaWQpKS5zaXplLCBjYXRhbG9nLmVudHJpZXMubGVuZ3RoKTsKICBmb3IgKGNvbnN0IGUgb2YgY2F0YWxvZy5lbnRyaWVzKSB7CiAgICBhc3NlcnQub2soZS5pZCAmJiBlLmFwcCAmJiBlLmdyb3VwICYmIGUudGl0bGUgJiYgZS51cmwsIGB0aGnhur91IHRyxrDhu51uZzogJHtKU09OLnN0cmluZ2lmeShlKX1gKTsKICAgIGlmIChlLmFwcCA9PT0gJ2hhemktdmlldCcpIGFzc2VydC5tYXRjaChlLnVybCwgL15odHRwczpcL1wvYm9ob2E5NnRiXC5naXRodWJcLmlvXC9oYXppLXZpZXRcL3ZvY2FidWxhcnlcLmh0bWxcP3dvcmQ9Lyk7CiAgICBlbHNlIGFzc2VydC5tYXRjaChlLnVybCwgL15odHRwczpcL1wvYm9ob2E5NnRiXC5naXRodWJcLmlvXC9IU0szXC4wXC8jXC9sZXNzb25cLy8pOwogIH0KICAvLyBIw6BtIGThu7FuZyB04burIGThu68gbGnhu4d1IHRow7QgbeG6q3UKICBjb25zdCBoYXppID0gYnVpbGRIYXppRW50cmllcyh7IGxlc3NvbnM6IFt7IGlkOiAnaGFuemlpLWwxLWIwMScsIGxldmVsOiAxLCBudW1iZXI6IDEsIHRpdGxlOiAnTMOgbSBxdWVuJywgd29yZElkczogWyd3MSddIH1dIH0pOwogIGFzc2VydC5lcXVhbChoYXppWzBdLnVybCwgJ2h0dHBzOi8vYm9ob2E5NnRiLmdpdGh1Yi5pby9oYXppLXZpZXQvdm9jYWJ1bGFyeS5odG1sP3dvcmQ9dzEnKTsKICBhc3NlcnQuZXF1YWwoaGF6aVswXS5ncm91cCwgJ0hTSyAxJyk7CiAgY29uc3QgaHNrID0gYnVpbGRIc2szMEVudHJpZXMoeyBsZXNzb25zOiBbeyBpZDogJ2hzazEtbDAxJywgbGV2ZWw6ICdIU0sgMScsIGxlc3Nvbk51bWJlcjogMSwgdGl0bGVaaDogJ+S9oOWlvScsIHRpdGxlVmk6ICdYaW4gY2jDoG8nIH1dIH0pOwogIGFzc2VydC5lcXVhbChoc2tbMF0udXJsLCAnaHR0cHM6Ly9ib2hvYTk2dGIuZ2l0aHViLmlvL0hTSzMuMC8jL2xlc3Nvbi9oc2sxLWwwMScpOwogIC8vIEzhu41jIGRhbmggbeG7pWMKICBhc3NlcnQuZXF1YWwoZmlsdGVyQ2F0YWxvZyhjYXRhbG9nLmVudHJpZXMsIHsgYXBwOiAnaHNrMy4wJyB9KS5sZW5ndGgsIGNhdGFsb2cuY291bnRzWydoc2szLjAnXSk7CiAgYXNzZXJ0Lm9rKGZpbHRlckNhdGFsb2coY2F0YWxvZy5lbnRyaWVzLCB7IHF1ZXJ5OiAn5L2g5aW9JyB9KS5sZW5ndGggPj0gMSk7CiAgYXNzZXJ0LmVxdWFsKGZpbHRlckNhdGFsb2coY2F0YWxvZy5lbnRyaWVzLCB7IGFwcDogJ2hhemktdmlldCcsIHF1ZXJ5OiAna2jDtG5nLWPDsy1iw6BpLW7DoHkteHl6JyB9KS5sZW5ndGgsIDApOwp9KTsKCi8vIDE4LiBDaOG7kW5nIHRyw7luZyBiw6BpCmF3YWl0IHRlc3QoJzE4LiBmaW5kRHVwbGljYXRlTGVzc29uOiB0csO5bmcgVVJMIGhv4bq3YyBjw7luZyBhcHArdMOqbiB0aMOsIGPhuqNuaCBiw6FvLCBraMOhYyB0aMOsIGtow7RuZycsICgpID0+IHsKICBjb25zdCBsZXNzb25zID0gYmFzZURhdGEoKS5sZXNzb25zOwogIGNvbnN0IGJ5VXJsID0gZmluZER1cGxpY2F0ZUxlc3NvbihsZXNzb25zLCB7IGFwcDogJ2hzazMuMCcsIHVybDogJ2h0dHBzOi8vYm9ob2E5NnRiLmdpdGh1Yi5pby9oYXppLXZpZXQvJywgdGl0bGU6ICdLaMOhYyBo4bqzbicgfSk7CiAgYXNzZXJ0LmVxdWFsKGJ5VXJsLmlkLCAnbDEnKTsKICBjb25zdCBieVRpdGxlID0gZmluZER1cGxpY2F0ZUxlc3NvbihsZXNzb25zLCB7IGFwcDogJ2hhemktdmlldCcsIHVybDogJ2h0dHBzOi8vZXhhbXBsZS5jb20veCcsIHRpdGxlOiAnICBiw6BpIDEg5L2g5aW9ICcgfSk7CiAgYXNzZXJ0LmVxdWFsKGJ5VGl0bGUuaWQsICdsMScpOwogIGNvbnN0IGRpZmZBcHAgPSBmaW5kRHVwbGljYXRlTGVzc29uKGxlc3NvbnMsIHsgYXBwOiAnaHNrMy4wJywgdXJsOiAnaHR0cHM6Ly9leGFtcGxlLmNvbS95JywgdGl0bGU6ICdCw6BpIDEg5L2g5aW9JyB9KTsKICBhc3NlcnQuZXF1YWwoZGlmZkFwcCwgbnVsbCk7CiAgY29uc3Qgbm9uZSA9IGZpbmREdXBsaWNhdGVMZXNzb24obGVzc29ucywgeyBhcHA6ICdoYXppLXZpZXQnLCB1cmw6ICdodHRwczovL2V4YW1wbGUuY29tL3onLCB0aXRsZTogJ0LDoGkgbeG7m2kgdGluaCcgfSk7CiAgYXNzZXJ0LmVxdWFsKG5vbmUsIG51bGwpOwp9KTsKCmNvbnNvbGUubG9nKGBcbj09PT09IEvhur5UIFFV4bqiOiAke3Bhc3NlZH0gxJHhuqF0LCAke2ZhaWx1cmVzLmxlbmd0aH0gbOG7l2kgPT09PT1gKTsKaWYgKGZhaWx1cmVzLmxlbmd0aCkgeyBmYWlsdXJlcy5mb3JFYWNoKChmKSA9PiBjb25zb2xlLmxvZyhgLSAke2Z9YCkpOyBwcm9jZXNzLmV4aXQoMSk7IH0K
+// run-tests.mjs — Bộ test tự động, chỉ dùng node:assert (không package ngoài).
+// Chạy: node tests/run-tests.mjs
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import {
+  SRS_INTERVALS, todayJST, addDays, diffDays, isValidDateStr,
+  markRemembered, markForgotten, applyStudyDay, validateData, mergeData,
+  generateId, dueLessons, emptyData, filterCatalog, findDuplicateLesson,
+  normalizeReminderMode,
+} from '../js/srs.js';
+import { encodeBase64Utf8, decodeBase64Utf8, GitHubSync, GitHubError } from '../js/github-sync.js';
+import { buildMessage, sendNtfy, sendTelegram, shouldSendNow, currentHourJST } from '../scripts/remind.mjs';
+import { buildHaziEntries, buildHsk30Entries } from '../scripts/sync-catalog.mjs';
+
+let passed = 0;
+const failures = [];
+async function test(name, fn) {
+  try { await fn(); passed++; console.log(`✅ ${name}`); }
+  catch (err) { failures.push(`${name}: ${err.message}`); console.log(`❌ ${name}: ${err.message}`); }
+}
+
+function baseData() {
+  return {
+    version: 1,
+    settings: { owner: 'bohoa96tb', repo: 'hsk-hub', branch: 'main' },
+    stats: { currentStreak: 0, longestStreak: 0, totalReviews: 0, lastStudyDate: null },
+    lessons: [{
+      id: 'l1', title: 'Bài 1 你好', app: 'hazi-viet', url: 'https://bohoa96tb.github.io/hazi-viet/',
+      note: '', stage: 0, nextReviewDate: '2026-11-23', reviewHistory: [],
+      createdAt: '2026-11-20T00:00:00.000Z', updatedAt: '2026-11-20T00:00:00.000Z',
+    }],
+  };
+}
+
+// 1. JST
+await test('1. Ngày JST: nửa đêm UTC vẫn là ngày hôm trước ở Tokyo khi chưa qua 00:00 JST', () => {
+  // 2026-11-22T16:30:00Z = 2026-11-23 01:30 JST
+  assert.equal(todayJST(new Date('2026-11-22T16:30:00Z')), '2026-11-23');
+  // 2026-11-22T14:30:00Z = 2026-11-22 23:30 JST
+  assert.equal(todayJST(new Date('2026-11-22T14:30:00Z')), '2026-11-22');
+  assert.equal(addDays('2026-11-23', 1), '2026-11-24');
+  assert.equal(addDays('2026-12-31', 1), '2027-01-01');
+  assert.equal(addDays('2024-02-28', 1), '2024-02-29'); // năm nhuận
+  assert.equal(diffDays('2026-11-22', '2026-11-23'), 1);
+  assert.equal(isValidDateStr('2026-02-30'), false);
+  assert.equal(isValidDateStr('2026-11-23'), true);
+});
+
+// 2+3. SRS mọi stage + không vượt giới hạn
+await test('2-3. SRS: mọi stage hẹn đúng khoảng, stage kẹt ở mốc cuối 60 ngày', () => {
+  let d = baseData();
+  const expected = [3, 7, 14, 30, 60, 60];
+  for (let i = 0; i < expected.length; i++) {
+    d = markRemembered(d, 'l1', '2026-11-23');
+    assert.equal(d.lessons[0].nextReviewDate, addDays('2026-11-23', expected[i]), `lần ${i + 1}`);
+    assert.ok(d.lessons[0].stage <= SRS_INTERVALS.length - 1);
+  }
+  assert.equal(d.lessons[0].stage, SRS_INTERVALS.length - 1);
+});
+
+// 4. Nhớ nhiều bài cùng ngày: streak chỉ +1, history không trùng
+await test('4. Học nhiều bài cùng ngày: streak tính theo ngày duy nhất, reviewHistory không trùng', () => {
+  let d = baseData();
+  d.lessons.push({ ...d.lessons[0], id: 'l2', title: 'Bài 2' });
+  d = markRemembered(d, 'l1', '2026-11-23');
+  d = markRemembered(d, 'l2', '2026-11-23');
+  d = markRemembered(d, 'l1', '2026-11-23');
+  assert.equal(d.stats.currentStreak, 1);
+  assert.equal(d.stats.totalReviews, 3);
+  assert.deepEqual(d.lessons[0].reviewHistory, ['2026-11-23']);
+});
+
+// 5. Quên
+await test('5. Quên: stage về 0, ôn lại ngày mai, vẫn tính ngày học', () => {
+  let d = baseData();
+  d.lessons[0].stage = 3;
+  d = markForgotten(d, 'l1', '2026-11-23');
+  assert.equal(d.lessons[0].stage, 0);
+  assert.equal(d.lessons[0].nextReviewDate, '2026-11-24');
+  assert.equal(d.stats.lastStudyDate, '2026-11-23');
+  assert.equal(d.stats.currentStreak, 1);
+});
+
+// 6+7. Streak
+await test('6-7. Streak: cùng ngày giữ nguyên, liên tiếp +1, bỏ ngày reset 1, longest không giảm', () => {
+  let s = { currentStreak: 0, longestStreak: 0, totalReviews: 0, lastStudyDate: null };
+  s = applyStudyDay(s, '2026-11-20'); assert.equal(s.currentStreak, 1);
+  s = applyStudyDay(s, '2026-11-20'); assert.equal(s.currentStreak, 1);
+  s = applyStudyDay(s, '2026-11-21'); assert.equal(s.currentStreak, 2);
+  s = applyStudyDay(s, '2026-11-23'); assert.equal(s.currentStreak, 1); // bỏ 22
+  assert.equal(s.longestStreak, 2);
+  s = applyStudyDay(s, '2026-11-24'); assert.equal(s.currentStreak, 2);
+  assert.equal(s.longestStreak, 2);
+});
+
+// 8. ID không trùng
+await test('8. generateId: 1000 ID không trùng', () => {
+  const ids = new Set(Array.from({ length: 1000 }, () => generateId()));
+  assert.equal(ids.size, 1000);
+});
+
+// 9. Import sai bị từ chối
+await test('9. Validate: JSON sai/ngày sai/id trùng bị từ chối, dữ liệu hợp lệ được nhận', () => {
+  assert.equal(validateData(null).ok, false);
+  assert.equal(validateData({ lessons: 'x' }).ok, false);
+  const badDate = baseData(); badDate.lessons[0].nextReviewDate = '23/11/2026';
+  assert.equal(validateData(badDate).ok, false);
+  const dup = baseData(); dup.lessons.push({ ...dup.lessons[0] });
+  assert.equal(validateData(dup).ok, false);
+  const dupHist = baseData(); dupHist.lessons[0].reviewHistory = ['2026-11-20', '2026-11-20'];
+  assert.equal(validateData(dupHist).ok, false);
+  assert.equal(validateData(baseData()).ok, true);
+});
+
+// 10. Merge không mất bài
+await test('10. Merge theo ID: không mất bài ở cả hai phía, gộp reviewHistory', () => {
+  const a = baseData();
+  const b = baseData();
+  b.lessons = [{ ...b.lessons[0], id: 'l2', title: 'Chỉ có ở B' }];
+  a.lessons[0].reviewHistory = ['2026-11-20'];
+  const a2 = baseData(); a2.lessons[0].reviewHistory = ['2026-11-21'];
+  a2.lessons[0].updatedAt = '2026-11-21T00:00:00.000Z';
+  const merged = mergeData(a, b);
+  assert.deepEqual(merged.lessons.map((l) => l.id).sort(), ['l1', 'l2']);
+  const mergedHist = mergeData(a, a2);
+  assert.deepEqual(mergedHist.lessons[0].reviewHistory, ['2026-11-20', '2026-11-21']);
+});
+
+// 11. Unicode Base64
+await test('11. Base64 UTF-8: tiếng Việt + chữ Hán khứ hồi nguyên vẹn', () => {
+  const s = 'Học tiếng Trung - 你好世界';
+  assert.equal(decodeBase64Utf8(encodeBase64Utf8(s)), s);
+  const long = '汉字 học '.repeat(5000);
+  assert.equal(decodeBase64Utf8(encodeBase64Utf8(long)), long);
+});
+
+// 12. Reminder
+await test('12. Reminder: bài hôm nay + quá hạn lên đầu, không có bài, FORCE_SEND', () => {
+  const d = baseData();
+  d.lessons.push({ ...d.lessons[0], id: 'l0', title: 'Bài quá hạn', nextReviewDate: '2026-11-20' });
+  d.lessons.push({ ...d.lessons[0], id: 'l9', title: 'Bài tương lai', nextReviewDate: '2026-12-01' });
+  const due = dueLessons(d, '2026-11-23');
+  assert.deepEqual(due.map((l) => l.id), ['l0', 'l1']);
+  const msg = buildMessage(d, '2026-11-23');
+  assert.equal(msg.dueCount, 2);
+  assert.match(msg.body, /Quá hạn 3 ngày/);
+  assert.match(msg.body, /bohoa96tb\.github\.io\/hsk-hub/);
+  const empty = buildMessage(emptyData(), '2026-11-23');
+  assert.equal(empty.dueCount, 0);
+});
+
+// 13. ntfy/Telegram lỗi HTTP
+await test('13. ntfy/Telegram: HTTP lỗi thì ném lỗi rõ ràng, HTTP 200 thì OK', async () => {
+  const failFetch = async () => ({ ok: false, status: 500 });
+  await assert.rejects(() => sendNtfy({ topic: 'x' }, 'nội dung', failFetch), /500/);
+  await assert.rejects(() => sendTelegram({ token: 't', chatId: '1' }, { title: 't', body: 'a\n\nb' }, failFetch), /500/);
+  let ntfyReq = null;
+  const okFetch = async (url, opts) => { ntfyReq = { url, opts }; return { ok: true, status: 200 }; };
+  await sendNtfy({ topic: 'my-topic' }, 'Học tiếng Trung 你好', okFetch);
+  assert.match(ntfyReq.url, /ntfy\.sh\/my-topic/);
+  assert.ok(/^[\x00-\x7F]*$/.test(ntfyReq.opts.headers.Title), 'Header Title phải ASCII');
+  assert.equal(ntfyReq.opts.body, 'Học tiếng Trung 你好');
+  let tgReq = null;
+  const tgFetch = async (url, opts) => { tgReq = { url, opts }; return { ok: true, status: 200 }; };
+  await sendTelegram({ token: 'tok', chatId: '42' }, { title: 'T', body: 'T\n\n• Bài_a*b <x>' }, tgFetch);
+  const payload = JSON.parse(tgReq.opts.body);
+  assert.match(payload.text, /Bài_a\*b &lt;x&gt;/);
+});
+
+// 14. GitHub API lỗi
+await test('14. GitHub API: 401/409/timeout xử lý đúng, save lấy sha trước PUT', async () => {
+  const mkRes = (status, json = {}) => ({ ok: status >= 200 && status < 300, status, json: async () => json });
+  // 401
+  const s401 = new GitHubSync({ token: 'bad', fetchFn: async () => mkRes(401) });
+  await assert.rejects(() => s401.fetchRemote(), (e) => e instanceof GitHubError && e.status === 401);
+  // 409 ở PUT đầu -> GET lại sha -> PUT lại thành công
+  let putCount = 0;
+  const s409 = new GitHubSync({
+    token: 'ok',
+    fetchFn: async (url, opts) => {
+      if (opts && opts.method === 'PUT') {
+        putCount++;
+        if (putCount === 1) return mkRes(409);
+        return mkRes(200, { content: { sha: 'newsha' }, commit: { sha: 'c1' } });
+      }
+      return mkRes(200, { content: encodeBase64Utf8('{"version":1,"lessons":[]}'), sha: 'sha1' });
+    },
+  });
+  const saved = await s409.save(baseData());
+  assert.equal(putCount, 2);
+  assert.equal(saved.sha, 'newsha');
+  // Timeout
+  const sTimeout = new GitHubSync({
+    token: 'ok', timeoutMs: 30,
+    fetchFn: (url, opts) => new Promise((_, reject) => {
+      opts.signal.addEventListener('abort', () => { const e = new Error('aborted'); e.name = 'AbortError'; reject(e); });
+    }),
+  });
+  await assert.rejects(() => sTimeout.testConnection(), /timeout/i);
+});
+
+// Dữ liệu mẫu + manifest hợp lệ
+await test('15. data/progress.json và manifest.json hợp lệ, bài mẫu có bài hôm nay + quá hạn', async () => {
+  const root = new URL('..', import.meta.url);
+  const data = JSON.parse(await readFile(new URL('data/progress.json', root), 'utf8'));
+  const v = validateData(data);
+  assert.equal(v.ok, true, v.error);
+  const today = todayJST();
+  const due = dueLessons(data, today);
+  assert.ok(due.length >= 2, 'cần ít nhất 2 bài đến hạn trong dữ liệu mẫu');
+  assert.ok(due.some((l) => l.nextReviewDate < today), 'cần 1 bài quá hạn');
+  const manifest = JSON.parse(await readFile(new URL('manifest.json', root), 'utf8'));
+  assert.equal(manifest.name, 'HSK Hub');
+  assert.equal(manifest.start_url, './');
+  assert.equal(manifest.display, 'standalone');
+});
+
+// 16. reminderMode: sáng/tối/cả hai/tắt + cửa sổ ±2 giờ chống trễ cron + FORCE_SEND bỏ qua
+await test('16. reminderMode: lọc khung giờ đúng mọi chế độ, trễ cron trong ±2h vẫn gửi', () => {
+  // morning (mốc 7): 5,7,9 gửi; 4,10,19 không
+  for (const h of [5, 7, 9]) assert.equal(shouldSendNow('morning', h), true, `morning ${h}h`);
+  for (const h of [4, 10, 12, 19]) assert.equal(shouldSendNow('morning', h), false, `morning ${h}h`);
+  // evening (mốc 19): 17,19,21 gửi; 16,22,7 không
+  for (const h of [17, 19, 21]) assert.equal(shouldSendNow('evening', h), true, `evening ${h}h`);
+  for (const h of [16, 22, 7]) assert.equal(shouldSendNow('evening', h), false, `evening ${h}h`);
+  // both
+  assert.equal(shouldSendNow('both', 7), true);
+  assert.equal(shouldSendNow('both', 19), true);
+  assert.equal(shouldSendNow('both', 12), false);
+  // off: không bao giờ, trừ force
+  assert.equal(shouldSendNow('off', 7), false);
+  assert.equal(shouldSendNow('off', 19), false);
+  assert.equal(shouldSendNow('off', 12, true), true);
+  assert.equal(shouldSendNow('morning', 19, true), true);
+  // mode lạ -> mặc định morning; giờ JST từ Date UTC: 22:30 UTC = 07:30 JST
+  assert.equal(currentHourJST(new Date('2026-11-22T22:30:00Z')), 7);
+  assert.equal(shouldSendNow('xxx', new Date('2026-11-22T22:30:00Z')), true);
+  assert.equal(normalizeReminderMode('evening'), 'evening');
+  assert.equal(normalizeReminderMode('xyz'), 'morning');
+  // validateData giữ reminderMode hợp lệ và chuẩn hoá mode sai
+  const okMode = baseData(); okMode.settings = { reminderMode: 'both' };
+  assert.equal(validateData(okMode).data.settings.reminderMode, 'both');
+  const badMode = baseData(); badMode.settings = { reminderMode: 'night' };
+  assert.equal(validateData(badMode).data.settings.reminderMode, 'morning');
+});
+
+// 17. catalog.json thật + hàm dựng danh mục
+await test('17. catalog.json: đủ 2 nguồn, schema đúng, ID không trùng, URL deep-link đúng', async () => {
+  const root = new URL('..', import.meta.url);
+  const catalog = JSON.parse(await readFile(new URL('data/catalog.json', root), 'utf8'));
+  assert.ok(catalog.counts['hazi-viet'] >= 90, `hazi-viet chỉ có ${catalog.counts['hazi-viet']}`);
+  assert.ok(catalog.counts['hsk3.0'] >= 30, `hsk3.0 chỉ có ${catalog.counts['hsk3.0']}`);
+  assert.equal(catalog.entries.length, catalog.counts.total);
+  assert.equal(new Set(catalog.entries.map((e) => e.id)).size, catalog.entries.length);
+  for (const e of catalog.entries) {
+    assert.ok(e.id && e.app && e.group && e.title && e.url, `thiếu trường: ${JSON.stringify(e)}`);
+    if (e.app === 'hazi-viet') assert.match(e.url, /^https:\/\/bohoa96tb\.github\.io\/hazi-viet\/vocabulary\.html\?word=/);
+    else assert.match(e.url, /^https:\/\/bohoa96tb\.github\.io\/HSK3\.0\/#\/lesson\//);
+  }
+  // Hàm dựng từ dữ liệu thô mẫu
+  const hazi = buildHaziEntries({ lessons: [{ id: 'hanzii-l1-b01', level: 1, number: 1, title: 'Làm quen', wordIds: ['w1'] }] });
+  assert.equal(hazi[0].url, 'https://bohoa96tb.github.io/hazi-viet/vocabulary.html?word=w1');
+  assert.equal(hazi[0].group, 'HSK 1');
+  const hsk = buildHsk30Entries({ lessons: [{ id: 'hsk1-l01', level: 'HSK 1', lessonNumber: 1, titleZh: '你好', titleVi: 'Xin chào' }] });
+  assert.equal(hsk[0].url, 'https://bohoa96tb.github.io/HSK3.0/#/lesson/hsk1-l01');
+  // Lọc danh mục
+  assert.equal(filterCatalog(catalog.entries, { app: 'hsk3.0' }).length, catalog.counts['hsk3.0']);
+  assert.ok(filterCatalog(catalog.entries, { query: '你好' }).length >= 1);
+  assert.equal(filterCatalog(catalog.entries, { app: 'hazi-viet', query: 'không-có-bài-này-xyz' }).length, 0);
+});
+
+// 18. Chống trùng bài
+await test('18. findDuplicateLesson: trùng URL hoặc cùng app+tên thì cảnh báo, khác thì không', () => {
+  const lessons = baseData().lessons;
+  const byUrl = findDuplicateLesson(lessons, { app: 'hsk3.0', url: 'https://bohoa96tb.github.io/hazi-viet/', title: 'Khác hẳn' });
+  assert.equal(byUrl.id, 'l1');
+  const byTitle = findDuplicateLesson(lessons, { app: 'hazi-viet', url: 'https://example.com/x', title: '  bài 1 你好 ' });
+  assert.equal(byTitle.id, 'l1');
+  const diffApp = findDuplicateLesson(lessons, { app: 'hsk3.0', url: 'https://example.com/y', title: 'Bài 1 你好' });
+  assert.equal(diffApp, null);
+  const none = findDuplicateLesson(lessons, { app: 'hazi-viet', url: 'https://example.com/z', title: 'Bài mới tinh' });
+  assert.equal(none, null);
+});
+
+console.log(`\n===== KẾT QUẢ: ${passed} đạt, ${failures.length} lỗi =====`);
+if (failures.length) { failures.forEach((f) => console.log(`- ${f}`)); process.exit(1); }
