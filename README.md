@@ -1,1 +1,97 @@
-IyBIU0sgSHViIPCfk5oKCldlYiB0xKluaCAoUFdBKSB0aGVvIGTDtWkgdGnhur9uIMSR4buZIGjhu41jIHRp4bq/bmcgVHJ1bmcgSFNLIDHigJMzLjAsIMO0biB04bqtcCB0aGVvIFNSUyBgWzEsIDMsIDcsIDE0LCAzMCwgNjBdYCBuZ8OgeSAobcO6aSBnaeG7nSBgQXNpYS9Ub2t5b2ApLCDEkeG7k25nIGLhu5kgMiBjaGnhu4F1IHbhu5tpIEdpdEh1YiB2w6Agbmjhuq9jIMO0biB04buxIMSR4buZbmcgbeG7l2kgc8OhbmcgYuG6sW5nIEdpdEh1YiBBY3Rpb25zLgoKLSBUcmFuZyBsaXZlOiBodHRwczovL2JvaG9hOTZ0Yi5naXRodWIuaW8vaHNrLWh1Yi8KLSBXZWIgaOG7jWMgbGnDqm4ga+G6v3Q6IFtIYXppIFZp4buHdF0oaHR0cHM6Ly9ib2hvYTk2dGIuZ2l0aHViLmlvL2hhemktdmlldC8pIMK3IFtIU0sgMy4wXShodHRwczovL2JvaG9hOTZ0Yi5naXRodWIuaW8vSFNLMy4wLykKLSBUaHXhuqduIEhUTUwvQ1NTL0phdmFTY3JpcHQgKEVTIE1vZHVsZXMpLCBraMO0bmcgZnJhbWV3b3JrLCBraMO0bmcgYnVpbGQsIGtow7RuZyBwYWNrYWdlIG5nb8OgaS4KCiMjIDEuIELhuq10IEdpdEh1YiBQYWdlcwoKMS4gTeG7nyByZXBvIGBib2hvYTk2dGIvaHNrLWh1YmAg4oaSICoqU2V0dGluZ3Mg4oaSIFBhZ2VzKiouCjIuIE3hu6VjICoqQnVpbGQgYW5kIGRlcGxveW1lbnQg4oaSIFNvdXJjZSoqOiBjaOG7jW4gKipEZXBsb3kgZnJvbSBhIGJyYW5jaCoqLgozLiBCcmFuY2g6IGBtYWluYCwgdGjGsCBt4bulYzogYC8gKHJvb3QpYCDihpIgKipTYXZlKiouCjQuIENo4budIDHigJMyIHBow7p0LCBt4bufIGh0dHBzOi8vYm9ob2E5NnRiLmdpdGh1Yi5pby9oc2staHViLyDEkeG7gyBraeG7g20gdHJhLgoKIyMgMi4gVOG6oW8gR2l0SHViIEZpbmUtZ3JhaW5lZCBQQVQgxJHhu4MgxJHhu5NuZyBi4buZCgoxLiBHaXRIdWIg4oaSIOG6o25oIMSR4bqhaSBkaeG7h24g4oaSICoqU2V0dGluZ3Mg4oaSIERldmVsb3BlciBzZXR0aW5ncyDihpIgUGVyc29uYWwgYWNjZXNzIHRva2VucyDihpIgRmluZS1ncmFpbmVkIHRva2VucyDihpIgR2VuZXJhdGUgbmV3IHRva2VuKiouCjIuICoqUmVwb3NpdG9yeSBhY2Nlc3MqKjogY2jhu41uICoqT25seSBzZWxlY3QgcmVwb3NpdG9yaWVzKiog4oaSIGNo4buNbiDEkcO6bmcgYGhzay1odWJgLgozLiAqKlBlcm1pc3Npb25zIOKGkiBSZXBvc2l0b3J5IHBlcm1pc3Npb25zIOKGkiBDb250ZW50cyoqOiBjaOG7jW4gKipSZWFkIGFuZCB3cml0ZSoqLiBLaMO0bmcgY+G6pXAgdGjDqm0gcXV54buBbiBuw6BvIGtow6FjLgo0LiBU4bqhbyB0b2tlbiwgc2FvIGNow6lwIChjaOG7iSBoaeG7h24gMSBs4bqnbikuCjUuIE3hu58gSFNLIEh1YiDihpIgbsO6dCDimpnvuI8gKipDw6BpIMSR4bq3dCoqIOKGkiBkw6FuIHRva2VuIHbDoG8gw7QgUEFUIOKGkiAqKktp4buDbSB0cmEga+G6v3QgbuG7kWkqKiDihpIgKirEkOG7k25nIGLhu5kgbmdheSoqLgoK4pqg77iPIFRva2VuIGzGsHUgdHJvbmcgYGxvY2FsU3RvcmFnZWAgY+G7p2EgdHLDrG5oIGR1eeG7h3QgbsOgeS4gQ2jhu4kgZMO5bmcgdG9rZW4gZ2nhu5tpIGjhuqFuIG5oxrAgdHLDqm47IG7hur91IG5naGkgbmfhu50gbOG7mSB0b2tlbiwgdsOgbyBHaXRIdWIgeMOzYSB0b2tlbiBjxakgdsOgIHThuqFvIHRva2VuIG3hu5tpLgoKIyMgMy4gQ8OgaSBuaOG6r2Mgbmjhu58gcXVhIG50ZnkgKGhv4bq3YyBUZWxlZ3JhbSkKCiMjIyBDw6FjaCBBIOKAlCBudGZ5IChraHV5w6puIGTDuW5nKQoKMS4gQ8OgaSBhcHAgKipudGZ5KiogdHLDqm4gQW5kcm9pZCAoUGxheSBTdG9yZSAvIEYtRHJvaWQpIGhv4bq3YyBpUGFkLgoyLiBN4bufIGFwcCBudGZ5IOKGkiAqKisqKiDihpIgxJHEg25nIGvDvSBt4buZdCB0b3BpYyBraMOzIMSRb8OhbiwgdsOtIGThu6UgYGhzay1odWItYnVpLTdmM2s5YCAoYWkgYmnhur90IHRvcGljIGPFqW5nIMSR4buNYy9n4butaSDEkcaw4bujYyB0aMO0bmcgYsOhbywgbsOqbiDEkeG7q25nIGTDuW5nIHTDqm4gZOG7hSDEkW/DoW4pLgozLiBUcsOqbiBHaXRIdWI6IHJlcG8gYGhzay1odWJgIOKGkiAqKlNldHRpbmdzIOKGkiBTZWNyZXRzIGFuZCB2YXJpYWJsZXMg4oaSIEFjdGlvbnMg4oaSIE5ldyByZXBvc2l0b3J5IHNlY3JldCoqOgogICAtIFTDqm46IGBOVEZZX1RPUElDYCwgZ2nDoSB0cuG7izogxJHDum5nIHRvcGljIHbhu6thIHThuqFvLgogICAtIChUw7l5IGNo4buNbikgYE5URllfU0VSVkVSYCBu4bq/dSBkw7luZyBzZXJ2ZXIgbnRmeSByacOqbmc7IG3hurdjIMSR4buLbmggYGh0dHBzOi8vbnRmeS5zaGAuCgojIyMgQ8OhY2ggQiDigJQgVGVsZWdyYW0KCjEuIE5o4bqvbiBgL25ld2JvdGAgY2hvICoqQEJvdEZhdGhlcioqLCB04bqhbyBib3QgdsOgIGzhuqV5IHRva2VuLgoyLiBOaOG6r24gbeG7mXQgdGluIGLhuqV0IGvhu7MgY2hvIGJvdCBj4bunYSBi4bqhbiwgbeG7nyBgaHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdDxUT0tFTj4vZ2V0VXBkYXRlc2AgxJHhu4MgbOG6pXkgYGNoYXQuaWRgLgozLiBUaMOqbSAyIHNlY3JldDogYFRFTEVHUkFNX0JPVF9UT0tFTmAgdsOgIGBURUxFR1JBTV9DSEFUX0lEYC4KCkPDsyB0aOG7gyBjw6BpIGPhuqMgaGFpIGvDqm5oIOKAlCB0aMO0bmcgYsOhbyBz4bq9IGfhu61pIHNvbmcgc29uZy4KCiMjIyDEkOG7lWkga2h1bmcgZ2nhu50gbmjhuq9jIG5nYXkgdHLDqm4gd2ViIChWMikKClbDoG8g4pqZ77iPICoqQ8OgaSDEkeG6t3Qg4oaSIEtodW5nIGdp4budIG5o4bqtbiB0aMO0bmcgYsOhbyoqOiAqKlPDoW5nIDA3OjAwKiogLyAqKlThu5FpIDE5OjAwKiogLyAqKkPhuqMgc8OhbmcgJiB04buRaSoqIC8gKipU4bqhbSBk4burbmcqKiwgcuG7k2kgYuG6pW0gKirEkOG7k25nIGLhu5kgbmdheSoqIMSR4buDIGzGsHUgdsOgbyBgcHJvZ3Jlc3MuanNvbmAgdHLDqm4gR2l0SHViLiBHaXRIdWIgQWN0aW9ucyBjaOG6oXkgY+G6oyAyIG3hu5FjIDA3OjAwIHbDoCAxOTowMCAoZ2nhu50gTmjhuq10KSBt4buXaSBuZ8OgeSwgc2NyaXB0IHThu7EgbOG7jWMgdGhlbyBs4buxYSBjaOG7jW4gY+G7p2EgYuG6oW4gKGNo4bqlcCBuaOG6rW4gdHLhu4UgY3JvbiB0cm9uZyDCsTIgZ2nhu50pIOKAlCBraMO0bmcgY+G6p24gc+G7rWEgZmlsZSBZQU1MLgoKIyMgNC4gVGVzdCB0aMO0bmcgYsOhbyBuZ2F5CgpSZXBvIGBoc2staHViYCDihpIgdGFiICoqQWN0aW9ucyoqIOKGkiB3b3JrZmxvdyAqKkRhaWx5IEhTSyBSZW1pbmRlcioqIOKGkiAqKlJ1biB3b3JrZmxvdyoqIOKGkiBnaeG7ryBgZm9yY2Vfc2VuZCA9IHRydWVgIOKGkiAqKlJ1biB3b3JrZmxvdyoqLiBLaeG7g20gdHJhIMSRaeG7h24gdGhv4bqhaS9hcHAgbnRmeSBob+G6t2MgVGVsZWdyYW0gc2F1IHbDoGkgY2jhu6VjIGdpw6J5LgoKVGjhu60gdOG6oWkgbcOheSAoa2jDtG5nIGfhu61pIHRo4bqtdCk6CgpgYGBiYXNoCkZPUkNFX1NFTkQ9dHJ1ZSBub2RlIHNjcmlwdHMvcmVtaW5kLm1qcyAtLWRyeS1ydW4KYGBgCgojIyBDaOG7jW4gbmhhbmggYsOgaSBo4buNYyB04burIGRhbmggbeG7pWMgKFYyKQoKTsO6dCAqKisgVGjDqm0gYsOgaSBt4bubaSoqIGPDsyBt4bulYyAqKkNo4buNbiBuaGFuaCB04burIGRhbmggbeG7pWMqKjogbOG7jWMgdGhlbyBhcHAsIGfDtSB0w6xtICh0w6puIGLDoGksIGNo4buvIEjDoW7igKYpLCBjaOG6oW0gbeG7mXQgYsOgaSBsw6AgdOG7sSDEkWnhu4FuIHTDqm4vYXBwL2xpbmsgxJHDum5nIGLDoGkgdGjhuq10IOKAlCBIYXppIFZp4buHdCBt4bufIHRo4bqzbmcgYsOgaSBxdWEgYHZvY2FidWxhcnkuaHRtbD93b3JkPeKApmAsIEhTSyAzLjAgcXVhIGAjL2xlc3Nvbi/igKZgLiBO4bq/dSBiw6BpIMSRw6MgY8OzIHRyb25nIGRhbmggc8OhY2ggY+G7p2EgYuG6oW4sIHdlYiBoaeG7h24gY+G6o25oIGLDoW8gbmjhurkgxJHhu4MgdHLDoW5oIHRow6ptIHRyw7luZy4gVuG6q24gbmjhuq1wIHRheSB04buxIGRvIMSRxrDhu6NjIG5oxrAgY8WpLgoKRGFuaCBt4bulYyAoYGRhdGEvY2F0YWxvZy5qc29uYCwgaGnhu4duICoqMTI0IGLDoGkqKjogSGF6aSBWaeG7h3QgOTQgKyBIU0sgMy4wIDMwKSDEkcaw4bujYyB04buVbmcgaOG7o3AgdOG7qyBk4buvIGxp4buHdSBjw7RuZyBraGFpIGPhu6dhIDIgcmVwby4gQ+G6rXAgbmjhuq10IGzhuqFpIGtoaSAyIHdlYiBjw7MgYsOgaSBt4bubaToKCmBgYGJhc2gKbm9kZSBzY3JpcHRzL3N5bmMtY2F0YWxvZy5tanMKYGBgCgojIyBTYW8gbMawdSAmIGtow7RpIHBo4bulYyBraGkgxJHhu5VpIG3DoXkgLyBt4bqldCDEkWnhu4duIHRob+G6oWkKCi0gROG7ryBsaeG7h3UgdGjhuq10IG7hurFtIOG7nyBgZGF0YS9wcm9ncmVzcy5qc29uYCB0csOqbiBHaXRIdWIgKGtoaSDEkcOjIMSR4buTbmcgYuG7mSBi4bqxbmcgUEFUKSDigJQgxJHhu5VpIG3DoXkgY2jhu4kgY+G6p24gbeG7nyB3ZWIsIGTDoW4gbOG6oWkgUEFULCBk4buvIGxp4buHdSB04buxIHThuqNpIHbhu4EuCi0gQ2jGsGEgZ+G6r24gUEFUOiBk4buvIGxp4buHdSBjaOG7iSDhu58gdHLDrG5oIGR1eeG7h3QgY+G7p2EgbcOheSDEkcOzLiBIw6N5IHbDoG8g4pqZ77iPIOKGkiAqKlh14bqldCBKU09OKiogxJHhu4Mgc2FvIGzGsHUgxJHhu4tuaCBr4buzLgotIEtow7RpIHBo4bulYzog4pqZ77iPIOKGkiAqKk5o4bqtcCBKU09OKiog4oaSIGNo4buNbiBmaWxlIMSRw6MgeHXhuqV0LiBI4buHIHRo4buRbmcga2nhu4NtIHRyYSDEkeG7i25oIGThuqFuZyB0csaw4bubYyBraGkgbmjhuq1uLCB04buxIHNhbyBsxrB1IGLhuqNuIGhp4buHbiB04bqhaSB0csOqbiBtw6F5LCB2w6AgKipn4buZcCB0aGVvIElEIGLDoGkgaOG7jWMqKiAoa2jDtG5nIHjDs2EgYsOgaSBjaOG7iSB2w6wgZmlsZSBuaOG6rXAga2jDtG5nIGPDsyBiw6BpIMSRw7MpLgotIE7hur91IMSR4buTbmcgYuG7mSBiw6FvIHh1bmcgxJHhu5l0L2zhu5dpIHRva2VuOiBraeG7g20gdHJhIFBBVCBjw7JuIGjhuqFuIHbDoCDEkcO6bmcgcXV54buBbiBgQ29udGVudHM6IFJlYWQgYW5kIHdyaXRlYCwgcuG7k2kgYuG6pW0gKirEkOG7k25nIGLhu5kgbmdheSoqIGzhuqFpLgoKIyMgS2nhu4NtIHRo4butIHThu7EgxJHhu5luZwoKYGBgYmFzaApub2RlIC0tY2hlY2sganMvc3JzLmpzICYmIG5vZGUgLS1jaGVjayBqcy9naXRodWItc3luYy5qcyAmJiBub2RlIC0tY2hlY2sganMvYXBwLmpzICYmIG5vZGUgLS1jaGVjayBzY3JpcHRzL3JlbWluZC5tanMKbm9kZSB0ZXN0cy9ydW4tdGVzdHMubWpzCmBgYAoKQuG7mSB0ZXN0IGJhbyBwaOG7pzogbmfDoHkgSlNULCBTUlMgbeG7jWkgbeG7kWMsIHN0cmVhaywgSUQgZHV5IG5o4bqldCwgdmFsaWRhdGUgaW1wb3J0LCBtZXJnZSBraMO0bmcgbeG6pXQgYsOgaSwgQmFzZTY0IFVuaWNvZGUgKHRp4bq/bmcgVmnhu4d0ICsgY2jhu68gSMOhbiksIHJlbWluZGVyIChow7RtIG5heS9xdcOhIGjhuqFuL0ZPUkNFX1NFTkQpLCBs4buXaSBIVFRQIGPhu6dhIG50ZnkvVGVsZWdyYW0sIGzhu5dpIDQwMS80MDkvdGltZW91dCBj4bunYSBHaXRIdWIgQVBJLgoKIyMgQ+G6pXUgdHLDumMKCmBgYAppbmRleC5odG1sIMK3IG1hbmlmZXN0Lmpzb24gwrcgaWNvbi5zdmcKY3NzL3N0eWxlLmNzcwpqcy9zcnMuanMgKGxvZ2ljIFNSUyB0aHXhuqduKSDCtyBqcy9naXRodWItc3luYy5qcyAoR2l0SHViIEFQSSkgwrcganMvYXBwLmpzIChnaWFvIGRp4buHbikKZGF0YS9wcm9ncmVzcy5qc29uIMK3IGRhdGEvY2F0YWxvZy5qc29uCnNjcmlwdHMvcmVtaW5kLm1qcyDCtyBzY3JpcHRzL3N5bmMtY2F0YWxvZy5tanMKLmdpdGh1Yi93b3JrZmxvd3MvcmVtaW5kLnltbAp0ZXN0cy9ydW4tdGVzdHMubWpzCmRvY3MvQ0hFQ0tQT0lOVC5tZApgYGAKCkzGsHUgw70ga+G7uSB0aHXhuq10OiBhcHAgKipraMO0bmcqKiBkw7luZyBTZXJ2aWNlIFdvcmtlciBjYWNoZSBk4buvIGxp4buHdSwgdsOgIGx1w7RuIHThuqNpIGBkYXRhL3Byb2dyZXNzLmpzb25gIGvDqG0gYD90PTx0aW1lc3RhbXA+YCAoaG/hurdjIHF1YSBHaXRIdWIgQVBJIGtoaSBjw7MgUEFUKSDEkeG7gyBraMO0bmcgYmFvIGdp4budIGhp4buDbiB0aOG7iyBk4buvIGxp4buHdSBjxakuCg==
+# HSK Hub 📚
+
+Web tĩnh (PWA) theo dõi tiến độ học tiếng Trung HSK 1–3.0, ôn tập theo SRS `[1, 3, 7, 14, 30, 60]` ngày (múi giờ `Asia/Tokyo`), đồng bộ 2 chiều với GitHub và nhắc ôn tự động mỗi sáng bằng GitHub Actions.
+
+- Trang live: https://bohoa96tb.github.io/hsk-hub/
+- Web học liên kết: [Hazi Việt](https://bohoa96tb.github.io/hazi-viet/) · [HSK 3.0](https://bohoa96tb.github.io/HSK3.0/)
+- Thuần HTML/CSS/JavaScript (ES Modules), không framework, không build, không package ngoài.
+
+## 1. Bật GitHub Pages
+
+1. Mở repo `bohoa96tb/hsk-hub` → **Settings → Pages**.
+2. Mục **Build and deployment → Source**: chọn **Deploy from a branch**.
+3. Branch: `main`, thư mục: `/ (root)` → **Save**.
+4. Chờ 1–2 phút, mở https://bohoa96tb.github.io/hsk-hub/ để kiểm tra.
+
+## 2. Tạo GitHub Fine-grained PAT để đồng bộ
+
+1. GitHub → ảnh đại diện → **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**.
+2. **Repository access**: chọn **Only select repositories** → chọn đúng `hsk-hub`.
+3. **Permissions → Repository permissions → Contents**: chọn **Read and write**. Không cấp thêm quyền nào khác.
+4. Tạo token, sao chép (chỉ hiện 1 lần).
+5. Mở HSK Hub → nút ⚙️ **Cài đặt** → dán token vào ô PAT → **Kiểm tra kết nối** → **Đồng bộ ngay**.
+
+⚠️ Token lưu trong `localStorage` của trình duyệt này. Chỉ dùng token giới hạn như trên; nếu nghi ngờ lộ token, vào GitHub xóa token cũ và tạo token mới.
+
+## 3. Cài nhắc nhở qua ntfy (hoặc Telegram)
+
+### Cách A — ntfy (khuyên dùng)
+
+1. Cài app **ntfy** trên Android (Play Store / F-Droid) hoặc iPad.
+2. Mở app ntfy → **+** → đăng ký một topic khó đoán, ví dụ `hsk-hub-bui-7f3k9` (ai biết topic cũng đọc/gửi được thông báo, nên đừng dùng tên dễ đoán).
+3. Trên GitHub: repo `hsk-hub` → **Settings → Secrets and variables → Actions → New repository secret**:
+   - Tên: `NTFY_TOPIC`, giá trị: đúng topic vừa tạo.
+   - (Tùy chọn) `NTFY_SERVER` nếu dùng server ntfy riêng; mặc định `https://ntfy.sh`.
+
+### Cách B — Telegram
+
+1. Nhắn `/newbot` cho **@BotFather**, tạo bot và lấy token.
+2. Nhắn một tin bất kỳ cho bot của bạn, mở `https://api.telegram.org/bot<TOKEN>/getUpdates` để lấy `chat.id`.
+3. Thêm 2 secret: `TELEGRAM_BOT_TOKEN` và `TELEGRAM_CHAT_ID`.
+
+Có thể cài cả hai kênh — thông báo sẽ gửi song song.
+
+### Đổi khung giờ nhắc ngay trên web (V2)
+
+Vào ⚙️ **Cài đặt → Khung giờ nhận thông báo**: **Sáng 07:00** / **Tối 19:00** / **Cả sáng & tối** / **Tạm dừng**, rồi bấm **Đồng bộ ngay** để lưu vào `progress.json` trên GitHub. GitHub Actions chạy cả 2 mốc 07:00 và 19:00 (giờ Nhật) mỗi ngày, script tự lọc theo lựa chọn của bạn (chấp nhận trễ cron trong ±2 giờ) — không cần sửa file YAML.
+
+## 4. Test thông báo ngay
+
+Repo `hsk-hub` → tab **Actions** → workflow **Daily HSK Reminder** → **Run workflow** → giữ `force_send = true` → **Run workflow**. Kiểm tra điện thoại/app ntfy hoặc Telegram sau vài chục giây.
+
+Thử tại máy (không gửi thật):
+
+```bash
+FORCE_SEND=true node scripts/remind.mjs --dry-run
+```
+
+## Chọn nhanh bài học từ danh mục (V2)
+
+Nút **+ Thêm bài mới** có mục **Chọn nhanh từ danh mục**: lọc theo app, gõ tìm (tên bài, chữ Hán…), chạm một bài là tự điền tên/app/link đúng bài thật — Hazi Việt mở thẳng bài qua `vocabulary.html?word=…`, HSK 3.0 qua `#/lesson/…`. Nếu bài đã có trong danh sách của bạn, web hiện cảnh báo nhẹ để tránh thêm trùng. Vẫn nhập tay tự do được như cũ.
+
+Danh mục (`data/catalog.json`, hiện **124 bài**: Hazi Việt 94 + HSK 3.0 30) được tổng hợp từ dữ liệu công khai của 2 repo. Cập nhật lại khi 2 web có bài mới:
+
+```bash
+node scripts/sync-catalog.mjs
+```
+
+## Sao lưu & khôi phục khi đổi máy / mất điện thoại
+
+- Dữ liệu thật nằm ở `data/progress.json` trên GitHub (khi đã đồng bộ bằng PAT) — đổi máy chỉ cần mở web, dán lại PAT, dữ liệu tự tải về.
+- Chưa gắn PAT: dữ liệu chỉ ở trình duyệt của máy đó. Hãy vào ⚙️ → **Xuất JSON** để sao lưu định kỳ.
+- Khôi phục: ⚙️ → **Nhập JSON** → chọn file đã xuất. Hệ thống kiểm tra định dạng trước khi nhận, tự sao lưu bản hiện tại trên máy, và **gộp theo ID bài học** (không xóa bài chỉ vì file nhập không có bài đó).
+- Nếu đồng bộ báo xung đột/lỗi token: kiểm tra PAT còn hạn và đúng quyền `Contents: Read and write`, rồi bấm **Đồng bộ ngay** lại.
+
+## Kiểm thử tự động
+
+```bash
+node --check js/srs.js && node --check js/github-sync.js && node --check js/app.js && node --check scripts/remind.mjs
+node tests/run-tests.mjs
+```
+
+Bộ test bao phủ: ngày JST, SRS mọi mốc, streak, ID duy nhất, validate import, merge không mất bài, Base64 Unicode (tiếng Việt + chữ Hán), reminder (hôm nay/quá hạn/FORCE_SEND), lỗi HTTP của ntfy/Telegram, lỗi 401/409/timeout của GitHub API.
+
+## Cấu trúc
+
+```
+index.html · manifest.json · icon.svg
+css/style.css
+js/srs.js (logic SRS thuần) · js/github-sync.js (GitHub API) · js/app.js (giao diện)
+data/progress.json · data/catalog.json
+scripts/remind.mjs · scripts/sync-catalog.mjs
+.github/workflows/remind.yml
+tests/run-tests.mjs
+docs/CHECKPOINT.md
+```
+
+Lưu ý kỹ thuật: app **không** dùng Service Worker cache dữ liệu, và luôn tải `data/progress.json` kèm `?t=<timestamp>` (hoặc qua GitHub API khi có PAT) để không bao giờ hiển thị dữ liệu cũ.
