@@ -3,8 +3,13 @@ import {
   APPS, SRS_INTERVALS, todayJST, addDays, dueLessons, upcomingLessons,
   markRemembered, markForgotten, overdueDays, generateId, validateData,
   mergeData, emptyData, clampStage, filterCatalog, findDuplicateLesson,
-  normalizeReminderMode,
+  normalizeReminderMode, overdueLessons, spreadOverdueLessons, deferLessonDate,
+  computeTierProgress, DEFAULT_DAILY_REVIEW_LIMIT,
 } from './srs.js';
+import {
+  monthGrid, buildHeatmap, buildDueCounts, buildForecastCounts,
+  forecastLessonsOn, monthStats,
+} from './calendar.js';
 import {
   GitHubSync, GitHubError, getStoredToken, storeToken, fetchStaticData,
   loadLocalData, saveLocalData, backupLocalData, createSyncQueue,
@@ -16,11 +21,25 @@ const els = {
   list: $('#lessonList'), loading: $('#loadingState'), error: $('#errorState'), empty: $('#emptyState'),
   toast: $('#toast'), offline: $('#offlineBanner'),
   lessonModal: $('#lessonModal'), settingsModal: $('#settingsModal'),
+  spreadModal: $('#spreadModal'), deferModal: $('#deferModal'),
   syncStatus: $('#syncStatus'),
+  calendarView: $('#calendarView'), calGrid: $('#calGrid'), calTitle: $('#calTitle'),
+  calDayDetail: $('#calDayDetail'), calMonthStats: $('#calMonthStats'),
+  calOverdueBanner: $('#calOverdueBanner'), calOverdueText: $('#calOverdueText'),
+  calSpreadBtn: $('#calSpreadBtn'), calForecast: $('#calForecast'),
+  dueSpreadBanner: $('#dueSpreadBanner'), dueSpreadText: $('#dueSpreadText'),
+  progressBody: $('#progressBody'), progressChevron: $('#progressChevron'),
 };
 
 let data = null;
 let activeTab = 'due';
+// Trạng thái tab Lịch tháng
+const _nowParts = todayJST().split('-').map(Number);
+let calYear = _nowParts[0];
+let calMonth = _nowParts[1];
+let selectedDate = todayJST();
+let forecastOn = false;
+let deferTargetId = null;
 let syncState = 'Chưa gắn Token';
 let syncClient = null;
 let syncClientKey = '';
@@ -173,6 +192,11 @@ function stageLabel(stage) {
   return `Mốc ${SRS_INTERVALS[clampStage(stage)]} ngày`;
 }
 
+function fmtVN(dateStr) {
+  const [y, m, d] = String(dateStr).split('-');
+  return `${d}/${m}/${y}`;
+}
+
 function render() {
   if (!data) return;
   const today = todayJST();
@@ -181,6 +205,23 @@ function render() {
   els.longest.textContent = data.stats.longestStreak;
   els.due.textContent = due.length;
   els.sync.textContent = syncState;
+
+  renderProgress();
+
+  // Thanh cảnh báo dàn đều ở tab "Cần ôn hôm nay" khi có từ 2 bài quá hạn
+  const overdue = overdueLessons(data, today);
+  const showDueBanner = activeTab === 'due' && overdue.length >= 2;
+  els.dueSpreadBanner.hidden = !showDueBanner;
+  if (showDueBanner) els.dueSpreadText.textContent = `⚠️ ${overdue.length} bài quá hạn — dàn đều để đỡ ngợp.`;
+
+  const isCalendar = activeTab === 'calendar';
+  els.calendarView.hidden = !isCalendar;
+  els.list.hidden = isCalendar;
+  if (isCalendar) {
+    els.empty.hidden = true;
+    renderCalendar();
+    return;
+  }
 
   let lessons;
   if (activeTab === 'due') lessons = due;
@@ -221,6 +262,7 @@ function render() {
         <a class="btn" href="" target="_blank" rel="noopener">Mở bài</a>
         <button class="btn ok" type="button" data-act="remember">Đã nhớ</button>
         <button class="btn forgot" type="button" data-act="forget">Quên</button>
+        <button class="btn small" type="button" data-act="defer">📅 Dời</button>
         ${activeTab === 'all' ? '<button class="btn small" type="button" data-act="edit">Sửa</button><button class="btn small" type="button" data-act="delete">Xóa</button>' : ''}
       </div>`;
     card.querySelector('.lesson-title').textContent = lesson.title;
@@ -237,6 +279,7 @@ function render() {
       toast('Không sao — bài sẽ ôn lại vào ngày mai.');
       persist();
     });
+    card.querySelector('[data-act="defer"]').addEventListener('click', () => openDeferModal(lesson));
     const editBtn = card.querySelector('[data-act="edit"]');
     if (editBtn) editBtn.addEventListener('click', () => openLessonModal(lesson));
     const delBtn = card.querySelector('[data-act="delete"]');
@@ -250,6 +293,275 @@ function render() {
     els.list.appendChild(card);
   }
 }
+
+// ---------- V3: Thanh tiến độ 3 tầng ----------
+function catalogCounts() {
+  const counts = { 'hazi-viet': 0, 'hsk3.0': 0 };
+  for (const e of catalogEntries || []) if (e.app in counts) counts[e.app]++;
+  return counts;
+}
+
+function renderProgress() {
+  if (!data) return;
+  const progress = computeTierProgress(data.lessons, catalogCounts());
+  for (const appKey of Object.keys(progress)) {
+    const row = document.getElementById(`progress-${appKey}`);
+    if (!row) continue;
+    const p = progress[appKey];
+    const pct = (n) => (p.total > 0 ? (n / p.total) * 100 : 0);
+    row.innerHTML = `
+      <div class="progress-meta"><strong>${APPS[appKey]?.label || appKey}</strong>
+      <span class="p-count">${p.tracked}/${p.total} bài (${p.percent}%)</span></div>
+      <div class="stacked-bar" role="img" aria-label="Mới học ${p.fresh}, đang củng cố ${p.consolidating}, đã nhớ sâu ${p.deep}">
+        <div class="seg seg-fresh" style="width:${pct(p.fresh)}%"></div>
+        <div class="seg seg-consol" style="width:${pct(p.consolidating)}%"></div>
+        <div class="seg seg-deep" style="width:${pct(p.deep)}%"></div>
+      </div>
+      <p class="progress-tiers">Mới: ${p.fresh} · Củng cố: ${p.consolidating} · Nhớ sâu: ${p.deep}</p>`;
+  }
+}
+
+$('#progressToggle').addEventListener('click', () => {
+  const collapsed = !els.progressBody.hidden;
+  els.progressBody.hidden = collapsed;
+  els.progressChevron.textContent = collapsed ? '▸' : '▾';
+  $('#progressToggle').setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+  localStorage.setItem('hsk-hub-progress-collapsed', collapsed ? '1' : '0');
+});
+if (localStorage.getItem('hsk-hub-progress-collapsed') === '1') {
+  els.progressBody.hidden = true;
+  els.progressChevron.textContent = '▸';
+  $('#progressToggle').setAttribute('aria-expanded', 'false');
+}
+
+// ---------- V3: Tab Lịch tháng SRS ----------
+function renderCalendar() {
+  if (!data) return;
+  const today = todayJST();
+  els.calTitle.textContent = `Tháng ${calMonth} / ${calYear}`;
+  const heatmap = buildHeatmap(data.lessons);
+  const dueCounts = buildDueCounts(data.lessons);
+  const forecastCounts = forecastOn ? buildForecastCounts(data.lessons) : new Map();
+  const overdue = overdueLessons(data, today);
+
+  els.calOverdueBanner.hidden = overdue.length === 0;
+  if (overdue.length) {
+    els.calOverdueText.textContent = `⚠️ ${overdue.length} bài quá hạn`;
+    els.calSpreadBtn.hidden = overdue.length < 2;
+  }
+
+  els.calGrid.innerHTML = '';
+  for (const week of monthGrid(calYear, calMonth)) {
+    for (const cell of week) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      if (!cell.date) {
+        btn.className = 'cal-cell empty';
+        btn.disabled = true;
+        btn.setAttribute('aria-hidden', 'true');
+      } else {
+        const heat = heatmap.get(cell.date) || 0;
+        btn.className = 'cal-cell'
+          + (heat >= 3 ? ' heat-3' : heat === 2 ? ' heat-2' : heat === 1 ? ' heat-1' : '')
+          + (cell.date === today ? ' today' : '')
+          + (cell.date === selectedDate ? ' selected' : '');
+        const dueN = cell.date >= today ? (dueCounts.get(cell.date) || 0) : 0;
+        const fcN = forecastOn ? (forecastCounts.get(cell.date) || 0) : 0;
+        btn.innerHTML = `<span class="cal-daynum">${cell.day}</span>
+          <span class="cal-badges">
+            ${dueN ? `<span class="dot-badge due">🔵 ${dueN}</span>` : ''}
+            ${fcN ? `<span class="dot-badge forecast">🟣 ${fcN}</span>` : ''}
+          </span>`;
+        btn.setAttribute('aria-label', `Ngày ${fmtVN(cell.date)}`);
+        btn.addEventListener('click', () => { selectedDate = cell.date; renderCalendar(); });
+      }
+      els.calGrid.appendChild(btn);
+    }
+  }
+  const stats = monthStats(heatmap, calYear, calMonth);
+  els.calMonthStats.textContent = `Tổng lượt ôn trong tháng: ${stats.totalReviews} · Số ngày có học: ${stats.daysStudied}`;
+  renderDayDetail(heatmap);
+}
+
+function detailItem(lesson, { showReview }) {
+  const today = todayJST();
+  const item = document.createElement('div');
+  item.className = 'cal-item';
+  item.innerHTML = `
+    <p class="lesson-title"></p>
+    <div class="badges">
+      <span class="badge app">${APPS[lesson.app]?.label || lesson.app}</span>
+      <span class="badge">${stageLabel(lesson.stage)}</span>
+      <span class="badge">Ôn: ${fmtVN(lesson.nextReviewDate)}</span>
+    </div>
+    <div class="lesson-actions">
+      <a class="btn" href="" target="_blank" rel="noopener">Mở bài</a>
+      ${showReview ? '<button class="btn ok" type="button" data-act="remember">Đã nhớ</button><button class="btn forgot" type="button" data-act="forget">Quên</button>' : ''}
+      <button class="btn small" type="button" data-act="defer">📅 Dời</button>
+    </div>`;
+  item.querySelector('.lesson-title').textContent = lesson.title;
+  item.querySelector('a.btn').href = lesson.url;
+  const rememberBtn = item.querySelector('[data-act="remember"]');
+  if (rememberBtn) rememberBtn.addEventListener('click', () => {
+    data = markRemembered(data, lesson.id, todayJST());
+    toast('Tốt lắm! Đã hẹn lịch ôn tiếp theo.', 'ok');
+    persist();
+  });
+  const forgetBtn = item.querySelector('[data-act="forget"]');
+  if (forgetBtn) forgetBtn.addEventListener('click', () => {
+    data = markForgotten(data, lesson.id, todayJST());
+    toast('Không sao — bài sẽ ôn lại vào ngày mai.');
+    persist();
+  });
+  item.querySelector('[data-act="defer"]').addEventListener('click', () => openDeferModal(lesson));
+  return item;
+}
+
+function renderDayDetail(heatmap) {
+  const today = todayJST();
+  const wrap = els.calDayDetail;
+  wrap.innerHTML = '';
+  const dueThatDay = data.lessons
+    .filter((l) => l.nextReviewDate === selectedDate)
+    .sort((a, b) => a.title.localeCompare(b.title));
+  const doneThatDay = data.lessons.filter((l) => {
+    const days = new Set([...(l.reviewHistory || []), ...(l.learnedDate ? [l.learnedDate] : [])]);
+    return days.has(selectedDate);
+  });
+  const forecastThatDay = forecastOn ? forecastLessonsOn(data.lessons, selectedDate) : [];
+
+  const h = document.createElement('h3');
+  h.textContent = selectedDate === today ? `Hôm nay — ${fmtVN(selectedDate)}` : `Ngày ${fmtVN(selectedDate)}`;
+  wrap.appendChild(h);
+
+  if (dueThatDay.length) {
+    const gh = document.createElement('h3');
+    gh.textContent = `Cần ôn / Lịch ôn ngày ${fmtVN(selectedDate)} (${dueThatDay.length})`;
+    wrap.appendChild(gh);
+    for (const lesson of dueThatDay) {
+      wrap.appendChild(detailItem(lesson, { showReview: selectedDate <= today }));
+    }
+  }
+  if (doneThatDay.length) {
+    const gh = document.createElement('h3');
+    gh.textContent = `Đã hoàn thành ngày ${fmtVN(selectedDate)} (${doneThatDay.length})`;
+    wrap.appendChild(gh);
+    for (const lesson of doneThatDay) {
+      const p = document.createElement('p');
+      p.className = 'cal-item';
+      p.textContent = `✅ ${lesson.title} (${APPS[lesson.app]?.label || lesson.app})`;
+      wrap.appendChild(p);
+    }
+  }
+  if (forecastOn && forecastThatDay.length) {
+    const gh = document.createElement('h3');
+    gh.textContent = `Dự kiến ôn (${forecastThatDay.length}) — chỉ để xem trước`;
+    wrap.appendChild(gh);
+    for (const lesson of forecastThatDay) {
+      const p = document.createElement('p');
+      p.className = 'cal-item';
+      p.textContent = `🟣 ${lesson.title} (${APPS[lesson.app]?.label || lesson.app})`;
+      wrap.appendChild(p);
+    }
+  }
+  if (!dueThatDay.length && !doneThatDay.length && !(forecastOn && forecastThatDay.length)) {
+    const p = document.createElement('p');
+    p.className = 'state-msg';
+    p.textContent = 'Ngày này không có bài ôn nào.';
+    wrap.appendChild(p);
+  }
+}
+
+$('#calPrev').addEventListener('click', () => {
+  calMonth--; if (calMonth < 1) { calMonth = 12; calYear--; }
+  renderCalendar();
+});
+$('#calNext').addEventListener('click', () => {
+  calMonth++; if (calMonth > 12) { calMonth = 1; calYear++; }
+  renderCalendar();
+});
+$('#calTodayBtn').addEventListener('click', () => {
+  const [y, m] = todayJST().split('-').map(Number);
+  calYear = y; calMonth = m; selectedDate = todayJST();
+  renderCalendar();
+});
+els.calForecast.addEventListener('change', () => { forecastOn = els.calForecast.checked; renderCalendar(); });
+
+// ---------- V3: Dàn đều bài quá hạn ----------
+function spreadOptions() {
+  const limit = Number($('#spreadLimit').value) || DEFAULT_DAILY_REVIEW_LIMIT;
+  const startDate = $('#spreadStart').value === 'tomorrow' ? addDays(todayJST(), 1) : todayJST();
+  return { today: todayJST(), startDate, dailyReviewLimit: limit };
+}
+
+function updateSpreadPreview() {
+  if (!data) return;
+  const { assignments, byDate } = spreadOverdueLessons(data.lessons, spreadOptions());
+  const el = $('#spreadPreview');
+  if (!assignments.length) {
+    el.textContent = 'Hiện không có bài quá hạn nào.';
+    return;
+  }
+  const parts = Object.entries(byDate)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([date, n]) => `${fmtVN(date)} (+${n} bài)`);
+  el.textContent = `Rải ${assignments.length} bài quá hạn: ${parts.join(', ')}`;
+}
+
+function openSpreadModal() {
+  if (!data) return;
+  closeAllModals();
+  $('#spreadLimit').value = String(data.settings.dailyReviewLimit ?? DEFAULT_DAILY_REVIEW_LIMIT);
+  $('#spreadStart').value = 'today';
+  updateSpreadPreview();
+  els.spreadModal.hidden = false;
+}
+$('#spreadLimit').addEventListener('change', updateSpreadPreview);
+$('#spreadStart').addEventListener('change', updateSpreadPreview);
+$('#spreadConfirmBtn').addEventListener('click', () => {
+  const opts = spreadOptions();
+  const { lessons, assignments } = spreadOverdueLessons(data.lessons, opts);
+  data = {
+    ...data,
+    lessons,
+    settings: { ...data.settings, dailyReviewLimit: opts.dailyReviewLimit },
+  };
+  els.spreadModal.hidden = true;
+  toast(`Đã dàn đều ${assignments.length} bài quá hạn.`, 'ok');
+  persist(); // đúng 1 lần đưa vào hàng đợi đồng bộ
+});
+$('#dueSpreadBtn').addEventListener('click', openSpreadModal);
+els.calSpreadBtn.addEventListener('click', openSpreadModal);
+
+// ---------- V3: Dời ngày nhanh ----------
+function openDeferModal(lesson) {
+  closeAllModals();
+  deferTargetId = lesson.id;
+  $('#deferLessonName').textContent = `"${lesson.title}" — đang hẹn ôn ${fmtVN(lesson.nextReviewDate)}.`;
+  $('#deferDateInput').value = addDays(lesson.nextReviewDate, 1);
+  els.deferModal.hidden = false;
+}
+function applyDefer(newDate) {
+  if (!deferTargetId) return;
+  data = { ...data, lessons: deferLessonDate(data.lessons, deferTargetId, newDate) };
+  deferTargetId = null;
+  els.deferModal.hidden = true;
+  toast(`Đã dời ngày ôn sang ${fmtVN(newDate)}.`, 'ok');
+  persist(); // đúng 1 lần đưa vào hàng đợi đồng bộ
+}
+$('#deferPlus1Btn').addEventListener('click', () => {
+  const lesson = data.lessons.find((l) => l.id === deferTargetId);
+  if (lesson) applyDefer(addDays(lesson.nextReviewDate, 1));
+});
+$('#deferPlus3Btn').addEventListener('click', () => {
+  const lesson = data.lessons.find((l) => l.id === deferTargetId);
+  if (lesson) applyDefer(addDays(lesson.nextReviewDate, 3));
+});
+$('#deferCustomBtn').addEventListener('click', () => {
+  const v = $('#deferDateInput').value;
+  if (!v) { toast('Hãy chọn một ngày.', 'error'); return; }
+  applyDefer(v);
+});
 
 // ---------- Tabs ----------
 document.querySelectorAll('.tab').forEach((tab) => {
@@ -334,6 +646,8 @@ $('#fApp').addEventListener('change', updateDupWarn);
 function closeAllModals() {
   els.lessonModal.hidden = true;
   els.settingsModal.hidden = true;
+  els.spreadModal.hidden = true;
+  els.deferModal.hidden = true;
 }
 
 // ---------- Modal bài học ----------
@@ -484,7 +798,7 @@ $('#importFile').addEventListener('change', async (e) => {
 document.querySelectorAll('[data-close]').forEach((btn) => {
   btn.addEventListener('click', () => closeAllModals());
 });
-[els.lessonModal, els.settingsModal].forEach((m) => {
+[els.lessonModal, els.settingsModal, els.spreadModal, els.deferModal].forEach((m) => {
   m.addEventListener('click', (e) => { if (e.target === m) closeAllModals(); });
 });
 document.addEventListener('keydown', (e) => {
@@ -500,3 +814,4 @@ window.addEventListener('offline', updateOnline);
 initTheme();
 updateOnline();
 loadData();
+loadCatalog().then(() => { if (data) renderProgress(); });
